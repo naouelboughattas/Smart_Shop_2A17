@@ -34,14 +34,14 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>0</y>
+      <x>10</x>
+      <y>10</y>
       <width>721</width>
       <height>361</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -141,7 +141,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_ent">
+      <widget class="QLineEdit" name="lineEdit_De">
        <property name="geometry">
         <rect>
          <x>70</x>
@@ -174,9 +174,45 @@
       <property name="geometry">
        <rect>
         <x>30</x>
+        <y>50</y>
+        <width>451</width>
+        <height>271</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_S">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
         <y>30</y>
-        <width>631</width>
-        <height>281</height>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Supprimer</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_tri">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>80</y>
+        <width>141</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Tri Vehicule</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_R">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>141</width>
+        <height>20</height>
        </rect>
       </property>
      </widget>
@@ -279,7 +315,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_ent_M">
+      <widget class="QLineEdit" name="lineEdit_De_M">
        <property name="geometry">
         <rect>
          <x>70</x>
@@ -289,7 +325,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_M">
+      <widget class="QPushButton" name="pushmod">
        <property name="geometry">
         <rect>
          <x>270</x>
@@ -299,10 +335,15 @@
         </rect>
        </property>
        <property name="text">
-        <string>Ajouter</string>
+        <string>Modifier</string>
        </property>
       </widget>
      </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Supprimer Vehicule</string>
+     </attribute>
     </widget>
    </widget>
   </widget>

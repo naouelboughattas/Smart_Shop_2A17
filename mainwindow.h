@@ -23,6 +23,14 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushmod_clicked();
+
+    void on_pushButton_S_clicked();
+
+     void on_pushButton_tri_clicked();
+
+     void on_lineEdit_R(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     vehicule tmpveh;
