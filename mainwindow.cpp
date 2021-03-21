@@ -16,9 +16,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
    ui->tableView_vehicule->setModel(tmpveh.afficher_veh());
-   // ui->stackedWidget->setCurrentIndex(6);
+    ui->tableView_livreur->setModel(tmpliv.afficher_liv());
+    ui->stackedWidget->setCurrentIndex(1);
 //
-  //  ui->comboBox_Matricule->setModel(tmpveh.afficher_veh());
+  // ui->comboBox_Matricule->setModel(tmpveh.afficher_veh());
 
 
 }
@@ -59,6 +60,39 @@ void MainWindow::on_pushButton_clicked()
 
 }
 
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    QString cin = ui->le_cin->text();
+    QString nom = ui->lineEdit_nom->text();
+    QString prenom = ui->lineEdit_pr->text();
+     QString date_amb = ui->lineEdit_da->text();
+
+
+    livreur l(cin,nom,prenom,date_amb);
+    bool test=l.ajouter_liv();
+    if(test)
+    {
+        QMessageBox::information(nullptr, QObject::tr("Ajouter un livreur"),
+                          QObject::tr("livreur ajouté.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+      //  ui->stackedWidget->setCurrentIndex(0);
+
+        QString objet="AJOUT LIVREUR";
+        QString message=" livreur a été ajouté avec succés" ;
+
+
+
+    }
+
+    ui->tableView_livreur->setModel(tmpliv.afficher_liv());
+
+}
+
+
+
+
+
 void MainWindow::on_pushmod_clicked()
 {
     QString matricule = ui->le_Mat_M->text();
@@ -83,6 +117,31 @@ void MainWindow::on_pushmod_clicked()
 
 }
 
+
+void MainWindow::on_pushmod_2_clicked()
+{
+    QString cin = ui->le_cin_M->text();
+    QString nom = ui->lineEdit_nom_M->text();
+    QString prenom = ui->lineEdit_pr_M->text();
+    QString date_amb = ui->lineEdit_da_M->text();
+    livreur l;
+    bool test=l.modifier_liv(cin,nom,prenom,date_amb);
+
+    if(test)
+    {
+        QMessageBox::information(nullptr, QObject::tr("modifie un livreur"),
+                          QObject::tr("livreur modifie.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("non modifie"),
+                    QObject::tr("Erreur !.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+     ui->tableView_livreur->setModel(tmpliv.afficher_liv());
+
+}
+
 void MainWindow::on_pushButton_S_clicked()
 {
     QString id =ui->tableView_vehicule->model()->index(ui->tableView_vehicule->currentIndex().row(),0).data().toString();
@@ -100,9 +159,34 @@ void MainWindow::on_pushButton_S_clicked()
       }
 
 }
+
+
+
+void MainWindow::on_pushButton_S1_clicked()
+{
+    QString id =ui->tableView_livreur->model()->index(ui->tableView_livreur->currentIndex().row(),0).data().toString();
+    QMessageBox::StandardButton reply;
+      reply = QMessageBox::question(this, "Supprimer", "Etes vous sur de supprimer ce livreur?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes) {
+          bool test=tmpliv.supprimer_liv(id);
+          if(test)
+          {
+              ui->tableView_livreur->setModel(tmpliv.afficher_liv());
+              QMessageBox::information(nullptr,"Suppression","Livreur supprimé");
+
+          }
+      }
+
+}
 void MainWindow::on_pushButton_tri_clicked()
 {
     ui->tableView_vehicule->setModel(tmpveh.tri_veh());
+}
+
+void MainWindow::on_pushButton_tri_2_clicked()
+{
+    ui->tableView_livreur->setModel(tmpliv.tri_liv());
 }
 
 void MainWindow::on_lineEdit_R(const QString &arg1)
@@ -110,3 +194,19 @@ void MainWindow::on_lineEdit_R(const QString &arg1)
     vehicule a;
     ui->tableView_vehicule->setModel(tmpveh.rechercher_veh_dynamique(arg1));
 }
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->tableView_vehicule->setModel(tmpveh.afficher_veh());
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+    ui->tableView_livreur->setModel(tmpliv.afficher_liv());
+}
+
+
+

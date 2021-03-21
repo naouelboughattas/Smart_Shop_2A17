@@ -17,12 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Livreur.cpp \
     Vehicule.cpp \
     connection.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    Livreur.h \
     Vehicule.h \
     connection.h \
     mainwindow.h
