@@ -94,7 +94,7 @@ QSqlQueryModel * Facture::tri()
 
 QStringList Facture::recherche_id(){
     QSqlQuery query;
-    query.prepare("select * from FACTURES");
+    query.prepare("select * from FACTURES ORDER BY ID_F ASC");
     query.exec();
     QStringList list;
     while(query.next()){

@@ -85,11 +85,7 @@ void MainWindow::on_pb_ajouter_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-   // ui->supr_box->clear();
-    //ui->supr_box->addItems(Ftemp.recherche_id());
     ui->tab_fact->setModel(Ftemp.tri());
-    //ui->modif_box->clear();
-   // ui->modif_box->addItems(Ftemp.recherche_id());
 
 }
 
@@ -220,6 +216,11 @@ void MainWindow::on_impr_clicked()
 void MainWindow::on_tabWidget_currentChanged(int index)
 {
     ui->tab_fact->setModel(Ftemp.afficher());
+    ui->modif_box->clear();
+    ui->modif_box->addItems(Ftemp.recherche_id());
+    ui->supr_box->clear();
+    ui->supr_box->addItems(Ftemp.recherche_id());
+
 
 }
 
@@ -227,16 +228,13 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 
 void MainWindow::on_modif_box_currentTextChanged(const QString &arg1)
 {
-    ui->modif_box->clear();
-    ui->modif_box->addItems(Ftemp.recherche_id());
+
     ui->tab_fact->setModel(Ftemp.afficher());
 
 }
 
 void MainWindow::on_supr_box_currentIndexChanged(int index)
 {
-    ui->supr_box->clear();
-    ui->supr_box->addItems(Ftemp.recherche_id());
     ui->tab_fact->setModel(Ftemp.afficher());
 
 }
