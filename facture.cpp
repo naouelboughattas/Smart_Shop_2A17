@@ -3,12 +3,17 @@
 #include <QDebug>
 #include <QObject>
 #include <QTableView>
+#include <QDateTime>
+#include <QDate>
+#include <QTime>
 
 Facture::Facture()
 {
-id_f=0; date_f=""; ttc_f="";
+id_f=0;
+date_f=QDateTime(QDate(2000,01,01),QTime(00,00,00));
+ttc_f="";
 }
-Facture::Facture(int id_f,QString date_f,QString ttc_f){
+Facture::Facture(int id_f,QDateTime date_f,QString ttc_f){
     this->id_f=id_f;
     this->date_f=date_f;
     this->ttc_f=ttc_f;
@@ -17,7 +22,7 @@ Facture::Facture(int id_f,QString date_f,QString ttc_f){
 int Facture::getid_f(){
     return id_f;
 }
-QString Facture::getdate_f(){
+QDateTime Facture::getdate_f(){
     return date_f;
 }
 QString Facture::getttc_f(){
@@ -26,7 +31,7 @@ QString Facture::getttc_f(){
 void Facture::setid_f(int id_f){
     this->id_f=id_f;
 }
-void Facture::setdate_f(QString date_f){
+void Facture::setdate_f(QDateTime date_f){
     this->date_f=date_f;
 }
 void Facture::setttc_f(QString ttc_f){
@@ -60,7 +65,7 @@ bool Facture::supprimer(int id_f){
     query.bindValue(":id_f", id_f);
     return    query.exec();
 }
-bool Facture::modifier(int id_f,QString date_f,QString ttc_f)
+bool Facture::modifier(int id_f,QDateTime date_f,QString ttc_f)
 {
     QSqlQuery query;
     query.prepare("UPDATE FACTURES SET date_f= :date_f,ttc_f = :ttc_f WHERE id_f= :id_f ");
@@ -113,7 +118,7 @@ Facture Facture::search_id(int id_f){
     Facture p;
     while(query.next()){
         p.setid_f(query.value(0).toInt());
-        p.setdate_f(query.value(1).toString());
+        p.setdate_f(query.value(1).toDateTime());
         p.setttc_f(query.value(2).toString());
 
     }

@@ -19,7 +19,7 @@
 #include <QDate>
 #include <QPrintDialog>
 #include <QPropertyAnimation>
-
+#include <QDateTime>
 
 
 
@@ -49,6 +49,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->le_id_f->setValidator( new QIntValidator(0, 999999999, this));
     /*/////////////////////////////////////////////////////////////////////////////*/
     ui->tab_fact->setModel(Ftemp.afficher());
+    ui->date_box->setDateTime(QDateTime::currentDateTime());
+    ui->modif_date_f_box->setDateTime(QDateTime::currentDateTime());
 
 
 }
@@ -62,7 +64,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pb_ajouter_clicked()
 {
     int id_f=ui->le_id_f->text().toInt();
-    QString date_f=ui->le_date_f->text();
+    QDateTime date_f=ui->date_box->dateTime();
     QString ttc_f=ui->le_ttc_f->text();
 
     Facture F(id_f,date_f,ttc_f);
@@ -113,7 +115,7 @@ void MainWindow::on_supp_clicked()
 void MainWindow::on_pb_modifier_clicked()
 {
     int id_f = ui->modif_box->currentText().toInt();
-    QString date_f = ui->modif_date_f->text();
+    QDateTime date_f = ui->modif_date_f_box->dateTime();
     QString ttc_f = ui->modif_ttc_f->text();
     Facture ff;
     bool test=ff.modifier(id_f,date_f,ttc_f);
