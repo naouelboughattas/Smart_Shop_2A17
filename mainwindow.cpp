@@ -45,9 +45,13 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap pix_sup("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/supprime.png");
     ui->label_5->setPixmap(pix_sup.scaled(100,100,Qt::KeepAspectRatio));
     /*/////////////////////////////////////////////////////////////////////////////*/
+
+
     /*////////////////////////CONTROLE DE SAISIE///////////////////////////////////*/
-    ui->le_id_f->setValidator( new QIntValidator(0, 999999999, this));
+    ui->le_ttc_f->setValidator( new QIntValidator(0, 999999999, this));
     /*/////////////////////////////////////////////////////////////////////////////*/
+
+
     ui->tab_fact->setModel(Ftemp.afficher());
     ui->date_box->setDateTime(QDateTime::currentDateTime());
     ui->modif_date_f_box->setDateTime(QDateTime::currentDateTime());
@@ -63,7 +67,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pb_ajouter_clicked()
 {
-    int id_f=ui->le_id_f->text().toInt();
+    QString id_f=ui->le_id_f->text();
     QDateTime date_f=ui->date_box->dateTime();
     QString ttc_f=ui->le_ttc_f->text();
 
@@ -93,7 +97,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_supp_clicked()
 {
-    int id_f= ui->supr_box->currentText().toInt();
+    QString id_f= ui->supr_box->currentText();
     QMessageBox::StandardButton reply;
       reply = QMessageBox::question(this, "Supprimer", "Etes vous sur de supprimer cette facture?",
                                     QMessageBox::Yes|QMessageBox::No);
@@ -114,7 +118,7 @@ void MainWindow::on_supp_clicked()
 
 void MainWindow::on_pb_modifier_clicked()
 {
-    int id_f = ui->modif_box->currentText().toInt();
+    QString id_f = ui->modif_box->currentText();
     QDateTime date_f = ui->modif_date_f_box->dateTime();
     QString ttc_f = ui->modif_ttc_f->text();
     Facture ff;

@@ -9,25 +9,25 @@ class Facture
 {
 public:
     Facture();
-    Facture(int,QDateTime,QString);
-    int getid_f();
+    Facture(QString,QDateTime,QString);
+    QString getid_f();
     QDateTime getdate_f();
     QString getttc_f();
-    void setid_f(int);
+    void setid_f(QString);
     void setdate_f(QDateTime);
     void setttc_f(QString);
     bool ajouter();
     QSqlQueryModel* afficher();
-    bool supprimer(int);
-    bool modifier(int,QDateTime,QString);
+    bool supprimer(QString);
+    bool modifier(QString,QDateTime,QString);
     QSqlQueryModel * rechercher(QString);
     QSqlQueryModel * tri();
     QStringList recherche_id();
-    Facture search_id(int id_f);
+    Facture search_id(QString id_f);
 
 
 private:
-    int id_f;
+    QString id_f;
     QString ttc_f;
     QDateTime date_f;
 };

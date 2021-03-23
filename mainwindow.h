@@ -40,20 +40,20 @@ private slots:
 
     void on_modif_box_currentTextChanged(const QString &arg1);
 
-    void on_modif_box_activated(int index);
+    void on_modif_box_activated(QString index);
 
     void on_tabWidget_currentChanged(int index);
 
     void on_modif_box_editTextChanged(const QString &arg1);
 
-    void on_modif_box_currentIndexChanged(int index);
+    void on_modif_box_currentIndexChanged(QString index);
 
     void on_supr_box_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
-    int IDTemp;
+    QString IDTemp;
 };
 
 #endif // MAINWINDOW_H
