@@ -65,7 +65,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -119,7 +119,7 @@ padding:0 5;
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>230</y>
+         <y>260</y>
          <width>84</width>
          <height>31</height>
         </rect>
@@ -226,7 +226,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>280</y>
+         <y>310</y>
          <width>84</width>
          <height>31</height>
         </rect>
@@ -273,7 +273,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>330</y>
+         <y>360</y>
          <width>84</width>
          <height>31</height>
         </rect>
@@ -311,6 +311,42 @@ border: none;
        </property>
        <property name="text">
         <string>Imprimer</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>210</y>
+         <width>84</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
        </property>
       </widget>
      </widget>

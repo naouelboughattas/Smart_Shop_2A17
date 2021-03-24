@@ -20,7 +20,9 @@
 #include <QPrintDialog>
 #include <QPropertyAnimation>
 #include <QDateTime>
-
+#include <QResizeEvent>
+#include <QDebug>
+#include <QDesktopWidget>
 
 
 
@@ -93,6 +95,7 @@ void MainWindow::on_pb_ajouter_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     ui->tab_fact->setModel(Ftemp.tri());
+    ui->tab_fact->resizeRowsToContents();
 
 }
 
@@ -237,11 +240,43 @@ void MainWindow::on_modif_box_currentTextChanged(const QString &arg1)
 {
 
     ui->tab_fact->setModel(Ftemp.afficher());
-
 }
 
 void MainWindow::on_supr_box_currentIndexChanged(int index)
 {
     ui->tab_fact->setModel(Ftemp.afficher());
+
+}
+
+
+
+
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QVariant id_ff = ui->tab_fact->model()->data(ui->tab_fact->selectionModel()->currentIndex(),Qt::DisplayRole);
+    QString idd = id_ff.toString();
+    QMessageBox::StandardButton reply;
+      reply = QMessageBox::question(this, "Supprimer", "Etes vous sur de supprimer cette facture?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes) {
+          bool test=Ftemp.supprimer(idd);
+          if(test)
+          {
+              ui->supr_box->clear();
+              ui->supr_box->addItems(Ftemp.recherche_id());
+              ui->tab_fact->setModel(Ftemp.afficher());
+
+              QMessageBox::information(nullptr,"Suppression","Facture supprimé");
+
+          }
+      }
+
+    ui->tab_fact->setModel(Ftemp.afficher());
+    ui->modif_box->clear();
+    ui->modif_box->addItems(Ftemp.recherche_id());
+    ui->supr_box->clear();
+    ui->supr_box->addItems(Ftemp.recherche_id());
 
 }

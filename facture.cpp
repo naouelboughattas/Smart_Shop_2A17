@@ -55,8 +55,8 @@ QSqlQueryModel *Facture::afficher(){
     QSqlQueryModel* model=new QSqlQueryModel();
 
           model->setQuery("SELECT * FROM FACTURES");
-          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Référence de facture"));
-          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date de facture"));
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Référence"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date"));
           model->setHeaderData(2, Qt::Horizontal, QObject::tr("Total TTC"));
           return model;
 }
@@ -84,8 +84,8 @@ QSqlQueryModel * Facture::rechercher(QString a)
     query.bindValue(":id",a);
     query.exec();
     model->setQuery(query);
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Référence de facture"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date de facture"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Référence"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Total TTC"));
     return model;
 }
@@ -93,8 +93,8 @@ QSqlQueryModel * Facture::tri()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
     model->setQuery("SELECT * FROM FACTURES ORDER BY ID_F");
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Référence de facture"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date de facture"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Référence"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Total TTC"));
     return model;
 }
@@ -146,7 +146,6 @@ QString Facture::remplir(){
     Facture Ftemp;
 
    s3=COUNT_FACT();
-   // s1=s1+s3;
 return s1+s3;
 }
 

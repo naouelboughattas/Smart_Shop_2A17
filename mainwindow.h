@@ -32,23 +32,17 @@ private slots:
 
     void on_lineEdit_textEdited(const QString &arg1);
 
-    void on_pushButton_2_clicked();
-
     void on_pdf_clicked();
 
     void on_impr_clicked();
 
     void on_modif_box_currentTextChanged(const QString &arg1);
 
-    void on_modif_box_activated(QString index);
-
     void on_tabWidget_currentChanged(int index);
 
-    void on_modif_box_editTextChanged(const QString &arg1);
-
-    void on_modif_box_currentIndexChanged(QString index);
-
     void on_supr_box_currentIndexChanged(int index);
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
