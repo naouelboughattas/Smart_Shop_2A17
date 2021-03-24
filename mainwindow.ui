@@ -65,7 +65,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -332,6 +332,9 @@ border: none;
        <string>Ajouter</string>
       </property>
       <widget class="QLineEdit" name="le_id_f">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>210</x>
@@ -351,7 +354,7 @@ padding:0 8;
 }</string>
        </property>
        <property name="text">
-        <string>#FC</string>
+        <string/>
        </property>
       </widget>
       <widget class="QLineEdit" name="le_ttc_f">

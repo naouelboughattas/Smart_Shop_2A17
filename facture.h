@@ -24,7 +24,8 @@ public:
     QSqlQueryModel * tri();
     QStringList recherche_id();
     Facture search_id(QString id_f);
-
+    QString COUNT_FACT();
+    QString remplir ();
 
 private:
     QString id_f;

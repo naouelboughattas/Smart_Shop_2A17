@@ -55,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tab_fact->setModel(Ftemp.afficher());
     ui->date_box->setDateTime(QDateTime::currentDateTime());
     ui->modif_date_f_box->setDateTime(QDateTime::currentDateTime());
+    ui->le_id_f->setText(Ftemp.remplir());
 
 
 }

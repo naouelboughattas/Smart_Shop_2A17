@@ -6,6 +6,8 @@
 #include <QDateTime>
 #include <QDate>
 #include <QTime>
+#include <QSqlRecord>
+
 
 Facture::Facture()
 {
@@ -125,5 +127,26 @@ Facture Facture::search_id(QString id_f){
 
 
     return p;
+}
+
+
+QString Facture::COUNT_FACT(){
+    QSqlQuery query; int l=0;
+    query.prepare("select count(*) from FACTURES ORDER BY ID_F ASC");
+    query.exec();
+    while(query.last()){
+        l=query.value(0).toInt();
+    }
+    l++;
+    return QString::number(l);
+}
+
+QString Facture::remplir(){
+    QString s1="#FC000"; QString s3;
+    Facture Ftemp;
+
+   s3=COUNT_FACT();
+   // s1=s1+s3;
+return s1+s3;
 }
 

@@ -54,6 +54,7 @@ private:
     Ui::MainWindow *ui;
     Facture Ftemp;
     QString IDTemp;
+    QString Rtemp;
 };
 
 #endif // MAINWINDOW_H
