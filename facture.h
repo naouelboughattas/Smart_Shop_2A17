@@ -10,6 +10,7 @@ class Facture
 public:
     Facture();
     Facture(QString,QDateTime,QString,QString,QString);
+
     QString getid_f();
     QDateTime getdate_f();
     QString getttc_f();
@@ -21,10 +22,11 @@ public:
     void setttc_f(QString);
     void setmode_f(QString);
     void setnom_c(QString);
+
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(QString);
-    bool modifier(QString,QDateTime,QString);
+    bool modifier(QString,QDateTime,QString,QString,QString);
     QSqlQueryModel * rechercher(QString);
     QSqlQueryModel * tri();
     QStringList recherche_id();

@@ -65,7 +65,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -937,6 +937,27 @@ padding:0 8;
         <width>181</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::PreventContextMenu</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+
+color: green;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}</string>
       </property>
       <property name="text">
        <string/>

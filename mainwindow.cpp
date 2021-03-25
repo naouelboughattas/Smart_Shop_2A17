@@ -25,11 +25,6 @@
 #include <QDesktopWidget>
 #include <QListWidget>
 
-
-
-
-
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -145,8 +140,11 @@ void MainWindow::on_pb_modifier_clicked()
     QString id_f = ui->modif_box->currentText();
     QDateTime date_f = ui->modif_date_f_box->dateTime();
     QString ttc_f = ui->modif_ttc_f->text();
+    QString mode_f = ui->modif_le_mode_f->currentText();
+    QString nom_c = ui->modif_le_client->currentText();
+
     Facture ff;
-    bool test=ff.modifier(id_f,date_f,ttc_f);
+    bool test=ff.modifier(id_f,date_f,ttc_f,mode_f,nom_c);
 
     if(test)
     {
@@ -244,7 +242,6 @@ void MainWindow::on_impr_clicked()
 
 }
 
-
 void MainWindow::on_tabWidget_currentChanged(int index)
 {
     ui->tab_fact->setModel(Ftemp.afficher());
@@ -272,15 +269,104 @@ void MainWindow::on_tabWidget_currentChanged(int index)
     /**************************************************************************************/
     ui->le_id_f->setText(Ftemp.remplir());
     /**************************************************************************************/
-
+    /**************************************************************************************/
+    QSqlQuery y;
+    QString rr;
+    y.prepare("SELECT MODE_P_F FROM FACTURES WHERE ID_F=:waaa ");
+    y.bindValue(":waaa",ui->modif_box->currentText());
+    y.exec();
+    while(y.next()){
+   rr=y.value(0).toString();
+    }
+    ui->modif_le_mode_f->setCurrentText(rr);
+    /**************************************************************************************/
+    /**************************************************************************************/
+    QDateTime dat;
+    QSqlQuery yy;
+    yy.prepare("SELECT DATE_F FROM FACTURES WHERE ID_F=:waaa ");
+    yy.bindValue(":waaa",ui->modif_box->currentText());
+    yy.exec();
+    while(yy.next()){
+   dat=yy.value(0).toDateTime();
+    }
+   ui->modif_date_f_box->setDateTime(dat);
+   /**************************************************************************************/
+   /**************************************************************************************/
+   QString ttc_ff;
+   QSqlQuery qqr;
+   qqr.prepare("SELECT TTC_F FROM FACTURES WHERE ID_F=:waaa ");
+   qqr.bindValue(":waaa",ui->modif_box->currentText());
+   qqr.exec();
+   while(qqr.next()){
+  ttc_ff=qqr.value(0).toString();
+   }
+  ui->modif_ttc_f->setText(ttc_ff);
+  /**************************************************************************************/
 }
-
-
 
 void MainWindow::on_modif_box_currentTextChanged(const QString &arg1)
 {
 ui->modif_box->currentText();
     ui->tab_fact->setModel(Ftemp.afficher());
+    /**************************************************************************************/
+    QSqlQuery qr;
+    QString resu;
+    qr.prepare("SELECT ID_C FROM factures WHERE id_f=:waa");
+    qr.bindValue(":waa",ui->modif_box->currentText());
+    qr.exec();
+    while(qr.next()){
+   resu=qr.value(0).toString();
+    }
+
+    ui->modif_le_client->setCurrentText(resu);
+
+    /**************************************************************************************/
+    /**************************************************************************************/
+    QSqlQuery qry;
+    QString resultt;
+    qry.prepare("SELECT NOM_C FROM CLIENTS WHERE ID_CLIENT=:a ");
+    qry.bindValue(":a",ui->modif_le_client->currentText());
+    qry.exec();
+    while(qry.next()){
+   resultt=qry.value(0).toString();
+    }
+    /**************************************************************************************/
+    ui->Lb_client->clear();
+ ui->Lb_client->setText(resultt);
+ /**************************************************************************************/
+ QSqlQuery y;
+ QString rr;
+ y.prepare("SELECT MODE_P_F FROM FACTURES WHERE ID_F=:waaa ");
+ y.bindValue(":waaa",ui->modif_box->currentText());
+ y.exec();
+ while(y.next()){
+rr=y.value(0).toString();
+ }
+ ui->modif_le_mode_f->setCurrentText(rr);
+ /**************************************************************************************/
+ /**************************************************************************************/
+ QDateTime dat;
+ QSqlQuery yy;
+ yy.prepare("SELECT DATE_F FROM FACTURES WHERE ID_F=:waaa ");
+ yy.bindValue(":waaa",ui->modif_box->currentText());
+ yy.exec();
+ while(yy.next()){
+dat=yy.value(0).toDateTime();
+ }
+ui->modif_date_f_box->setDateTime(dat);
+/**************************************************************************************/
+/**************************************************************************************/
+QString ttc_ff;
+QSqlQuery qqr;
+qqr.prepare("SELECT TTC_F FROM FACTURES WHERE ID_F=:waaa ");
+qqr.bindValue(":waaa",ui->modif_box->currentText());
+qqr.exec();
+while(qqr.next()){
+ttc_ff=qqr.value(0).toString();
+}
+ui->modif_ttc_f->setText(ttc_ff);
+/**************************************************************************************/
+
 }
 
 void MainWindow::on_supr_box_currentIndexChanged(int index)
@@ -288,11 +374,6 @@ void MainWindow::on_supr_box_currentIndexChanged(int index)
     ui->tab_fact->setModel(Ftemp.afficher());
 
 }
-
-
-
-
-
 
 void MainWindow::on_pushButton_2_clicked()
 {

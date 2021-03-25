@@ -8,7 +8,6 @@
 #include <QTime>
 #include <QSqlRecord>
 
-
 Facture::Facture()
 {
 id_f="";
@@ -40,7 +39,6 @@ QString Facture::getmode_f(){
 QString Facture::getnom_c(){
     return nom_c;
 }
-
 void Facture::setid_f(QString id_f){
     this->id_f=id_f;
 }
@@ -76,7 +74,7 @@ bool Facture::ajouter(){
 QSqlQueryModel *Facture::afficher(){
     QSqlQueryModel* model=new QSqlQueryModel();
 
-          model->setQuery("SELECT ID_F, ID_C, DATE_F, MODE_P_F, TTC_F FROM FACTURES where FACTURES.ID_C=CLIENTS.ID_CLIENT ORDER BY DATE_F DESC");
+          model->setQuery("SELECT ID_F, NOM_C, DATE_F, MODE_P_F, TTC_F FROM FACTURES, CLIENTS where FACTURES.ID_C=CLIENTS.ID_CLIENT ORDER BY DATE_F DESC");
           model->setHeaderData(0, Qt::Horizontal, QObject::tr("Référence"));
           model->setHeaderData(1, Qt::Horizontal, QObject::tr("Client"));
           model->setHeaderData(2, Qt::Horizontal, QObject::tr("Date"));
@@ -91,13 +89,15 @@ bool Facture::supprimer(QString id_f){
     query.bindValue(":id_f", id_f);
     return    query.exec();
 }
-bool Facture::modifier(QString id_f,QDateTime date_f,QString ttc_f)
+bool Facture::modifier(QString id_f,QDateTime date_f,QString ttc_f,QString mode_f,QString nom_c)
 {
     QSqlQuery query;
-    query.prepare("UPDATE FACTURES SET date_f= :date_f,ttc_f = :ttc_f WHERE id_f= :id_f ");
+    query.prepare("UPDATE FACTURES SET date_f= :date_f,ttc_f = :ttc_f,MODE_P_F= :mode_f,ID_C = :nom_c WHERE id_f= :id_f ");
     query.bindValue(":id_f",id_f);
     query.bindValue(":date_f",date_f);
     query.bindValue(":ttc_f",ttc_f);
+    query.bindValue(":mode_f",mode_f);
+    query.bindValue(":nom_c",nom_c);
     return    query.exec();
 }
 QSqlQueryModel * Facture::rechercher(QString a)
@@ -126,7 +126,6 @@ QSqlQueryModel * Facture::tri()
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Total TTC"));
     return model;
 }
-
 QStringList Facture::recherche_id(){
     QSqlQuery query;
     query.prepare("select * from FACTURES ORDER BY ID_F ASC");
@@ -151,7 +150,6 @@ QStringList Facture::recherche_client(){
     return list;
 
 }
-
 Facture Facture::search_id(QString id_f){
     QSqlQuery query;
     query.prepare("select *from FACTURES where ID_F=:id_f");
@@ -168,8 +166,6 @@ Facture Facture::search_id(QString id_f){
 
     return p;
 }
-
-
 QString Facture::COUNT_FACT(){
     QSqlQuery query; int l=0;
     query.prepare("SELECT COUNT(*) FROM FACTURES;");
@@ -180,20 +176,32 @@ QString Facture::COUNT_FACT(){
     l++;
     return QString::number(l);
 }
-
 QString Facture::remplir(){
     QSqlQuery qy;
-    int res;
+    int res=0;
     QString ref;
+    ref="#FC000"+QString::number(res);
+    QSqlQuery qyr;
+    qyr.prepare("SELECT ID_F FROM FACTURES WHERE ID_F LIKE :id_f");
+    qyr.bindValue(":id_f",ref);
+    qyr.exec();
+    while(qyr.next()){
+    if(qyr.value(0).toString()==ref){
+        res++;
+        ref="#FC000"+QString::number(res);
+
+    }
+
     qy.prepare("SELECT COUNT(*) FROM FACTURES");
     qy.exec();
     while(qy.next()){
     res=qy.value(0).toInt();
     }
     res++;
+    }
+
   return  ref="#FC000"+QString::number(res);
 }
-
 QString Facture::recherche_nom_client(){
     QSqlQuery query;
     query.prepare("select NOM_C from CLIENTS");

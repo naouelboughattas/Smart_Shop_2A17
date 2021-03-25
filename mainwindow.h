@@ -8,7 +8,6 @@
 #include <facture.h>
 #include <QTableView>
 
-
 namespace Ui {
 class MainWindow;
 }
@@ -45,7 +44,6 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
-  //  int * recherche_id_client(QString);
 
     void on_modif_le_client_activated(const QString &arg1);
 
