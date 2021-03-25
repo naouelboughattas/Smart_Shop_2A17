@@ -65,7 +65,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -322,6 +322,27 @@ border: none;
          <height>31</height>
         </rect>
        </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::DefaultContextMenu</enum>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="statusTip">
+        <string/>
+       </property>
+       <property name="whatsThis">
+        <string/>
+       </property>
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <property name="accessibleDescription">
+        <string/>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
 background: #dfe3ee;
@@ -374,7 +395,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>171</y>
+         <y>158</y>
          <width>191</width>
          <height>21</height>
         </rect>
@@ -397,7 +418,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>270</y>
+         <y>280</y>
          <width>191</width>
          <height>22</height>
         </rect>
@@ -417,7 +438,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>175</y>
+         <y>158</y>
          <width>71</width>
          <height>21</height>
         </rect>
@@ -430,7 +451,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>220</y>
+         <y>248</y>
          <width>41</width>
          <height>31</height>
         </rect>
@@ -443,7 +464,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>270</y>
+         <y>280</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -488,27 +509,11 @@ border: none;
         <string>Ajouter</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_4">
-       <property name="geometry">
-        <rect>
-         <x>230</x>
-         <y>30</y>
-         <width>111</width>
-         <height>111</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>img/ajou.png</pixmap>
-       </property>
-      </widget>
       <widget class="QDateTimeEdit" name="date_box">
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>220</y>
+         <y>248</y>
          <width>194</width>
          <height>22</height>
         </rect>
@@ -528,7 +533,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>360</x>
-         <y>260</y>
+         <y>270</y>
          <width>31</width>
          <height>41</height>
         </rect>
@@ -544,6 +549,103 @@ padding:0 8;
         <string>DT</string>
        </property>
       </widget>
+      <widget class="QComboBox" name="le_client">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>188</y>
+         <width>191</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>145</x>
+         <y>188</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Client :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>218</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Mode de paiement :</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="le_mode_f">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>218</y>
+         <width>191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Especes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Cheque</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Carte bancaire</string>
+        </property>
+       </item>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>80</y>
+        <width>111</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>img/ajou.png</pixmap>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
@@ -566,7 +668,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>270</y>
+         <y>280</y>
          <width>191</width>
          <height>22</height>
         </rect>
@@ -586,7 +688,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>170</y>
+         <y>153</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -599,7 +701,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>220</y>
+         <y>248</y>
          <width>41</width>
          <height>31</height>
         </rect>
@@ -612,7 +714,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>270</y>
+         <y>280</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -660,8 +762,8 @@ border: none;
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>30</y>
+         <x>240</x>
+         <y>20</y>
          <width>111</width>
          <height>121</height>
         </rect>
@@ -689,7 +791,7 @@ border: none;
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>170</y>
+         <y>157</y>
          <width>191</width>
          <height>22</height>
         </rect>
@@ -709,7 +811,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>220</y>
+         <y>248</y>
          <width>194</width>
          <height>22</height>
         </rect>
@@ -729,7 +831,7 @@ padding:0 8;
        <property name="geometry">
         <rect>
          <x>360</x>
-         <y>260</y>
+         <y>270</y>
          <width>31</width>
          <height>41</height>
         </rect>
@@ -745,6 +847,100 @@ padding:0 8;
         <string>DT</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>145</x>
+         <y>189</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Client :</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="modif_le_client">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>188</y>
+         <width>191</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>218</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Mode de paiement :</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="modif_le_mode_f">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>218</y>
+         <width>191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Especes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Cheque</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Carte bancaire</string>
+        </property>
+       </item>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="Lb_client">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>250</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">

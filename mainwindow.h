@@ -44,11 +44,19 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+  //  int * recherche_id_client(QString);
+
+    void on_modif_le_client_activated(const QString &arg1);
+
+    void on_modif_box_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
     QString IDTemp;
     QString Rtemp;
+    QString Ctemp;
 };
 
 #endif // MAINWINDOW_H

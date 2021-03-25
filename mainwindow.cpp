@@ -23,6 +23,7 @@
 #include <QResizeEvent>
 #include <QDebug>
 #include <QDesktopWidget>
+#include <QListWidget>
 
 
 
@@ -59,7 +60,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->modif_date_f_box->setDateTime(QDateTime::currentDateTime());
     ui->le_id_f->setText(Ftemp.remplir());
 
-
 }
 
 MainWindow::~MainWindow()
@@ -68,13 +68,28 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
 void MainWindow::on_pb_ajouter_clicked()
 {
+    /**************************************************************************************/
+    QSqlQuery query;
+    QString result;
+    query.prepare("SELECT ID_CLIENT FROM CLIENTS WHERE NOM_C=:a ");
+    query.bindValue(":a",ui->le_client->currentText());
+    query.exec();
+    while(query.next()){
+   result=query.value(0).toString();
+    }
+    /**************************************************************************************/
+
     QString id_f=ui->le_id_f->text();
     QDateTime date_f=ui->date_box->dateTime();
     QString ttc_f=ui->le_ttc_f->text();
+    QString mode_f=ui->le_mode_f->currentText();
+    QString nom_c=ui->le_client->currentText();
 
-    Facture F(id_f,date_f,ttc_f);
+
+    Facture F(id_f,date_f,ttc_f,mode_f,result);
 
     bool test=F.ajouter();
     if(test){
@@ -96,6 +111,8 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->tab_fact->setModel(Ftemp.tri());
     ui->tab_fact->resizeRowsToContents();
+    ui->le_client->clear();
+    ui->le_client->addItems(Ftemp.recherche_client());
 
 }
 
@@ -112,6 +129,9 @@ void MainWindow::on_supp_clicked()
               ui->supr_box->clear();
               ui->supr_box->addItems(Ftemp.recherche_id());
               ui->tab_fact->setModel(Ftemp.afficher());
+              ui->le_client->clear();
+              ui->le_client->addItems(Ftemp.recherche_client());
+
 
               QMessageBox::information(nullptr,"Suppression","Facture supprimé");
 
@@ -132,6 +152,8 @@ void MainWindow::on_pb_modifier_clicked()
     {
         ui->modif_box->clear();
         ui->modif_box->addItems(Ftemp.recherche_id());
+        ui->le_client->clear();
+        ui->le_client->addItems(Ftemp.recherche_client());
         ui->tab_fact->setModel(Ftemp.afficher());
         QMessageBox::information(nullptr, QObject::tr("Modification effectué"),
                           QObject::tr("Facture modifie.\n"
@@ -230,7 +252,26 @@ void MainWindow::on_tabWidget_currentChanged(int index)
     ui->modif_box->addItems(Ftemp.recherche_id());
     ui->supr_box->clear();
     ui->supr_box->addItems(Ftemp.recherche_id());
+    ui->le_client->clear();
+    ui->le_client->addItems(Ftemp.recherche_client());
+    ui->modif_le_client->clear();
+    ui->modif_le_client->addItems(Ftemp.recherche_idclient());
+    /**************************************************************************************/
+    QSqlQuery qry;
+    QString resultt;
+    qry.prepare("SELECT NOM_C FROM CLIENTS WHERE ID_CLIENT=:a ");
+    qry.bindValue(":a",ui->modif_le_client->currentText());
+    qry.exec();
+    while(qry.next()){
+   resultt=qry.value(0).toString();
+    }
+    /**************************************************************************************/
+    ui->Lb_client->clear();
+    ui->Lb_client->setText(resultt);
 
+    /**************************************************************************************/
+    ui->le_id_f->setText(Ftemp.remplir());
+    /**************************************************************************************/
 
 }
 
@@ -238,7 +279,7 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 
 void MainWindow::on_modif_box_currentTextChanged(const QString &arg1)
 {
-
+ui->modif_box->currentText();
     ui->tab_fact->setModel(Ftemp.afficher());
 }
 
@@ -266,6 +307,8 @@ void MainWindow::on_pushButton_2_clicked()
           {
               ui->supr_box->clear();
               ui->supr_box->addItems(Ftemp.recherche_id());
+              ui->le_client->clear();
+              ui->le_client->addItems(Ftemp.recherche_client());
               ui->tab_fact->setModel(Ftemp.afficher());
 
               QMessageBox::information(nullptr,"Suppression","Facture supprimé");
@@ -278,5 +321,42 @@ void MainWindow::on_pushButton_2_clicked()
     ui->modif_box->addItems(Ftemp.recherche_id());
     ui->supr_box->clear();
     ui->supr_box->addItems(Ftemp.recherche_id());
+    ui->le_client->clear();
+    ui->le_client->addItems(Ftemp.recherche_client());
+
+
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    //ui->tab_prod->setModel(Ftemp.afficher());
+
+}
+
+void MainWindow::on_modif_le_client_activated(const QString &arg1)
+{
+    /**************************************************************************************/
+    QSqlQuery qry;
+    QString resultt;
+    qry.prepare("SELECT NOM_C FROM CLIENTS WHERE ID_CLIENT=:a ");
+    qry.bindValue(":a",ui->modif_le_client->currentText());
+    qry.exec();
+    while(qry.next()){
+   resultt=qry.value(0).toString();
+    }
+    /**************************************************************************************/
+    ui->Lb_client->clear();
+ ui->Lb_client->setText(resultt);
+}
+
+void MainWindow::on_modif_box_currentIndexChanged(const QString &arg1)
+{
+    QSqlQuery query;
+    query.prepare("select NOM_C from CLIENTS");
+    query.exec();
+    QString list;
+    while(query.next()){
+        list=query.value(0).toString();
+    }
 
 }
