@@ -39,9 +39,6 @@
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>img/ll.png</pixmap>
-      </property>
      </widget>
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
@@ -151,6 +148,7 @@ padding:0 8;
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="Menu"/>
     <widget class="QWidget" name="factures">
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">

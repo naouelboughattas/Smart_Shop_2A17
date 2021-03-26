@@ -59,6 +59,7 @@ private:
     QString IDTemp;
     QString Rtemp;
     QString Ctemp;
+    void keyPressEvent(QKeyEvent *event);
 };
 
 #endif // MAINWINDOW_H

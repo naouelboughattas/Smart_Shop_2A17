@@ -104,7 +104,7 @@ QSqlQueryModel * Facture::rechercher(QString a)
 {
     QSqlQueryModel * model= new QSqlQueryModel();
     QSqlQuery query;
-    query.prepare("SELECT ID_F, NOM_C, DATE_F, MODE_P_F, TTC_F FROM FACTURES, CLIENTS where FACTURES.ID_C=CLIENTS.ID_CLIENT AND ID_F like '"+a+"' ||'%' OR DATE_F like '"+a+"' ||'%' OR TTC_F like '"+a+"' ||'%' OR MODE_P_F like '"+a+"' OR NOM_C like '"+a+"' ORDER BY DATE_F DESC ");
+    query.prepare("SELECT ID_F, NOM_C, DATE_F, MODE_P_F, TTC_F FROM FACTURES, CLIENTS where FACTURES.ID_C=CLIENTS.ID_CLIENT AND ID_F like '"+a+"' ||'%' OR DATE_F like '"+a+"' ||'%' OR TTC_F like '"+a+"' ||'%' OR MODE_P_F like '"+a+"' OR NOM_C like '"+a+"' ||'%' ORDER BY DATE_F DESC ");
     query.bindValue(":id",a);
     query.exec();
     model->setQuery(query);

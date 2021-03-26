@@ -24,6 +24,8 @@
 #include <QDebug>
 #include <QDesktopWidget>
 #include <QListWidget>
+#include <QKeyEvent>
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -37,10 +39,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-
     ui->tab_fact->setModel(Ftemp.afficher());
 
     /*/////////////////////////////AJOUTTER IMAGE/////////////////////////////////////*/
+    QPixmap waa("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/ll.png");
+    ui->label_35->setPixmap(waa.scaled(100,100,Qt::KeepAspectRatio));
     QPixmap pix("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/ajout.png");
     ui->label_4->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
     QPixmap pix_aff("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/affiche.png");
@@ -471,4 +474,11 @@ void MainWindow::on_pushButton_5_clicked()
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
 }
+}
+void MainWindow::keyPressEvent(QKeyEvent *event){
+    if(event->key() == Qt::Key_F && ui->stackedWidget->currentIndex()!=0 ){
+        ui->stackedWidget->setCurrentIndex(2);
+    }else if(event->key() == Qt::Key_E && ui->stackedWidget->currentIndex()!=0 ){
+        ui->stackedWidget->setCurrentIndex(3);
+    }
 }
