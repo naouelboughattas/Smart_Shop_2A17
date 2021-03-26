@@ -51,7 +51,7 @@ private slots:
 
     void on_supr_box_currentTextChanged(const QString &arg1);
 
-    void on_pushButton_5_clicked();
+    void on_bt_login_clicked();
 
 private:
     Ui::MainWindow *ui;

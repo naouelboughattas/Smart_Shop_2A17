@@ -26,12 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    evenement.cpp \
     facture.cpp \
         main.cpp \
     connection.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    evenement.h \
     facture.h \
     connection.h \
     mainwindow.h

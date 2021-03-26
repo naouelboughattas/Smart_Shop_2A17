@@ -42,8 +42,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tab_fact->setModel(Ftemp.afficher());
 
     /*/////////////////////////////AJOUTTER IMAGE/////////////////////////////////////*/
-    QPixmap waa("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/ll.png");
-    ui->label_35->setPixmap(waa.scaled(100,100,Qt::KeepAspectRatio));
     QPixmap pix("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/ajout.png");
     ui->label_4->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
     QPixmap pix_aff("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/affiche.png");
@@ -463,7 +461,7 @@ void MainWindow::on_supr_box_currentTextChanged(const QString &arg1)
 
 }
 
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::on_bt_login_clicked()
 {
     if(ui->user->text()=="wael" && ui->pass->text()=="waelksila"){
     ui->stackedWidget->setCurrentIndex(1);
@@ -476,8 +474,11 @@ void MainWindow::on_pushButton_5_clicked()
 }
 }
 void MainWindow::keyPressEvent(QKeyEvent *event){
-    if(event->key() == Qt::Key_F && ui->stackedWidget->currentIndex()!=0 ){
+    if(event->key() == Qt::Key_Enter && ui->stackedWidget->currentIndex()==0 ){
+            ui->bt_login->clicked();
+        }else if(event->key() == Qt::Key_F && ui->stackedWidget->currentIndex()!=0 ){
         ui->stackedWidget->setCurrentIndex(2);
+        ui->tab_fact->setModel(Ftemp.afficher());
     }else if(event->key() == Qt::Key_E && ui->stackedWidget->currentIndex()!=0 ){
         ui->stackedWidget->setCurrentIndex(3);
     }
