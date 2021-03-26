@@ -31,6 +31,13 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
+
+
+
+
+
+
+
     ui->tab_fact->setModel(Ftemp.afficher());
 
     /*/////////////////////////////AJOUTTER IMAGE/////////////////////////////////////*/
@@ -451,4 +458,17 @@ void MainWindow::on_supr_box_currentTextChanged(const QString &arg1)
     infos = "Client : "+Ftemp.search_nom_c(ui->supr_box->currentText())+" | Mode de paiement : "+Ftemp.mode_pp(ui->supr_box->currentText())+" | Date : "+Ftemp.date_ff(ui->supr_box->currentText())+" | Total TTC : "+Ftemp.total_ttc(ui->supr_box->currentText());
     ui->infos->setText(infos);
 
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    if(ui->user->text()=="wael" && ui->pass->text()=="waelksila"){
+    ui->stackedWidget->setCurrentIndex(1);
+
+    }else{
+    QMessageBox::information(nullptr, QObject::tr("FAILED CONNECTION"),
+                    QObject::tr("connection failed !.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
 }
