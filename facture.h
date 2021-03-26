@@ -37,6 +37,12 @@ public:
     QString remplir ();
     int * recherche_id_client(QString);
     QString recherche_nom_client();
+    QString search_nom_c(QString);
+    QString mode_pp(QString);
+    QString date_ff(QString);
+    QString total_ttc(QString);
+
+
 
 
 private:
@@ -45,6 +51,8 @@ private:
     QDateTime date_f;
     QString mode_f;
     QString nom_c;
+    QString dat_info;
+
 };
 
 #endif // FACTURE_H

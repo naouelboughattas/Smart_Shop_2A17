@@ -227,4 +227,48 @@ QStringList Facture::recherche_idclient(){
 
 }
 
+QString Facture::search_nom_c(QString nom_c){
+    QSqlQuery qr;
+    QString resu;
+    qr.prepare("SELECT NOM_C FROM FACTURES, CLIENTS where FACTURES.ID_C=CLIENTS.ID_CLIENT AND ID_F=:waa");
+    qr.bindValue(":waa",nom_c);
+    qr.exec();
+    while(qr.next()){
+   resu=qr.value(0).toString();
+    }
+return resu;
+}
+QString Facture::mode_pp(QString mode_p){
+    QSqlQuery qr;
+    QString resu;
+    qr.prepare("SELECT MODE_P_F FROM FACTURES, CLIENTS where FACTURES.ID_C=CLIENTS.ID_CLIENT AND ID_F=:waa");
+    qr.bindValue(":waa",mode_p);
+    qr.exec();
+    while(qr.next()){
+   resu=qr.value(0).toString();
+    }
+return resu;
+}
+QString Facture::date_ff(QString dat_info){
+    QSqlQuery qr;
+    QString resu;
+    qr.prepare("SELECT DATE_F FROM FACTURES, CLIENTS where FACTURES.ID_C=CLIENTS.ID_CLIENT AND ID_F=:waa");
+    qr.bindValue(":waa",dat_info);
+    qr.exec();
+    while(qr.next()){
+   resu=qr.value(0).toString();
+    }
+return resu;
+}
+QString Facture::total_ttc(QString total_ttc){
+    QSqlQuery qr;
+    QString resu;
+    qr.prepare("SELECT TTC_F FROM FACTURES, CLIENTS where FACTURES.ID_C=CLIENTS.ID_CLIENT AND ID_F=:waa");
+    qr.bindValue(":waa",total_ttc);
+    qr.exec();
+    while(qr.next()){
+   resu=qr.value(0).toString();
+    }
+return resu;
+}
 

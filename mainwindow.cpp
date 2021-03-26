@@ -302,6 +302,9 @@ void MainWindow::on_tabWidget_currentChanged(int index)
    }
   ui->modif_ttc_f->setText(ttc_ff);
   /**************************************************************************************/
+QString infos;
+infos = "Client : "+Ftemp.search_nom_c(ui->supr_box->currentText())+" | Mode de paiement : "+Ftemp.mode_pp(ui->supr_box->currentText())+" | Date : "+Ftemp.date_ff(ui->supr_box->currentText())+" | Total TTC : "+Ftemp.total_ttc(ui->supr_box->currentText());
+ui->infos->setText(infos);
 }
 
 void MainWindow::on_modif_box_currentTextChanged(const QString &arg1)
@@ -439,5 +442,13 @@ void MainWindow::on_modif_box_currentIndexChanged(const QString &arg1)
     while(query.next()){
         list=query.value(0).toString();
     }
+
+}
+
+void MainWindow::on_supr_box_currentTextChanged(const QString &arg1)
+{
+    QString infos;
+    infos = "Client : "+Ftemp.search_nom_c(ui->supr_box->currentText())+" | Mode de paiement : "+Ftemp.mode_pp(ui->supr_box->currentText())+" | Date : "+Ftemp.date_ff(ui->supr_box->currentText())+" | Total TTC : "+Ftemp.total_ttc(ui->supr_box->currentText());
+    ui->infos->setText(infos);
 
 }

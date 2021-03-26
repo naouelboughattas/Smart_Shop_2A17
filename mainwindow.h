@@ -49,6 +49,8 @@ private slots:
 
     void on_modif_box_currentIndexChanged(const QString &arg1);
 
+    void on_supr_box_currentTextChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
