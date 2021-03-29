@@ -26,6 +26,28 @@
 #include <QListWidget>
 #include <QKeyEvent>
 
+void MainWindow::on_bt_login_clicked()
+{
+    if(ui->user->text()=="wael" && ui->pass->text()=="ksila"){
+    ui->stackedWidget->setCurrentIndex(1);
+
+    }else{
+    QMessageBox::information(nullptr, QObject::tr("FAILED CONNECTION"),
+                    QObject::tr("connection failed !.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
+}
+void MainWindow::keyPressEvent(QKeyEvent *event){
+    if(event->key() == Qt::Key_Enter && ui->stackedWidget->currentIndex()==0 ){
+            ui->bt_login->clicked();
+        }else if(event->key() == Qt::Key_F && ui->stackedWidget->currentIndex()!=0 ){
+        ui->stackedWidget->setCurrentIndex(2);
+        ui->tab_fact->setModel(Ftemp.afficher());
+    }else if(event->key() == Qt::Key_E && ui->stackedWidget->currentIndex()!=0 ){
+        ui->stackedWidget->setCurrentIndex(3);
+    }
+}
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -311,7 +333,7 @@ void MainWindow::on_tabWidget_currentChanged(int index)
   ui->modif_ttc_f->setText(ttc_ff);
   /**************************************************************************************/
 QString infos;
-infos = "Client : "+Ftemp.search_nom_c(ui->supr_box->currentText())+" | Mode de paiement : "+Ftemp.mode_pp(ui->supr_box->currentText())+" | Date : "+Ftemp.date_ff(ui->supr_box->currentText())+" | Total TTC : "+Ftemp.total_ttc(ui->supr_box->currentText());
+infos = "Client : "+Ftemp.search_nom_c(ui->supr_box->currentText())+" | Mode de paiement : "+Ftemp.mode_pp(ui->supr_box->currentText())+" | Date : "+Ftemp.date_ff(ui->supr_box->currentText())+" | Total TTC : "+Ftemp.total_ttc(ui->supr_box->currentText())+" DT";
 ui->infos->setText(infos);
 }
 
@@ -456,30 +478,8 @@ void MainWindow::on_modif_box_currentIndexChanged(const QString &arg1)
 void MainWindow::on_supr_box_currentTextChanged(const QString &arg1)
 {
     QString infos;
-    infos = "Client : "+Ftemp.search_nom_c(ui->supr_box->currentText())+" | Mode de paiement : "+Ftemp.mode_pp(ui->supr_box->currentText())+" | Date : "+Ftemp.date_ff(ui->supr_box->currentText())+" | Total TTC : "+Ftemp.total_ttc(ui->supr_box->currentText());
+    infos = "Client : "+Ftemp.search_nom_c(ui->supr_box->currentText())+" | Mode de paiement : "+Ftemp.mode_pp(ui->supr_box->currentText())+" | Date : "+Ftemp.date_ff(ui->supr_box->currentText())+" | Total TTC : "+Ftemp.total_ttc(ui->supr_box->currentText())+" DT";
     ui->infos->setText(infos);
 
 }
 
-void MainWindow::on_bt_login_clicked()
-{
-    if(ui->user->text()=="wael" && ui->pass->text()=="waelksila"){
-    ui->stackedWidget->setCurrentIndex(1);
-
-    }else{
-    QMessageBox::information(nullptr, QObject::tr("FAILED CONNECTION"),
-                    QObject::tr("connection failed !.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
-
-}
-}
-void MainWindow::keyPressEvent(QKeyEvent *event){
-    if(event->key() == Qt::Key_Enter && ui->stackedWidget->currentIndex()==0 ){
-            ui->bt_login->clicked();
-        }else if(event->key() == Qt::Key_F && ui->stackedWidget->currentIndex()!=0 ){
-        ui->stackedWidget->setCurrentIndex(2);
-        ui->tab_fact->setModel(Ftemp.afficher());
-    }else if(event->key() == Qt::Key_E && ui->stackedWidget->currentIndex()!=0 ){
-        ui->stackedWidget->setCurrentIndex(3);
-    }
-}
