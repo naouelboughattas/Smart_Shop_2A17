@@ -96,11 +96,9 @@ void MainWindow::on_pushButton_4_clicked()
 void MainWindow::on_pushmod_clicked()
 {
     QString matricule = ui->le_Mat_M->text();
-    QString marque = ui->lineEdit_Marq_M->text();
-    QString couleur = ui->lineEdit_Cou_M->text();
     QString date_ent = ui->lineEdit_De_M->text();
     vehicule v;
-    bool test=v.modifier_veh(matricule,marque,couleur,date_ent);
+    bool test=v.modifier_veh(matricule,date_ent);
 
     if(test)
     {
@@ -179,6 +177,13 @@ void MainWindow::on_pushButton_S1_clicked()
       }
 
 }
+
+void MainWindow::on_pushButton_VE_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+    ui->tableView_vehicule_EN->setModel(tmpveh.ent_veh());
+}
+
 void MainWindow::on_pushButton_tri_clicked()
 {
     ui->tableView_vehicule->setModel(tmpveh.tri_veh());
@@ -189,10 +194,16 @@ void MainWindow::on_pushButton_tri_2_clicked()
     ui->tableView_livreur->setModel(tmpliv.tri_liv());
 }
 
-void MainWindow::on_lineEdit_R(const QString &arg1)
+void MainWindow::on_lineEdit_R_textEdited(const QString &arg1)
 {
     vehicule a;
     ui->tableView_vehicule->setModel(tmpveh.rechercher_veh_dynamique(arg1));
+}
+
+void MainWindow::on_lineEdit_R_2_textEdited(const QString &arg1)
+{
+    livreur a;
+    ui->tableView_livreur->setModel(tmpliv.rechercher_liv_dynamique(arg1));
 }
 
 
@@ -206,6 +217,21 @@ void MainWindow::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
     ui->tableView_livreur->setModel(tmpliv.afficher_liv());
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 

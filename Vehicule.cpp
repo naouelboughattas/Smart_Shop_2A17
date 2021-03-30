@@ -42,6 +42,21 @@ QSqlQueryModel * vehicule::afficher_veh()
 
     return model;
 }
+
+QSqlQueryModel * vehicule::ent_veh()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+
+    model->setQuery("select * from vehicule WHERE date_ent < SYSDATE - 180 ;");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("marque"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("couleur"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("date_ent"));
+
+    return model;
+}
+
+
 QSqlQueryModel * vehicule::afficher_id()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
@@ -51,13 +66,11 @@ QSqlQueryModel * vehicule::afficher_id()
     return model;
 }
 
-bool vehicule::modifier_veh(QString mat,QString marq,QString col,QString de)
+bool vehicule::modifier_veh(QString mat,QString de)
 {
     QSqlQuery query;
-    query.prepare("UPDATE vehicule SET matricule= :matricule,marque = :marque,couleur = :couleur,date_ent = :date_ent  WHERE matricule= :matricule ");
+    query.prepare("UPDATE vehicule SET matricule= :matricule,date_ent = :date_ent  WHERE matricule= :matricule ");
     query.bindValue(":matricule",mat);
-    query.bindValue(":marque",marq);
-    query.bindValue(":couleur",col);
      query.bindValue(":date_ent",de);
 
     return    query.exec();
@@ -96,3 +109,4 @@ QSqlQueryModel * vehicule::tri_veh()
 
     return model;
 }
+
