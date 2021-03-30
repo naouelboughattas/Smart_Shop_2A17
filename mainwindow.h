@@ -6,6 +6,7 @@
 #include<QSqlQueryModel>
 #include <stdlib.h>
 #include <facture.h>
+#include <evenement.h>
 #include <QTableView>
 
 namespace Ui {
@@ -53,9 +54,18 @@ private slots:
 
     void on_bt_login_clicked();
 
+    void on_commandLinkButton_clicked();
+
+    void on_commandLinkButton_2_clicked();
+
+    void on_ajout_ev_clicked();
+
+    void on_tabWidget_2_currentChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
+    Evenement Etemp;
     QString IDTemp;
     QString Rtemp;
     QString Ctemp;

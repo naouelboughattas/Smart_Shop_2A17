@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "facture.h"
+#include "evenement.h"
 #include <QMessageBox>
 #include <QPixmap>
 #include <QIntValidator>
@@ -25,6 +26,7 @@
 #include <QDesktopWidget>
 #include <QListWidget>
 #include <QKeyEvent>
+
 
 void MainWindow::on_bt_login_clicked()
 {
@@ -62,6 +64,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     ui->tab_fact->setModel(Ftemp.afficher());
+    ui->produit_inclus->clear();
+    ui->produit_inclus->addItems(Etemp.recherche_produit());
 
     /*/////////////////////////////AJOUTTER IMAGE/////////////////////////////////////*/
     QPixmap pix("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/ajout.png");
@@ -283,6 +287,9 @@ void MainWindow::on_tabWidget_currentChanged(int index)
     ui->le_client->addItems(Ftemp.recherche_client());
     ui->modif_le_client->clear();
     ui->modif_le_client->addItems(Ftemp.recherche_idclient());
+    ui->produit_inclus->clear();
+    ui->produit_inclus->addItems(Etemp.recherche_produit());
+
     /**************************************************************************************/
     QSqlQuery qry;
     QString resultt;
@@ -483,3 +490,62 @@ void MainWindow::on_supr_box_currentTextChanged(const QString &arg1)
 
 }
 
+/*********************************************************************************************************************************/
+
+void MainWindow::on_commandLinkButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_commandLinkButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+
+}
+
+void MainWindow::on_ajout_ev_clicked()
+{
+    /**************************************************************************************/
+    QSqlQuery query;
+    QString result;
+    query.prepare("SELECT ID_P FROM PRODUITS WHERE NOM_P=:a ");
+    query.bindValue(":a",ui->produit_inclus->currentText());
+    query.exec();
+    while(query.next()){
+   result=query.value(0).toString();
+    }
+    /**************************************************************************************/
+
+    QString id_ev=ui->id_ev->text();
+    QString nom_ev=ui->nom_ev->text();
+    QDateTime dat_deb=ui->dat_deb->dateTime();
+    QDateTime dat_fin=ui->dat_fin->dateTime();
+
+    Evenement E(id_ev,nom_ev,dat_deb,dat_fin,result);
+
+    bool test=E.ajouter_ev();
+    if(test){
+        QMessageBox::information(nullptr, QObject::tr("OK"),
+                                 QObject::tr("Ajout effectué\n"
+                                 "Click Cancel to exit."),QMessageBox::Cancel);
+       // ui->tab_fact->setModel(Ftemp.afficher());
+
+
+    }else{
+        QMessageBox::critical(nullptr, QObject::tr("NOT OK"),
+                              QObject::tr("Ajout non effectué\n"
+                                 "Click Cancel to exit."),QMessageBox::Cancel);
+
+    }
+    ui->produit_inclus->clear();
+    ui->produit_inclus->addItems(Etemp.recherche_produit());
+
+
+}
+
+void MainWindow::on_tabWidget_2_currentChanged(int index)
+{
+    ui->produit_inclus->clear();
+    ui->produit_inclus->addItems(Etemp.recherche_produit());
+
+}
