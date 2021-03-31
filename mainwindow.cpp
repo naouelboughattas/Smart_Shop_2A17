@@ -48,6 +48,11 @@ void MainWindow::keyPressEvent(QKeyEvent *event){
         ui->tab_fact->setModel(Ftemp.afficher());
     }else if(event->key() == Qt::Key_E && ui->stackedWidget->currentIndex()!=0 ){
         ui->stackedWidget->setCurrentIndex(3);
+        ui->tab_ev->setModel(Etemp.afficher_ev());
+        ui->supr_ev->clear();
+        ui->supr_ev->addItems(Etemp.recherche_id_ev());
+
+
     }
 }
 
@@ -62,10 +67,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-
+    ui->tab_ev->setModel(Etemp.afficher_ev());
     ui->tab_fact->setModel(Ftemp.afficher());
     ui->produit_inclus->clear();
     ui->produit_inclus->addItems(Etemp.recherche_produit());
+    ui->modif_produit_inclus->clear();
+    ui->modif_produit_inclus->addItems(Etemp.recherche_produit());
+
 
     /*/////////////////////////////AJOUTTER IMAGE/////////////////////////////////////*/
     QPixmap pix("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProj/img/ajout.png");
@@ -85,9 +93,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     ui->tab_fact->setModel(Ftemp.afficher());
+    ui->tab_ev->setModel(Etemp.afficher_ev());
+
     ui->date_box->setDateTime(QDateTime::currentDateTime());
     ui->modif_date_f_box->setDateTime(QDateTime::currentDateTime());
     ui->le_id_f->setText(Ftemp.remplir());
+    ui->id_ev->setText(Etemp.remplir_ev());
 
 }
 
@@ -289,6 +300,8 @@ void MainWindow::on_tabWidget_currentChanged(int index)
     ui->modif_le_client->addItems(Ftemp.recherche_idclient());
     ui->produit_inclus->clear();
     ui->produit_inclus->addItems(Etemp.recherche_produit());
+    ui->modif_produit_inclus->clear();
+    ui->modif_produit_inclus->addItems(Etemp.recherche_produit());
 
     /**************************************************************************************/
     QSqlQuery qry;
@@ -480,6 +493,7 @@ void MainWindow::on_modif_box_currentIndexChanged(const QString &arg1)
         list=query.value(0).toString();
     }
 
+
 }
 
 void MainWindow::on_supr_box_currentTextChanged(const QString &arg1)
@@ -524,6 +538,8 @@ void MainWindow::on_ajout_ev_clicked()
     Evenement E(id_ev,nom_ev,dat_deb,dat_fin,result);
 
     bool test=E.ajouter_ev();
+    ui->tab_ev->setModel(Etemp.afficher_ev());
+
     if(test){
         QMessageBox::information(nullptr, QObject::tr("OK"),
                                  QObject::tr("Ajout effectué\n"
@@ -539,6 +555,12 @@ void MainWindow::on_ajout_ev_clicked()
     }
     ui->produit_inclus->clear();
     ui->produit_inclus->addItems(Etemp.recherche_produit());
+    ui->supr_ev->clear();
+    ui->supr_ev->addItems(Etemp.recherche_id_ev());
+    ui->modif_id_ev->clear();
+    ui->modif_id_ev->addItems(Etemp.recherche_id_ev());
+    ui->modif_produit_inclus->clear();
+    ui->modif_produit_inclus->addItems(Etemp.recherche_produit());
 
 
 }
@@ -547,5 +569,185 @@ void MainWindow::on_tabWidget_2_currentChanged(int index)
 {
     ui->produit_inclus->clear();
     ui->produit_inclus->addItems(Etemp.recherche_produit());
+    ui->tab_ev->setModel(Etemp.afficher_ev());
+    ui->supr_ev->clear();
+    ui->supr_ev->addItems(Etemp.recherche_id_ev());
+    ui->modif_id_ev->clear();
+    ui->modif_id_ev->addItems(Etemp.recherche_id_ev());
+    ui->modif_produit_inclus->clear();
+    ui->modif_produit_inclus->addItems(Etemp.recherche_produit());
+    ui->id_ev->setText(Etemp.remplir_ev());
+
+
+
+}
+
+void MainWindow::on_supp_ev_clicked()
+{
+    QString id_ev= ui->supr_ev->currentText();
+    QMessageBox::StandardButton reply;
+      reply = QMessageBox::question(this, "Supprimer", "Etes vous sur de supprimer cette evenement ?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes) {
+          bool test=Etemp.supprimer_ev(id_ev);
+          if(test)
+          {
+              ui->supr_ev->clear();
+              ui->supr_ev->addItems(Etemp.recherche_id_ev());
+              ui->tab_ev->setModel(Etemp.afficher_ev());
+              QMessageBox::information(nullptr,"Suppression","Evenement supprimé");
+
+          }
+      }else{
+          QMessageBox::information(nullptr,"Suppression","Evenement non supprimé !");
+
+      }
+
+}
+
+void MainWindow::on_supp_ev_2_clicked()
+{
+    QVariant id_ff = ui->tab_ev->model()->data(ui->tab_ev->selectionModel()->currentIndex(),Qt::DisplayRole);
+    QString id_ev = id_ff.toString();
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Supprimer", "Etes vous sur de supprimer cette evenement ?",
+                                    QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes) {
+          bool test=Etemp.supprimer_ev(id_ev);
+          if(test)
+          {
+              ui->supr_ev->clear();
+              ui->supr_ev->addItems(Etemp.recherche_id_ev());
+              ui->tab_ev->setModel(Etemp.afficher_ev());
+              QMessageBox::information(nullptr,"Suppression","Evenement supprimé");
+
+          }
+      }else{
+          QMessageBox::information(nullptr,"Suppression","Evenement non supprimé !");
+
+      }
+}
+
+void MainWindow::on_pdf_ev_clicked()
+{
+    QString strStream;
+            QTextStream out(&strStream);
+
+
+    QString fileName = QFileDialog::getSaveFileName((QWidget* )0, "Export PDF", QString(), "*.pdf");
+    if (QFileInfo(fileName).suffix().isEmpty()) { fileName.append(".pdf"); }
+
+    QPrinter printer(QPrinter::PrinterResolution);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setPaperSize(QPrinter::A4);
+    printer.setOutputFileName(fileName);
+    const int rowCount = ui->tab_ev->model()->rowCount();
+    const int columnCount = ui->tab_ev->model()->columnCount();
+    QString TT = QDate::currentDate().toString("yyyy/MM/dd");
+    out <<"<html>\n"
+          "<head>\n"
+           "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+        << "<title>ERP - EVENEMENTS LIST<title>\n "
+        << "</head>\n"
+        "<body bgcolor=#ffffff link=#5000A0>\n"
+        "<h1 style=\"text-align: center;\"><strong> LISTE DES EVENEMENTS </strong></h1>"
+        "<h5 style=\"text-align: center;\">Le : "+TT+"</h5>"
+        "<br>\n"
+        "<table style=\"text-align: center; font-size: 12;\" border=1>\n "
+          "</br> </br>";
+    // headers
+    out << "<thead><tr bgcolor=#d6e5ff>";
+    for (int column = 0; column < columnCount; column++)
+        if (!ui->tab_ev->isColumnHidden(column))
+            out << QString("<th>%1</th>").arg(ui->tab_ev->model()->headerData(column, Qt::Horizontal).toString());
+    out << "</tr></thead>\n";
+
+    // data table
+    for (int row = 0; row < rowCount; row++) {
+        out << "<tr>";
+        for (int column = 0; column < columnCount; column++) {
+            if (!ui->tab_ev->isColumnHidden(column)) {
+                QString data =ui->tab_ev->model()->data(ui->tab_ev->model()->index(row, column)).toString().simplified();
+                out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+            }
+        }
+        out << "</tr>\n";
+    }
+    out <<  "</table>\n"
+        "</body>\n"
+        "</html>\n";
+
+    QTextDocument doc;
+    doc.setHtml(strStream);
+    doc.print(&printer);
+
+}
+
+void MainWindow::on_impr_ev_clicked()
+{
+    QPrinter printer;
+            QPrintDialog *printDialog = new QPrintDialog(&printer, this);
+            printDialog->setWindowTitle("Imprimer Document");
+            printDialog->exec();
+
+            QPropertyAnimation *animationimprimerp;
+            animationimprimerp = new QPropertyAnimation(ui->impr,"geometry");
+            animationimprimerp->setDuration(1000);
+            animationimprimerp->setStartValue(QRect(690,20,141,51));
+            animationimprimerp->setEndValue(QRect(680,20,200,51));
+            animationimprimerp->setEasingCurve(QEasingCurve::InOutQuint);
+            animationimprimerp->start(QPropertyAnimation::DeleteWhenStopped);
+
+}
+
+void MainWindow::on_tri_ev_clicked()
+{
+    ui->tab_ev->setModel(Etemp.tri_ev());
+    ui->tab_ev->resizeRowsToContents();
+
+}
+
+void MainWindow::on_recherche_ev_textEdited(const QString &arg1)
+{
+    ui->tab_ev->setModel(Etemp.rechercher_ev(arg1));
+
+}
+
+void MainWindow::on_modif_ev_clicked()
+{
+    /**************************************************************************************/
+    QSqlQuery query;
+    QString result;
+    query.prepare("SELECT ID_P FROM PRODUITS WHERE NOM_P=:a ");
+    query.bindValue(":a",ui->modif_produit_inclus->currentText());
+    query.exec();
+    while(query.next()){
+   result=query.value(0).toString();
+    }
+    /**************************************************************************************/
+
+    QString id_ev = ui->modif_id_ev->currentText();
+    QString nom_ev = ui->modif_titre_ev->text();
+    QDateTime dat_deb = ui->modif_dat_deb->dateTime();
+    QDateTime dat_fin = ui->modif_dat_fin->dateTime();
+
+    Evenement ff;
+    bool test=ff.modifier_ev(id_ev,nom_ev,dat_deb,dat_fin,result);
+
+    if(test)
+    {
+        ui->modif_produit_inclus->clear();
+        ui->modif_produit_inclus->addItems(Etemp.recherche_id_ev());
+        ui->produit_inclus->clear();
+        ui->produit_inclus->addItems(Etemp.recherche_id_ev());
+        ui->tab_ev->setModel(Etemp.afficher_ev());
+        QMessageBox::information(nullptr, QObject::tr("Modification effectué"),
+                          QObject::tr("Facture modifie.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("Modification echoué"),
+                    QObject::tr("Erreur !.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
 
 }

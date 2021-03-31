@@ -62,6 +62,20 @@ private slots:
 
     void on_tabWidget_2_currentChanged(int index);
 
+    void on_supp_ev_clicked();
+
+    void on_supp_ev_2_clicked();
+
+    void on_pdf_ev_clicked();
+
+    void on_impr_ev_clicked();
+
+    void on_tri_ev_clicked();
+
+    void on_recherche_ev_textEdited(const QString &arg1);
+
+    void on_modif_ev_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;

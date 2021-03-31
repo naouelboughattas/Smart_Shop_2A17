@@ -25,20 +25,20 @@ public:
     void setproduit(QString);
 
     bool ajouter_ev();
-    QSqlQueryModel* afficher();
-    bool supprimer(QString);
-    bool modifier(QString,QDateTime,QString,QString,QString);
+    QSqlQueryModel* afficher_ev();
+    bool supprimer_ev(QString);
+    bool modifier_ev(QString,QString,QDateTime,QDateTime,QString);
 
     QString recherche_id_produit(QString);
 
-    QSqlQueryModel * rechercher(QString);
-    QSqlQueryModel * tri();
-    QStringList recherche_id();
+    QSqlQueryModel * rechercher_ev(QString);
+    QSqlQueryModel * tri_ev();
+    QStringList recherche_id_ev();
     QStringList recherche_produit();
     QStringList recherche_idclient();
     Evenement search_id(QString id_f);
     QString COUNT_FACT();
-    QString remplir ();
+    QString remplir_ev ();
     int * recherche_id_client(QString);
     QString recherche_nom_client();
     QString search_nom_c(QString);
