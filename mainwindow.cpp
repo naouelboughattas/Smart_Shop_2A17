@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
    ui->tableView_vehicule->setModel(tmpveh.afficher_veh());
     ui->tableView_livreur->setModel(tmpliv.afficher_liv());
+     ui->tableView_livraisons->setModel(tmplivraison.afficher_livraison());
     ui->stackedWidget->setCurrentIndex(1);
 //
   // ui->comboBox_Matricule->setModel(tmpveh.afficher_veh());
@@ -232,6 +233,12 @@ void MainWindow::on_pushButton_7_clicked()
 void MainWindow::on_pushButton_10_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+    ui->tableView_livraisons->setModel(tmplivraison.afficher_livraison());
 }
 
 

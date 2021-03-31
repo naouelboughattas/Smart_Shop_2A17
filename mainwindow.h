@@ -7,6 +7,8 @@
 #include <QMainWindow>
 #include "Vehicule.h"
 #include "livreur.h"
+#include "Livraison.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,6 +31,8 @@ private slots:
     void on_pushButton_4_clicked();
 
     void on_pushButton_6_clicked();
+
+    void on_pushButton_5_clicked();
 
     void on_pushButton_7_clicked();
 
@@ -58,6 +62,7 @@ private:
     Ui::MainWindow *ui;
     vehicule tmpveh;
     livreur tmpliv;
+    livraison tmplivraison ;
 };
 
 #endif // MAINWINDOW_H
