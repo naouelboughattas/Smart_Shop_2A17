@@ -56,7 +56,7 @@ void MainWindow::on_pushButton_clicked()
 
 
     }
-
+     ui->stackedWidget->setCurrentIndex(0);
     ui->tableView_vehicule->setModel(tmpveh.afficher_veh());
 
 }
@@ -181,7 +181,7 @@ void MainWindow::on_pushButton_S1_clicked()
 
 void MainWindow::on_pushButton_VE_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(4);
     ui->tableView_vehicule_EN->setModel(tmpveh.ent_veh());
 }
 
@@ -216,7 +216,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
     ui->tableView_livreur->setModel(tmpliv.afficher_liv());
 }
 
@@ -231,6 +231,11 @@ void MainWindow::on_pushButton_7_clicked()
 }
 
 void MainWindow::on_pushButton_10_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }

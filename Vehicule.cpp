@@ -37,8 +37,8 @@ QSqlQueryModel * vehicule::afficher_veh()
     model->setQuery("select * from vehicule");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("marque"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("couleur"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("date_ent"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("couleur"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_ent"));
 
     return model;
 }
@@ -50,8 +50,8 @@ QSqlQueryModel * vehicule::ent_veh()
     model->setQuery("select * from vehicule WHERE date_ent < SYSDATE - 180 ;");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("matricule"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("marque"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("couleur"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("date_ent"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("couleur"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("date_ent"));
 
     return model;
 }
