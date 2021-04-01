@@ -22,6 +22,10 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
     bool modifier(int,QString,QString,int);
+    QSqlQueryModel* tri();
+    QSqlQueryModel* recherche(QString);
+    QStringList recherche_id_produit();
+
 
 private:
     int id_P;

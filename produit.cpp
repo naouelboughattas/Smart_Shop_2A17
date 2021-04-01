@@ -69,3 +69,43 @@ bool Produit::modifier(int id_P,QString nom_P,QString type,int prix)
     return query.exec();
 
 }
+QSqlQueryModel* Produit::tri()
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+
+
+    model->setQuery("SELECT* FROM produit ORDER BY prix");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Id Produit"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom Produit"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Type Produit"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prix Produit"));
+
+    return model;
+}
+QSqlQueryModel* Produit::recherche(QString r)
+{
+    QSqlQueryModel* model=new QSqlQueryModel();
+    QSqlQuery query;
+    query.prepare("SELECT* FROM produit WHERE id_P like '"+r+"' ||'%' OR nom_P like '"+r+"' ||'%' OR type like '"+r+"' ||'%' OR prix like '"+r+"' ");
+    query.bindValue(":id",r);
+    query.exec();
+    model->setQuery(query);
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Id Produit"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom Produit"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Type Produit"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prix Produit"));
+
+    return model;
+}
+QStringList Produit::recherche_id_produit(){
+    QSqlQuery query;
+    query.prepare("select id_P from PRODUIT");
+    query.exec();
+    QStringList list;
+    while(query.next()){
+        list.append(query.value(0).toString());
+    }
+
+    return list;
+
+}

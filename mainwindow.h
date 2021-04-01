@@ -26,6 +26,12 @@ private slots:
 
     void on_pb_modifier_clicked();
 
+    void on_lineEdit_textEdited(const QString &arg1);
+
+    void on_pushButton_2_clicked();
+
+    void on_tab_12_currentChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     Produit P;

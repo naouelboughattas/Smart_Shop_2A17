@@ -43,11 +43,13 @@ void MainWindow::on_pushButton_clicked()
     else
         msgBox.setText("Echec d'ajout");
     msgBox.exec();
+
 }
 
 void MainWindow::on_pb_supprimer_clicked()
 {
-    Produit P1; P1.setid_P(ui->id_supp->text().toInt());
+
+    Produit P1; P1.setid_P(ui->supr_prod->currentText().toInt());
     bool test=P1.supprimer(P1.getid_P());
     QMessageBox msgBox;
 
@@ -56,9 +58,12 @@ void MainWindow::on_pb_supprimer_clicked()
         ui->tab_produit->setModel(P.afficher());
 
        }
-    else
+    else if(test==false)
         msgBox.setText("Echec de suppression");
     msgBox.exec();
+    ui->supr_prod->clear();
+    ui->supr_prod->addItems(P.recherche_id_produit());
+
 }
 
 void MainWindow::on_pb_modifier_clicked()
@@ -87,4 +92,19 @@ void MainWindow::on_pb_modifier_clicked()
                                    "Click Cancel to exit."), QMessageBox::Cancel);
      ui->tab_produit->setModel(P2.afficher());
 }
+void MainWindow::on_lineEdit_textEdited(const QString &arg1)
+{
+        ui->tab_produit->setModel(P.recherche(arg1));
+}
 
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->tab_produit->setModel(P.tri());
+}
+
+void MainWindow::on_tab_12_currentChanged(int index)
+{
+    ui->supr_prod->clear();
+    ui->supr_prod->addItems(P.recherche_id_produit());
+
+}
