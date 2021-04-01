@@ -110,3 +110,15 @@ QSqlQueryModel * vehicule::tri_veh()
     return model;
 }
 
+QStringList vehicule::recherche_veh(){
+    QSqlQuery query;
+    query.prepare("select MATRICULE from VEHICULE");
+    query.exec();
+    QStringList list;
+    while(query.next()){
+        list.append(query.value(0).toString());
+    }
+
+    return list;
+
+}

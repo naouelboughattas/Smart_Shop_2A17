@@ -24,5 +24,6 @@ public:
     QSqlQueryModel * rechercher_veh_dynamique(QString a);
     QSqlQueryModel * tri_veh();
     QSqlQueryModel * afficher_id();
+    QStringList recherche_veh() ;
 };
 #endif // VEHICULE_H

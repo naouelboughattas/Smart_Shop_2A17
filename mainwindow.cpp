@@ -56,7 +56,7 @@ void MainWindow::on_pushButton_clicked()
 
 
     }
-     ui->stackedWidget->setCurrentIndex(0);
+     ui->stackedWidget->setCurrentIndex(1);
     ui->tableView_vehicule->setModel(tmpveh.afficher_veh());
 
 }
@@ -67,10 +67,10 @@ void MainWindow::on_pushButton_4_clicked()
     QString cin = ui->le_cin->text();
     QString nom = ui->lineEdit_nom->text();
     QString prenom = ui->lineEdit_pr->text();
-     QString date_amb = ui->lineEdit_da->text();
+    QString statue = ui->comboBox->currentText();
 
 
-    livreur l(cin,nom,prenom,date_amb);
+    livreur l(cin,nom,prenom,statue);
     bool test=l.ajouter_liv();
     if(test)
     {
@@ -96,7 +96,7 @@ void MainWindow::on_pushButton_4_clicked()
 
 void MainWindow::on_pushmod_clicked()
 {
-    QString matricule = ui->le_Mat_M->text();
+    QString matricule = ui->comboBox_4->currentText();
     QString date_ent = ui->lineEdit_De_M->text();
     vehicule v;
     bool test=v.modifier_veh(matricule,date_ent);
@@ -119,12 +119,12 @@ void MainWindow::on_pushmod_clicked()
 
 void MainWindow::on_pushmod_2_clicked()
 {
-    QString cin = ui->le_cin_M->text();
-    QString nom = ui->lineEdit_nom_M->text();
-    QString prenom = ui->lineEdit_pr_M->text();
-    QString date_amb = ui->lineEdit_da_M->text();
+    QString cin = ui->comboBox_3->currentText();
+
+    QString statue = ui->comboBox_2->currentText();
+
     livreur l;
-    bool test=l.modifier_liv(cin,nom,prenom,date_amb);
+    bool test=l.modifier_liv(cin,statue);
 
     if(test)
     {
@@ -248,3 +248,16 @@ void MainWindow::on_pushButton_5_clicked()
 
 
 
+
+void MainWindow::on_tabWidget_2_currentChanged(int index)
+{
+    ui->comboBox_3->clear();
+    ui->comboBox_3->addItems(tmpliv.recherche_liv());
+}
+
+void MainWindow::on_tabWidget_currentChanged(int index)
+{
+    ui->comboBox_4->clear();
+    ui->comboBox_4->addItems(tmpveh.recherche_veh());
+
+}

@@ -60,6 +60,10 @@ private slots:
 
      void on_lineEdit_R_2_textEdited(const QString &arg1);
 
+     void on_tabWidget_2_currentChanged(int index);
+
+     void on_tabWidget_currentChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     vehicule tmpveh;
