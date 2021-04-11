@@ -2,58 +2,56 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QString>
-#include<QSqlQueryModel>
-#include <stdlib.h>
-#include <facture.h>
-#include <QTableView>
 
-
-namespace Ui {
-class MainWindow;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
-    void on_pb_ajouter_clicked();
+    void on_pushButton_ajouter_clicked();
+
+    void on_pushButton_modifier_clicked();
+
+    void on_tabWidget_2_currentChanged(int index);
+
+    void on_tableView_activated(const QModelIndex &index);
 
     void on_pushButton_clicked();
 
-    void on_supp_clicked();
-
-    void on_pb_modifier_clicked();
-
-    void on_lineEdit_textEdited(const QString &arg1);
-
     void on_pushButton_2_clicked();
 
-    void on_pdf_clicked();
+    void on_pushButton_3_clicked();
 
-    void on_impr_clicked();
+    void on_radioButton_clicked();
 
-    void on_modif_box_currentTextChanged(const QString &arg1);
+    void on_radioButton_2_clicked();
 
-    void on_modif_box_activated(int index);
+    void on_pushButton_recherche_clicked();
 
-    void on_tabWidget_currentChanged(int index);
+    void on_pushButton_ajouterabo_clicked();
 
-    void on_modif_box_editTextChanged(const QString &arg1);
+    void on_pushButton_modifierabo_clicked();
 
-    void on_modif_box_currentIndexChanged(int index);
+    void on_tabWidget_typeabo_currentChanged(int index);
 
-    void on_supr_box_currentIndexChanged(int index);
+    void on_pushButton_supprimerabo_clicked();
+
+    void on_pushButton_act_clicked();
+
+    void on_tableView_2_activated(const QModelIndex &index);
+
+    void on_pushButton_statistiqueabo_clicked();
 
 private:
     Ui::MainWindow *ui;
-    Facture Ftemp;
-    int IDTemp;
 };
 
 #endif // MAINWINDOW_H
