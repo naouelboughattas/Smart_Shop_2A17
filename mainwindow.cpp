@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
    ui->tableView_vehicule->setModel(tmpveh.afficher_veh());
     ui->tableView_livreur->setModel(tmpliv.afficher_liv());
      ui->tableView_livraisons->setModel(tmplivraison.afficher_livraison());
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
 //
   // ui->comboBox_Matricule->setModel(tmpveh.afficher_veh());
 
@@ -113,6 +113,31 @@ void MainWindow::on_pushmod_clicked()
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
      ui->tableView_vehicule->setModel(tmpveh.afficher_veh());
+
+}
+
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    QString matricule = ui->le->text();
+    QString marque = ui->li->text();
+    QString couleur = ui->lc->text();
+    vehicule v;
+    bool test=v.resaisie_veh(matricule,marque,couleur);
+
+    if(test)
+    {
+        QMessageBox::information(nullptr, QObject::tr("modifie une vehicule"),
+                          QObject::tr("vehicule modifie.\n"
+                                      "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("non modifie"),
+                    QObject::tr("Erreur !.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->tableView_vehicule->setModel(tmpveh.afficher_veh());
 
 }
 
@@ -216,18 +241,18 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(4);
     ui->tableView_livreur->setModel(tmpliv.afficher_liv());
 }
 
 void MainWindow::on_pushButton_6_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_pushButton_7_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void MainWindow::on_pushButton_10_clicked()
@@ -239,10 +264,19 @@ void MainWindow::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+void MainWindow::on_pushButton_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_res_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
 
 void MainWindow::on_pushButton_5_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(3);
     ui->tableView_livraisons->setModel(tmplivraison.afficher_livraison());
 }
 

@@ -75,6 +75,20 @@ bool vehicule::modifier_veh(QString mat,QString de)
 
     return    query.exec();
 }
+
+
+
+bool vehicule::resaisie_veh(QString mat,QString marq,QString col)
+{
+    QSqlQuery query;
+    query.prepare("UPDATE vehicule SET matricule= :matricule,marque = :marque,couleur = :couleur  WHERE matricule= :matricule ");
+    query.bindValue(":matricule",mat);
+     query.bindValue(":marque",marq);
+     query.bindValue("couleur",col);
+
+    return    query.exec();
+}
+
 bool vehicule::supprimer_veh(QString idd)
 {
     QSqlQuery query;

@@ -33,14 +33,14 @@ background-color : rgb(205, 199, 218) ; border : none;
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QTabWidget" name="tabWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
+        <y>0</y>
         <width>721</width>
         <height>411</height>
        </rect>
@@ -84,7 +84,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="tabBarAutoHide">
        <bool>false</bool>
@@ -430,6 +430,33 @@ font-family:Arial, Helvetica, sans-serif;
          <string>Vehicules a Entretenir</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="res">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>190</y>
+          <width>141</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+}</string>
+        </property>
+        <property name="text">
+         <string>Re-Saisir Une Vehicule</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -547,6 +574,183 @@ padding:0 8;
          </property>
         </widget>
        </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>511</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Formulaire d'Ajout </string>
+      </property>
+      <widget class="QLineEdit" name="li">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>70</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lc">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>110</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>70</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+}</string>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Matricule</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>110</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Couleur</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_35">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>70</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Marque</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="le">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>30</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>190</y>
+         <width>131</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+}</string>
+       </property>
+       <property name="text">
+        <string>Retour</string>
+       </property>
       </widget>
      </widget>
     </widget>
@@ -759,123 +963,6 @@ font-family:Arial, Helvetica, sans-serif;
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_9">
-       <attribute name="title">
-        <string>Modifier Livraison</string>
-       </attribute>
-       <widget class="QGroupBox" name="groupBox_6">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>481</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>Formulaire d'Ajout </string>
-        </property>
-        <widget class="QLabel" name="label_6">
-         <property name="geometry">
-          <rect>
-           <x>100</x>
-           <y>70</y>
-           <width>71</width>
-           <height>16</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 12pt &quot;Segoe UI&quot;;</string>
-         </property>
-         <property name="text">
-          <string>Matricule</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_9">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>90</y>
-           <width>171</width>
-           <height>61</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 12pt &quot;Segoe UI&quot;;</string>
-         </property>
-         <property name="text">
-          <string>Derniere date d'entretien </string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="le_Mat_M_2">
-         <property name="geometry">
-          <rect>
-           <x>180</x>
-           <y>70</y>
-           <width>151</width>
-           <height>21</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLineEdit
-{
- border-width: 1px;
-border-style: solid;
-border-color: black;
-  border-radius: 10px;
-padding:0 8;
-}</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEdit_De_M_2">
-         <property name="geometry">
-          <rect>
-           <x>180</x>
-           <y>110</y>
-           <width>151</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QLineEdit
-{
- border-width: 1px;
-border-style: solid;
-border-color: black;
-  border-radius: 10px;
-padding:0 8;
-}</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushmod_3">
-         <property name="geometry">
-          <rect>
-           <x>370</x>
-           <y>90</y>
-           <width>84</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-background: #dfe3ee;
-border: 2px solid #dfe3ee;
-border-bottom-color: #aaa5a5; /* same as the pane color */
-border-top-left-radius: 7px;
-border-top-right-radius: 7px;
-min-width: 80px;
-border-radius: 8px;
-color: black;
-font-size:12px;
-font-family:Arial, Helvetica, sans-serif;
-}</string>
-         </property>
-         <property name="text">
-          <string>Modifier</string>
-         </property>
-        </widget>
-       </widget>
-      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">
@@ -927,7 +1014,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
