@@ -239,9 +239,12 @@ void MainWindow::on_pb_supprimer_2_clicked()
 
 void MainWindow::on_cin_4_textEdited(const QString &arg1)
 {
+    tache t;
      ui->tabtache->setModel(tmptache.recherche(arg1));
-     refresh2();
+
 }
+
+
 void MainWindow::on_pdf_clicked()
 {
     QString strStream;
@@ -334,5 +337,11 @@ void MainWindow::on_email_6_clicked()
 void MainWindow::on_trie_clicked()
 {
     ui->tabtache->setModel(tmptache.tri_tache()) ;
+
+}
+
+void MainWindow::on_trie_2_clicked()
+{
+    ui->tabemployer->setModel(tmpemployer.tri_employer()) ;
 
 }

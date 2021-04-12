@@ -25,6 +25,8 @@ private slots:
 
     void on_trie_clicked();
 
+    void on_trie_2_clicked();
+
     void on_pb_supprimer_clicked();
 
     void on_comboBox_3_activated(const QString &arg1);
@@ -39,7 +41,7 @@ private slots:
 
    // void on_comboBox_3_activated(int index);
 
-    void on_pb_rechercher_clicked();
+    //void on_pb_rechercher_clicked();
 
     void on_pb_ajouter_2_clicked();
 

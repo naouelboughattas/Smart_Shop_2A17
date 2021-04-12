@@ -116,11 +116,14 @@ model->setHeaderData(2, Qt::Horizontal, QObject::tr("duree"));
      model->setHeaderData(2,Qt::Horizontal,QObject::tr("duree"));
         return model;
  }
+
+
+
  QSqlQueryModel * tache:: recherche (QString a)
  {
      QSqlQueryModel * model= new QSqlQueryModel();
      QSqlQuery query;
-     query.prepare("select * from tache WHERE id=:id");
+     query.prepare("SELECT * FROM tache WHERE id LIKE '"+a+"' ||'%'");
      query.bindValue(":id",a);
      query.exec();
      model->setQuery(query);

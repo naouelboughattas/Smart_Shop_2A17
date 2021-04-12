@@ -148,3 +148,17 @@ QSqlQueryModel * employer:: recherche(QString a)
 
 }
 
+
+QSqlQueryModel *employer:: tri_employer()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM personnel ORDER BY nom");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("adresse"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("email"));
+       return model;
+}
+
+

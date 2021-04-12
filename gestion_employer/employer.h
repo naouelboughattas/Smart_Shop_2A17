@@ -26,6 +26,7 @@ public:
     bool supprimer_employer();
     QSqlQueryModel * afficher_employer();
     QSqlQueryModel * afficher_list();
+    QSqlQueryModel *tri_employer();
     void chercher();
     QSqlQueryModel * recherche(QString valeur);
 
