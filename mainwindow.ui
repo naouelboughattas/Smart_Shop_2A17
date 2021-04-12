@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="LOGIN">
      <widget class="QPushButton" name="bt_login">
@@ -139,10 +139,10 @@ padding:0 8;
      <widget class="QCommandLinkButton" name="commandLinkButton">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>150</y>
-        <width>201</width>
-        <height>201</height>
+        <x>210</x>
+        <y>160</y>
+        <width>181</width>
+        <height>191</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -169,7 +169,7 @@ background:#eeeeee;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>img/fact.png</normaloff>img/fact.png</iconset>
+        <normaloff>../../../FOND13 - Copie.png</normaloff>../../../FOND13 - Copie.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -181,10 +181,10 @@ background:#eeeeee;
      <widget class="QCommandLinkButton" name="commandLinkButton_2">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>150</y>
-        <width>191</width>
-        <height>201</height>
+        <x>430</x>
+        <y>160</y>
+        <width>181</width>
+        <height>191</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -211,7 +211,7 @@ background:#eeeeee;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>img/events.png</normaloff>img/events.png</iconset>
+        <normaloff>../../../FOND13.png</normaloff>../../../FOND13.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -231,6 +231,32 @@ background:#eeeeee;
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>360</y>
+        <width>56</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Factures</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_35">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>360</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Evenements</string>
       </property>
      </widget>
     </widget>
@@ -353,6 +379,42 @@ border: none;
        </property>
        <property name="text">
         <string>Settings</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>50</y>
+         <width>84</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string>&lt;----</string>
        </property>
       </widget>
      </widget>
@@ -1568,6 +1630,42 @@ border: none;
           <string>Settings</string>
          </property>
         </widget>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>50</y>
+           <width>84</width>
+           <height>28</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>&lt;----</string>
+         </property>
+        </widget>
        </widget>
        <widget class="QTabWidget" name="tabWidget_2">
         <property name="geometry">
@@ -1620,7 +1718,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_7">
          <attribute name="title">
@@ -1717,7 +1815,7 @@ border: none;
           <widget class="QLabel" name="label_18">
            <property name="geometry">
             <rect>
-             <x>240</x>
+             <x>230</x>
              <y>30</y>
              <width>109</width>
              <height>109</height>
@@ -1727,7 +1825,10 @@ border: none;
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>img/affich.png</pixmap>
+            <pixmap>../../../affich.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
            </property>
           </widget>
           <widget class="QLineEdit" name="recherche_ev">
@@ -2170,7 +2271,7 @@ padding:0 8;
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>img/ajou.png</pixmap>
+           <pixmap>../../../ajou.png</pixmap>
           </property>
          </widget>
         </widget>
@@ -2203,7 +2304,7 @@ padding:0 8;
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>img/modif..png</pixmap>
+            <pixmap>../../../modif..png</pixmap>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2478,7 +2579,7 @@ font-family:Arial, Helvetica, sans-serif;
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>img/supprime.png</pixmap>
+           <pixmap>../../../supprime.png</pixmap>
           </property>
          </widget>
          <widget class="QGroupBox" name="groupBox_10">

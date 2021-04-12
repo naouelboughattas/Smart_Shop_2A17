@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "facture.h"
 #include "evenement.h"
+//#include "smtp.h"
 #include <QMessageBox>
 #include <QPixmap>
 #include <QIntValidator>
@@ -464,6 +465,8 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_3_clicked()
 {
     //ui->tab_prod->setModel(Ftemp.afficher());
+    ui->stackedWidget->setCurrentIndex(1);
+
 
 }
 
@@ -508,11 +511,16 @@ void MainWindow::on_supr_box_currentTextChanged(const QString &arg1)
 
 void MainWindow::on_commandLinkButton_clicked()
 {
+    ui->supr_box->clear();
+    ui->supr_box->addItems(Ftemp.recherche_id());
     ui->stackedWidget->setCurrentIndex(2);
+    ui->tab_fact->setModel(Ftemp.afficher());
+
 }
 
 void MainWindow::on_commandLinkButton_2_clicked()
 {
+    ui->tab_ev->setModel(Etemp.afficher_ev());
     ui->stackedWidget->setCurrentIndex(3);
 
 }
@@ -749,5 +757,22 @@ void MainWindow::on_modif_ev_clicked()
         QMessageBox::critical(nullptr, QObject::tr("Modification echoué"),
                     QObject::tr("Erreur !.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+
 
 }
