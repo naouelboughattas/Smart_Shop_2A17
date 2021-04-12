@@ -206,7 +206,7 @@ void MainWindow::on_pushButton_S1_clicked()
 
 void MainWindow::on_pushButton_VE_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(5);
     ui->tableView_vehicule_EN->setModel(tmpveh.ent_veh());
 }
 
