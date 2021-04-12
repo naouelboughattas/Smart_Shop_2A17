@@ -262,7 +262,7 @@ void MainWindow::on_pushButton_10_clicked()
 
 void MainWindow::on_pushButton_9_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 void MainWindow::on_pushButton_11_clicked()
 {

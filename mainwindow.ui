@@ -29,11 +29,11 @@
     </property>
     <property name="styleSheet">
      <string notr="true">QStackedWidget {
-background-color : rgb(0, 144, 153) ; border : none;
+background-color : rgb(229, 242, 247) ; border : none;
 }</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QTabWidget" name="tabWidget">
@@ -41,7 +41,7 @@ background-color : rgb(0, 144, 153) ; border : none;
        <rect>
         <x>10</x>
         <y>0</y>
-        <width>721</width>
+        <width>761</width>
         <height>411</height>
        </rect>
       </property>
@@ -84,7 +84,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="tabBarAutoHide">
        <bool>false</bool>
@@ -96,11 +96,18 @@ margin-top: 2px; /* make non-selected tabs look smaller */
        <widget class="QGroupBox" name="groupBox">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>20</y>
+          <x>140</x>
+          <y>60</y>
           <width>451</width>
           <height>231</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+  border: 1px solid #007299;
+  border-radius: 9px;
+  margin-top: 0.5em;
+}</string>
         </property>
         <property name="title">
          <string>Formulaire d'Ajout </string>
@@ -213,7 +220,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -318,10 +325,11 @@ transition: all 0.4s ease 0s;
 {
  border-width: 1px;
 border-style: solid;
-border-color: black;
+border-color:#007299;
   border-radius: 10px;
 padding:0 5;
-}</string>
+}
+</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_S">
@@ -329,7 +337,7 @@ padding:0 5;
          <rect>
           <x>540</x>
           <y>30</y>
-          <width>141</width>
+          <width>181</width>
           <height>23</height>
          </rect>
         </property>
@@ -348,7 +356,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -374,7 +382,7 @@ transition: all 0.4s ease 0s;
          <rect>
           <x>540</x>
           <y>80</y>
-          <width>141</width>
+          <width>181</width>
           <height>23</height>
          </rect>
         </property>
@@ -393,7 +401,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -429,7 +437,7 @@ transition: all 0.4s ease 0s;
 background-color: #80ccff ;
 border-width: 1px;
 border-style: solid;
-border-color: black;
+border-color:#007299;
   border-radius: 10px;
 padding:0 8;
 }</string>
@@ -440,7 +448,7 @@ padding:0 8;
          <rect>
           <x>540</x>
           <y>290</y>
-          <width>151</width>
+          <width>181</width>
           <height>23</height>
          </rect>
         </property>
@@ -459,7 +467,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -485,7 +493,7 @@ transition: all 0.4s ease 0s;
          <rect>
           <x>540</x>
           <y>130</y>
-          <width>141</width>
+          <width>181</width>
           <height>23</height>
          </rect>
         </property>
@@ -504,7 +512,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -530,7 +538,7 @@ transition: all 0.4s ease 0s;
          <rect>
           <x>540</x>
           <y>190</y>
-          <width>141</width>
+          <width>181</width>
           <height>23</height>
          </rect>
         </property>
@@ -549,7 +557,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -578,11 +586,18 @@ transition: all 0.4s ease 0s;
        <widget class="QGroupBox" name="groupBox_2">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>20</y>
+          <x>120</x>
+          <y>50</y>
           <width>481</width>
           <height>241</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+  border: 1px solid #007299;
+  border-radius: 9px;
+  margin-top: 0.5em;
+}</string>
         </property>
         <property name="title">
          <string>Formulaire d'Ajout </string>
@@ -713,11 +728,18 @@ padding:0 8;
      <widget class="QGroupBox" name="groupBox_5">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
+        <x>140</x>
+        <y>50</y>
         <width>511</width>
         <height>231</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+  border: 1px solid #007299;
+  border-radius: 9px;
+  margin-top: 0.5em;
+}</string>
       </property>
       <property name="title">
        <string>Formulaire d'Ajout </string>
@@ -788,7 +810,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -902,7 +924,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -954,7 +976,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1003,7 +1025,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1052,7 +1074,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1146,7 +1168,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 {
  border-width: 1px;
 border-style: solid;
-border-color: black;
+border-color: #007299;
   border-radius: 10px;
 padding:0 5;
 }</string>
@@ -1167,7 +1189,7 @@ padding:0 5;
 background-color: #80ccff ;
 border-width: 1px;
 border-style: solid;
-border-color: black;
+border-color: #007299;
   border-radius: 10px;
 padding:0 8;
 }</string>
@@ -1197,7 +1219,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1227,7 +1249,7 @@ transition: all 0.4s ease 0s;
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>721</width>
+        <width>761</width>
         <height>361</height>
        </rect>
       </property>
@@ -1282,7 +1304,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
           <x>140</x>
           <y>30</y>
           <width>541</width>
-          <height>321</height>
+          <height>261</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1363,7 +1385,7 @@ padding:0 8;
           <rect>
            <x>310</x>
            <y>100</y>
-           <width>101</width>
+           <width>111</width>
            <height>23</height>
           </rect>
          </property>
@@ -1382,7 +1404,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1520,7 +1542,7 @@ padding:0 8;
 
 border-width: 1px;
 border-style: solid;
-border-color: black;
+border-color: #007299;
   border-radius: 10px;
 padding:0 5;
 }
@@ -1533,7 +1555,7 @@ padding:0 5;
          <rect>
           <x>570</x>
           <y>30</y>
-          <width>111</width>
+          <width>171</width>
           <height>23</height>
          </rect>
         </property>
@@ -1552,7 +1574,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1578,7 +1600,7 @@ transition: all 0.4s ease 0s;
          <rect>
           <x>570</x>
           <y>80</y>
-          <width>111</width>
+          <width>171</width>
           <height>23</height>
          </rect>
         </property>
@@ -1597,7 +1619,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1633,7 +1655,7 @@ transition: all 0.4s ease 0s;
 background-color: #80ccff ;
 border-width: 1px;
 border-style: solid;
-border-color: black;
+border-color: #007299;
   border-radius: 10px;
 padding:0 8;
 }</string>
@@ -1642,9 +1664,9 @@ padding:0 8;
        <widget class="QPushButton" name="pushButton_6">
         <property name="geometry">
          <rect>
-          <x>580</x>
+          <x>570</x>
           <y>280</y>
-          <width>111</width>
+          <width>171</width>
           <height>23</height>
          </rect>
         </property>
@@ -1663,7 +1685,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1692,11 +1714,18 @@ transition: all 0.4s ease 0s;
        <widget class="QGroupBox" name="groupBox_4">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>10</y>
+          <x>130</x>
+          <y>30</y>
           <width>501</width>
           <height>261</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+  border: 1px solid #007299;
+  border-radius: 9px;
+  margin-top: 0.5em;
+}</string>
         </property>
         <property name="title">
          <string>Formulaire d'Ajout </string>
@@ -1741,7 +1770,7 @@ QPushButton {
      color: #fff !important;
 text-transform: uppercase;
 text-decoration: none;
-background: #00BFFF;
+background: #0085b2;
 padding: 20px;
 border-radius: 5px;
 display: inline-block;
@@ -1851,7 +1880,7 @@ padding:0 8;
 {
  border-width: 1px;
 border-style: solid;
-border-color: black;
+border-color:#007299;
   border-radius: 10px;
 padding:0 5;
 }</string>
