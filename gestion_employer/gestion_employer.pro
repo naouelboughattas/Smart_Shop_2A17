@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       +=  core gui sql printsupport network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,12 +19,40 @@ SOURCES += \
     connexion.cpp \
     employer.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    src/emailaddress.cpp \
+    src/mimeattachment.cpp \
+    src/mimecontentformatter.cpp \
+    src/mimefile.cpp \
+    src/mimehtml.cpp \
+    src/mimeinlinefile.cpp \
+    src/mimemessage.cpp \
+    src/mimemultipart.cpp \
+    src/mimepart.cpp \
+    src/mimetext.cpp \
+    src/quotedprintable.cpp \
+    src/smtpclient.cpp \
+    tache.cpp
 
 HEADERS += \
     connexion.h \
     employer.h \
-    mainwindow.h
+    mainwindow.h \
+    src/SmtpMime \
+    src/emailaddress.h \
+    src/mimeattachment.h \
+    src/mimecontentformatter.h \
+    src/mimefile.h \
+    src/mimehtml.h \
+    src/mimeinlinefile.h \
+    src/mimemessage.h \
+    src/mimemultipart.h \
+    src/mimepart.h \
+    src/mimetext.h \
+    src/quotedprintable.h \
+    src/smtpclient.h \
+    src/smtpexports.h \
+    tache.h
 
 FORMS += \
     mainwindow.ui

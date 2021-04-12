@@ -27,7 +27,7 @@ public:
     QSqlQueryModel * afficher_employer();
     QSqlQueryModel * afficher_list();
     void chercher();
-    QSqlQueryModel * recherche(QString valeur, int etat);
+    QSqlQueryModel * recherche(QString valeur);
 
 private:
     QString cin;

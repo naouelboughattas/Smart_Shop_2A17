@@ -75,7 +75,7 @@ bool employer::supprimer_employer()
 {
 
     QSqlQuery query;
-    query.prepare("Delete from personnel where cin = :cin ");
+    query.prepare("DELETE FROM personnel WHERE cin = :cin ");
     query.bindValue(":cin",cin);
     return    query.exec();
 
@@ -83,7 +83,7 @@ bool employer::supprimer_employer()
 QSqlQueryModel * employer:: afficher_employer()
 {QSqlQueryModel * model= new QSqlQueryModel();
 
-model->setQuery("select * from personnel");
+model->setQuery("SELECT * FROM personnel");
 model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
 model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
 model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
@@ -94,7 +94,7 @@ model->setHeaderData(4, Qt::Horizontal, QObject::tr("email"));
 
  bool employer::modifier_employer()
  {      QSqlQuery query;
-        query.prepare("update personnel set nom=:nom,prenom=:prenom,adresse=:adresse,email=:email where cin=:cin");
+        query.prepare("UPDATE personnel SET nom=:nom,prenom=:prenom,adresse=:adresse,email=:email WHERE cin=:cin");
         query.bindValue(":cin",cin);
         query.bindValue(":nom",nom);
         query.bindValue(":prenom",prenom);
@@ -110,7 +110,7 @@ QSqlQueryModel * employer:: afficher_list()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
 
-        model->setQuery("select cin from personnel");
+        model->setQuery("SELECT cin FROM personnel");
         model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
 
 
@@ -124,22 +124,19 @@ void employer:: chercher()
      while(query1.next())
      {
      nom = query1.value(0).toString();
-     prenom = query1.value(0).toString();
-     adresse = query1.value(0).toString();
-     email = query1.value(0).toString();
+     prenom = query1.value(1).toString();
+     adresse = query1.value(2).toString();
+     email = query1.value(3).toString();
      }
 
 }
-QSqlQueryModel * employer:: recherche(QString valeur, int etat)
+QSqlQueryModel * employer:: recherche(QString a)
 {
     QSqlQueryModel * model=new QSqlQueryModel();
+    QSqlQuery query ;
 
-    QSqlQuery query;
-    if(etat==0)
-   { query.prepare("SELECT * FROM personnel WHERE cin LIKE :valeur order by cin");}
-    else   { query.prepare("SELECT * FROM personnel WHERE cin LIKE :valeur order by cin desc");}
-    valeur="%"+valeur+"%";
-    query.bindValue(":valeur",valeur);
+    query.prepare("SELECT * FROM personnel WHERE cin LIKE '"+a+"' ||'%'");
+    query.bindValue(":id",a);
     query.exec();
     model->setQuery(query);
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("cin"));
