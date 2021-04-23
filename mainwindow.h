@@ -82,6 +82,10 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void on_toolButton_2_clicked();
+
+    void on_toolButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;

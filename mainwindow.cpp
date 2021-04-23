@@ -90,6 +90,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     /*////////////////////////CONTROLE DE SAISIE///////////////////////////////////*/
     ui->le_ttc_f->setValidator( new QIntValidator(0, 999999999, this));
+    ui->modif_ttc_f->setValidator( new QIntValidator(0, 999999999, this));
     /*/////////////////////////////////////////////////////////////////////////////*/
 
 
@@ -774,5 +775,21 @@ void MainWindow::on_pushButton_5_clicked()
 void MainWindow::on_pushButton_6_clicked()
 {
 
+
+}
+
+void MainWindow::on_toolButton_2_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+
+}
+
+void MainWindow::on_toolButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
 
 }
