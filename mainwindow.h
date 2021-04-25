@@ -92,6 +92,8 @@ private slots:
 
     void on_qrcode_clicked();
 
+    void on_toolButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;

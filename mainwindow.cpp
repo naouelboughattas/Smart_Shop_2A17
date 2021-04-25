@@ -879,3 +879,12 @@ void MainWindow::on_qrcode_clicked()
     im=im.scaled(200,200);
     ui->qrlabel->setPixmap(QPixmap::fromImage(im));
 }
+
+void MainWindow::on_toolButton_5_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
