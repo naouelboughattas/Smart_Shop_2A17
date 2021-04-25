@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/MyFiles">
+        <file>zeinebproj.pro</file>
+        <file>FOND13.png</file>
+    </qresource>
+</RCC>
