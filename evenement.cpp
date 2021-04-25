@@ -183,3 +183,7 @@ Evenement::Evenement()
         return    query.exec();
     }
 
+    QString Evenement::recherche_mail(){
+
+
+    }

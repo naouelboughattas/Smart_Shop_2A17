@@ -27,7 +27,8 @@
 #include <QDesktopWidget>
 #include <QListWidget>
 #include <QKeyEvent>
-
+#include "QrCode.hpp"
+using namespace qrcodegen;
 
 void MainWindow::on_bt_login_clicked()
 {
@@ -357,6 +358,15 @@ void MainWindow::on_tabWidget_currentChanged(int index)
 QString infos;
 infos = "Client : "+Ftemp.search_nom_c(ui->supr_box->currentText())+" | Mode de paiement : "+Ftemp.mode_pp(ui->supr_box->currentText())+" | Date : "+Ftemp.date_ff(ui->supr_box->currentText())+" | Total TTC : "+Ftemp.total_ttc(ui->supr_box->currentText())+" DT";
 ui->infos->setText(infos);
+
+
+/*************************************************************************************/
+Facture F;
+F.stat(ui->widget);
+
+
+
+
 }
 
 void MainWindow::on_modif_box_currentTextChanged(const QString &arg1)
@@ -550,10 +560,40 @@ void MainWindow::on_ajout_ev_clicked()
     ui->tab_ev->setModel(Etemp.afficher_ev());
 
     if(test){
-        QMessageBox::information(nullptr, QObject::tr("OK"),
-                                 QObject::tr("Ajout effectué\n"
-                                 "Click Cancel to exit."),QMessageBox::Cancel);
-       // ui->tab_fact->setModel(Ftemp.afficher());
+        QMessageBox::information(nullptr,"Ajout effectué\n","Ajout effectué\n");
+        /************************************SMTP******************************************************/
+                QString objet="NOUVELLE EVENEMENT AJOUTE !";
+                        QString message="IDEvenement:"+ui->id_ev->text()+"Nomd'evenement:"+ui->nom_ev->text() ;
+                        Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
+                        connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+                        QString pro=ui->produit_inclus->currentText();
+                        QString okk=pro+" En Solde";
+                        QString o=okk+".";
+                        smtp->sendMail("wael.ksila@esprit.tn", "waelksila97@gmail.com" , objet,o);
+
+                        /********/
+                       /* QSqlQuery query;
+                        query.prepare("SELECT EMAIL_C FROM CLIENTS");
+                        query.exec();
+                        QStringList list;
+                        QString e;
+                        while(query.next()){
+                            int i=0;
+                               list.append(query.value(0).toString());
+                               e=list.value(i);
+                               QMessageBox::information(nullptr,e,e);
+
+                               smtp->sendMail("wael.ksila@esprit.tn", e , objet,o);
+                             QTime dieTime= QTime::currentTime().addSecs(7);
+                               while (QTime::currentTime() < dieTime)
+                                   QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+
+                            i++;
+                        }*/
+        /**********************************************************************************************/
+         QMessageBox::information(nullptr,"Client informé\n","Mail envoyé a vos clients\n");
+
 
 
     }else{
@@ -792,4 +832,50 @@ void MainWindow::on_toolButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 
+}
+
+void MainWindow::on_ajout_ev_2_clicked()
+{
+    QString objet="AJOUT DU COURRIER";
+            QString message=" Votre courrier a été ajouté avec succés" ;
+            Smtp* smtp = new Smtp("wael.ksila@esprit.tn","191JMT3269", "smtp.gmail.com",465);
+            connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+            smtp->sendMail("wael.ksila@esprit.tn", "waelksila97@gmail.com" , objet, message);
+}
+
+void MainWindow::on_qrcode_clicked()
+{
+    int tabev=ui->tab_ev->currentIndex().row();
+    QVariant idd=ui->tab_ev->model()->data(ui->tab_ev->model()->index(tabev,0));
+    QString id= idd.toString();
+    QSqlQuery qry;
+    qry.prepare("select * from evenements where id_ev=:id");
+    qry.bindValue(":id",id);
+    qry.exec();
+    QString nom,debut,fin,idp,ids;
+    while(qry.next()){
+        nom=qry.value(1).toString();
+        debut=qry.value(2).toString();
+        fin=qry.value(3).toString();
+        idp=qry.value(4).toString();
+    }
+    ids=QString(id);
+    ids="ID: "+ids+" Nom: "+nom+" Date de debut: "+debut+" Date de fin: "+fin+"ID produit : "+idp;
+    QrCode qr = QrCode::encodeText(ids.toUtf8().constData(), QrCode::Ecc::HIGH);
+
+    // Read the black & white pixels
+    QImage im(qr.getSize(),qr.getSize(), QImage::Format_RGB888);
+    for (int y = 0; y < qr.getSize(); y++) {
+        for (int x = 0; x < qr.getSize(); x++) {
+            int color = qr.getModule(x, y);  // 0 for white, 1 for black
+
+            // You need to modify this part
+            if(color==0)
+                im.setPixel(x, y,qRgb(254, 254, 254));
+            else
+                im.setPixel(x, y,qRgb(0, 0, 0));
+        }
+    }
+    im=im.scaled(200,200);
+    ui->qrlabel->setPixmap(QPixmap::fromImage(im));
 }

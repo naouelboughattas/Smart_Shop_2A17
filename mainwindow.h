@@ -8,6 +8,8 @@
 #include <facture.h>
 #include <evenement.h>
 #include <QTableView>
+#include "smtp.h"
+#include "QrCode.hpp"
 
 namespace Ui {
 class MainWindow;
@@ -85,6 +87,10 @@ private slots:
     void on_toolButton_2_clicked();
 
     void on_toolButton_clicked();
+
+    void on_ajout_ev_2_clicked();
+
+    void on_qrcode_clicked();
 
 private:
     Ui::MainWindow *ui;

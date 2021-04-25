@@ -45,6 +45,7 @@ public:
     QString mode_pp(QString);
     QString date_ff(QString);
     QString total_ttc(QString);
+    QString recherche_mail();
 
 private:
     QString id_ev;

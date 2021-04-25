@@ -4,6 +4,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QDateTime>
+#include "qcustomplot.h"
 
 class Facture
 {
@@ -41,7 +42,12 @@ public:
     QString mode_pp(QString);
     QString date_ff(QString);
     QString total_ttc(QString);
-
+    QString stat_count();
+    QString max_p();
+    QString min_p();
+    QString top_c();
+    QString top_cc();
+    void stat(QCustomPlot *customPlot);
 
 
 

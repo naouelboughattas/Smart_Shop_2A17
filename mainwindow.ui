@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>833</width>
-    <height>631</height>
+    <width>1003</width>
+    <height>575</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,12 +19,12 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>821</width>
-      <height>551</height>
+      <width>1001</width>
+      <height>521</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="LOGIN">
      <widget class="QPushButton" name="bt_login">
@@ -423,7 +423,7 @@ border: none;
        <rect>
         <x>180</x>
         <y>10</y>
-        <width>641</width>
+        <width>821</width>
         <height>521</height>
        </rect>
       </property>
@@ -1494,6 +1494,21 @@ padding:0 8;
        <zorder>label_5</zorder>
        <zorder>infos</zorder>
       </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Statistiques</string>
+       </attribute>
+       <widget class="QCustomPlot" name="widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>731</width>
+          <height>411</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="evenements">
@@ -1502,7 +1517,7 @@ padding:0 8;
        <rect>
         <x>-10</x>
         <y>-10</y>
-        <width>821</width>
+        <width>941</width>
         <height>551</height>
        </rect>
       </property>
@@ -1672,7 +1687,7 @@ border: none;
          <rect>
           <x>190</x>
           <y>20</y>
-          <width>641</width>
+          <width>811</width>
           <height>521</height>
          </rect>
         </property>
@@ -1718,7 +1733,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_7">
          <attribute name="title">
@@ -2689,6 +2704,65 @@ padding:0 8;
       </widget>
       <widget class="QWidget" name="page_5"/>
      </widget>
+     <widget class="QPushButton" name="qrcode">
+      <property name="geometry">
+       <rect>
+        <x>825</x>
+        <y>350</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+      </property>
+      <property name="text">
+       <string>QrCode</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="qrlabel">
+      <property name="geometry">
+       <rect>
+        <x>765</x>
+        <y>135</y>
+        <width>211</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 5;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -2697,7 +2771,7 @@ padding:0 8;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>833</width>
+     <width>1003</width>
      <height>26</height>
     </rect>
    </property>
@@ -2746,6 +2820,14 @@ padding:0 8;
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

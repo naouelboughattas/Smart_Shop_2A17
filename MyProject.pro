@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql printsupport widgets
+QT       += core gui sql printsupport widgets network
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -26,19 +26,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    arduino.cpp \
+    QrCode.cpp \
     evenement.cpp \
     facture.cpp \
         main.cpp \
     connection.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    qcustomplot.cpp \
+    smtp.cpp
 
 HEADERS += \
-    arduino.h \
+    QrCode.hpp \
     evenement.h \
     facture.h \
     connection.h \
-    mainwindow.h
+    mainwindow.h \
+    qcustomplot.h \
+    smtp.h
 
 FORMS += \
     mainwindow.ui
