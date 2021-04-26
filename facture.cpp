@@ -390,7 +390,7 @@ void Facture::stat(QCustomPlot *customPlot)
 
 
     ticks << 1 << 2 << 3 ;
-    labels << "[0,100]" << "[100,1000]"<<"Plus que 1000" ;
+    labels << "[ 0 DT,100 DT ]" << "[ 100 DT,1000 DT ]"<<"Plus que 1000" ;
     QSharedPointer<QCPAxisTickerText> textTicker(new QCPAxisTickerText);
     textTicker->addTicks(ticks, labels);
     customPlot->xAxis->setTicker(textTicker);

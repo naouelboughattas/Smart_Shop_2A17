@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1003</width>
-    <height>575</height>
+    <width>1026</width>
+    <height>578</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>1001</width>
-      <height>521</height>
+      <width>1011</width>
+      <height>531</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -469,7 +469,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -1336,7 +1336,7 @@ padding:0 8;
        <widget class="QLabel" name="Lb_client">
         <property name="geometry">
          <rect>
-          <x>430</x>
+          <x>550</x>
           <y>250</y>
           <width>181</width>
           <height>20</height>
@@ -1501,10 +1501,10 @@ padding:0 8;
        <widget class="QCustomPlot" name="widget" native="true">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>0</x>
           <y>10</y>
-          <width>731</width>
-          <height>411</height>
+          <width>761</width>
+          <height>461</height>
          </rect>
         </property>
        </widget>
@@ -1733,7 +1733,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_7">
          <attribute name="title">
@@ -1744,7 +1744,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
            <rect>
             <x>20</x>
             <y>30</y>
-            <width>551</width>
+            <width>791</width>
             <height>421</height>
            </rect>
           </property>
@@ -2773,10 +2773,17 @@ padding:0 5;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1003</width>
+     <width>1026</width>
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout_us"/>
+   </widget>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -2820,6 +2827,11 @@ padding:0 5;
     <bool>false</bool>
    </attribute>
   </widget>
+  <action name="actionAbout_us">
+   <property name="text">
+    <string>About us</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

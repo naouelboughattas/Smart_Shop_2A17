@@ -68,7 +68,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 
-
     ui->tab_ev->setModel(Etemp.afficher_ev());
     ui->tab_fact->setModel(Ftemp.afficher());
     ui->produit_inclus->clear();
@@ -838,7 +837,7 @@ void MainWindow::on_ajout_ev_2_clicked()
 {
     QString objet="AJOUT DU COURRIER";
             QString message=" Votre courrier a été ajouté avec succés" ;
-            Smtp* smtp = new Smtp("wael.ksila@esprit.tn","191JMT3269", "smtp.gmail.com",465);
+            Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
             connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
             smtp->sendMail("wael.ksila@esprit.tn", "waelksila97@gmail.com" , objet, message);
 }
@@ -887,4 +886,20 @@ void MainWindow::on_toolButton_5_clicked()
                                   "Cliquez oui pour confirmer."), QMessageBox::Yes);
 
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_toolButton_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_actionAbout_us_triggered()
+{
+    QString about;
+    about = "Auther :   Wael Ksila\n";
+    about +="Date    :   26/04/2021\n";
+    about +="(C) Gestion D'entreprise (R)\n\n";
+    about +="For more information : fb.me/waellksila\n";
+    QMessageBox::about(this,"About",about);
 }
