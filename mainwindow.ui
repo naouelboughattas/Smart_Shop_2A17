@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1026</width>
-    <height>578</height>
+    <height>601</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="LOGIN">
      <widget class="QPushButton" name="bt_login">
@@ -469,7 +469,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -1688,7 +1688,7 @@ border: none;
           <x>190</x>
           <y>20</y>
           <width>811</width>
-          <height>521</height>
+          <height>461</height>
          </rect>
         </property>
         <property name="toolTip">
@@ -1760,7 +1760,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
              <x>90</x>
              <y>180</y>
              <width>451</width>
-             <height>241</height>
+             <height>221</height>
             </rect>
            </property>
            <property name="cursor" stdset="0">
@@ -2700,6 +2700,19 @@ padding:0 8;
           </property>
          </widget>
         </widget>
+       </widget>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>500</y>
+          <width>701</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="value">
+         <number>24</number>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="page_5"/>

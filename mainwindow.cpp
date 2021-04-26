@@ -64,7 +64,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-
+    ui->progressBar->setValue(0);
 
 
 
@@ -559,6 +559,11 @@ void MainWindow::on_ajout_ev_clicked()
     ui->tab_ev->setModel(Etemp.afficher_ev());
 
     if(test){
+        int i=0 ;
+        for(i=0;i<100;i=i+0.1){
+            i++;
+            ui->progressBar->setValue(i);
+        }
         QMessageBox::information(nullptr,"Ajout effectué\n","Ajout effectué\n");
         /************************************SMTP******************************************************/
                 QString objet="NOUVELLE EVENEMENT AJOUTE !";
@@ -591,6 +596,12 @@ void MainWindow::on_ajout_ev_clicked()
                             i++;
                         }*/
         /**********************************************************************************************/
+                        i=0 ;
+                        for(i=0;i<100;i=i+0.1){
+                            i++;
+                            ui->progressBar->setValue(i);
+                        }
+
          QMessageBox::information(nullptr,"Client informé\n","Mail envoyé a vos clients\n");
 
 
@@ -615,6 +626,7 @@ void MainWindow::on_ajout_ev_clicked()
 
 void MainWindow::on_tabWidget_2_currentChanged(int index)
 {
+    ui->progressBar->setValue(0);
     ui->produit_inclus->clear();
     ui->produit_inclus->addItems(Etemp.recherche_produit());
     ui->tab_ev->setModel(Etemp.afficher_ev());
@@ -640,6 +652,12 @@ void MainWindow::on_supp_ev_clicked()
           bool test=Etemp.supprimer_ev(id_ev);
           if(test)
           {
+              int i=0 ;
+              for(i=0;i<100;i=i+0.1){
+                  i++;
+                  ui->progressBar->setValue(i);
+              }
+
               ui->supr_ev->clear();
               ui->supr_ev->addItems(Etemp.recherche_id_ev());
               ui->tab_ev->setModel(Etemp.afficher_ev());
@@ -664,6 +682,11 @@ void MainWindow::on_supp_ev_2_clicked()
           bool test=Etemp.supprimer_ev(id_ev);
           if(test)
           {
+              int i=0 ;
+              for(i=0;i<100;i=i+0.1){
+                  i++;
+                  ui->progressBar->setValue(i);
+              }
               ui->supr_ev->clear();
               ui->supr_ev->addItems(Etemp.recherche_id_ev());
               ui->tab_ev->setModel(Etemp.afficher_ev());
@@ -684,6 +707,11 @@ void MainWindow::on_pdf_ev_clicked()
 
     QString fileName = QFileDialog::getSaveFileName((QWidget* )0, "Export PDF", QString(), "*.pdf");
     if (QFileInfo(fileName).suffix().isEmpty()) { fileName.append(".pdf"); }
+    int i=0 ;
+    for(i=0;i<100;i=i+0.1){
+        i++;
+        ui->progressBar->setValue(i);
+    }
 
     QPrinter printer(QPrinter::PrinterResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
@@ -750,6 +778,11 @@ void MainWindow::on_impr_ev_clicked()
 
 void MainWindow::on_tri_ev_clicked()
 {
+    int i=0 ;
+    for(i=0;i<100;i=i+0.1){
+        i++;
+        ui->progressBar->setValue(i);
+    }
     ui->tab_ev->setModel(Etemp.tri_ev());
     ui->tab_ev->resizeRowsToContents();
 
@@ -784,6 +817,12 @@ void MainWindow::on_modif_ev_clicked()
 
     if(test)
     {
+        int i=0 ;
+        for(i=0;i<100;i=i+0.1){
+            i++;
+            ui->progressBar->setValue(i);
+        }
+
         ui->modif_produit_inclus->clear();
         ui->modif_produit_inclus->addItems(Etemp.recherche_id_ev());
         ui->produit_inclus->clear();
@@ -837,13 +876,14 @@ void MainWindow::on_ajout_ev_2_clicked()
 {
     QString objet="AJOUT DU COURRIER";
             QString message=" Votre courrier a été ajouté avec succés" ;
-            Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
+            Smtp* smtp = new Smtp("wael.ksila@esprit.tn","191JMT3269", "smtp.gmail.com",465);
             connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
             smtp->sendMail("wael.ksila@esprit.tn", "waelksila97@gmail.com" , objet, message);
 }
 
 void MainWindow::on_qrcode_clicked()
 {
+
     int tabev=ui->tab_ev->currentIndex().row();
     QVariant idd=ui->tab_ev->model()->data(ui->tab_ev->model()->index(tabev,0));
     QString id= idd.toString();
@@ -877,6 +917,11 @@ void MainWindow::on_qrcode_clicked()
     }
     im=im.scaled(200,200);
     ui->qrlabel->setPixmap(QPixmap::fromImage(im));
+    int i=0 ;
+    for(i=0;i<100;i=i+0.1){
+        i++;
+        ui->progressBar->setValue(i);
+    }
 }
 
 void MainWindow::on_toolButton_5_clicked()
