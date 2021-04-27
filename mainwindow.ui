@@ -469,7 +469,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -1759,7 +1759,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
             <rect>
              <x>90</x>
              <y>180</y>
-             <width>451</width>
+             <width>471</width>
              <height>221</height>
             </rect>
            </property>
@@ -2270,6 +2270,24 @@ border-color: black;
   border-radius: 10px;
 padding:0 8;
 }</string>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="checkBox">
+           <property name="geometry">
+            <rect>
+             <x>418</x>
+             <y>314</y>
+             <width>141</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>7</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Informé vos clients</string>
            </property>
           </widget>
          </widget>

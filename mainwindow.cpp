@@ -28,11 +28,29 @@
 #include <QListWidget>
 #include <QKeyEvent>
 #include "QrCode.hpp"
+#include <QMediaPlayer>
+#include <QDebug>
 using namespace qrcodegen;
 
 void MainWindow::on_bt_login_clicked()
 {
     if(ui->user->text()=="wael" && ui->pass->text()=="ksila"){
+        QMediaPlayer* player;
+        player = new QMediaPlayer;
+        player->setMedia(QUrl::fromLocalFile("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProject/bienvenue.mp3"));
+                     player->play();
+                     qDebug()<<player->errorString();
+
+                     QPropertyAnimation *animationajouterp;
+                     animationajouterp = new QPropertyAnimation(ui->bt_login,"geometry");
+                     animationajouterp->setDuration(1000);
+                     animationajouterp->setStartValue(QRect(660,450,141,51));
+                     animationajouterp->setEndValue(QRect(650,450,200,51));
+                     animationajouterp->setEasingCurve(QEasingCurve::InOutQuint);
+                     animationajouterp->start(QPropertyAnimation::DeleteWhenStopped);
+
+
+
     ui->stackedWidget->setCurrentIndex(1);
 
     }else{
@@ -537,6 +555,7 @@ void MainWindow::on_commandLinkButton_2_clicked()
 
 void MainWindow::on_ajout_ev_clicked()
 {
+
     /**************************************************************************************/
     QSqlQuery query;
     QString result;
@@ -564,45 +583,45 @@ void MainWindow::on_ajout_ev_clicked()
             i++;
             ui->progressBar->setValue(i);
         }
-        QMessageBox::information(nullptr,"Ajout effectué\n","Ajout effectué\n");
-        /************************************SMTP******************************************************/
-                QString objet="NOUVELLE EVENEMENT AJOUTE !";
-                        QString message="IDEvenement:"+ui->id_ev->text()+"Nomd'evenement:"+ui->nom_ev->text() ;
-                        Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
-                        connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+            QMessageBox::information(nullptr,"Ajout effectué\n","Ajout effectué\n");
+            if(ui->checkBox->isChecked()){
+                /************************************SMTP******************************************************/
+                        QString objet="NOUVELLE EVENEMENT AJOUTE !";
+                                QString message="IDEvenement:"+ui->id_ev->text()+"Nomd'evenement:"+ui->nom_ev->text() ;
+                                Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
+                                connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
-                        QString pro=ui->produit_inclus->currentText();
-                        QString okk=pro+" En Solde";
-                        QString o=okk+".";
-                        smtp->sendMail("wael.ksila@esprit.tn", "waelksila97@gmail.com" , objet,o);
+                                QString pro=ui->produit_inclus->currentText();
+                                QString okk=pro+" En Solde";
+                                QString o=okk+".";
+                                smtp->sendMail("wael.ksila@esprit.tn", "waelksila97@gmail.com" , objet,o);
 
-                        /********/
-                       /* QSqlQuery query;
-                        query.prepare("SELECT EMAIL_C FROM CLIENTS");
-                        query.exec();
-                        QStringList list;
-                        QString e;
-                        while(query.next()){
-                            int i=0;
-                               list.append(query.value(0).toString());
-                               e=list.value(i);
-                               QMessageBox::information(nullptr,e,e);
+                                /********/
+                               /* QSqlQuery query;
+                                query.prepare("SELECT EMAIL_C FROM CLIENTS");
+                                query.exec();
+                                QStringList list;
+                                QString e;
+                                while(query.next()){
+                                    int i=0;
+                                       list.append(query.value(0).toString());
+                                       e=list.value(i);
+                                       QMessageBox::information(nullptr,e,e);
 
-                               smtp->sendMail("wael.ksila@esprit.tn", e , objet,o);
-                             QTime dieTime= QTime::currentTime().addSecs(7);
-                               while (QTime::currentTime() < dieTime)
-                                   QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+                                       smtp->sendMail("wael.ksila@esprit.tn", e , objet,o);
+                                     QTime dieTime= QTime::currentTime().addSecs(7);
+                                       while (QTime::currentTime() < dieTime)
+                                           QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 
-                            i++;
-                        }*/
-        /**********************************************************************************************/
-                        i=0 ;
-                        for(i=0;i<100;i=i+0.1){
-                            i++;
-                            ui->progressBar->setValue(i);
-                        }
+                                    i++;
+                                }*/
+                /**********************************************************************************************/
 
-         QMessageBox::information(nullptr,"Client informé\n","Mail envoyé a vos clients\n");
+                 QMessageBox::information(nullptr,"Client informé\n","Mail envoyé a vos clients\n");
+
+
+            }
+
 
 
 
