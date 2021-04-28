@@ -10,6 +10,7 @@
 #include <QTableView>
 #include "smtp.h"
 #include "QrCode.hpp"
+#include <arduino.h>
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +25,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void arduino();   // slot permettant la mise à jour du label état de la lampe 1,
+
     void on_pb_ajouter_clicked();
 
     void on_pushButton_clicked();
@@ -102,9 +105,12 @@ private:
     Ui::MainWindow *ui;
     Facture Ftemp;
     Evenement Etemp;
+    Arduino Atemp;
     QString IDTemp;
     QString Rtemp;
     QString Ctemp;
+    QByteArray data; // variable contenant les données reçues
+
     void keyPressEvent(QKeyEvent *event);
 };
 

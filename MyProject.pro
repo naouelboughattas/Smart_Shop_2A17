@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql printsupport widgets network multimedia multimediawidgets
+QT       += core gui sql printsupport widgets network multimedia multimediawidgets serialport
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -27,6 +27,7 @@ CONFIG += c++11
 
 SOURCES += \
     QrCode.cpp \
+    arduino.cpp \
     evenement.cpp \
     facture.cpp \
         main.cpp \
@@ -37,6 +38,7 @@ SOURCES += \
 
 HEADERS += \
     QrCode.hpp \
+    arduino.h \
     evenement.h \
     facture.h \
     connection.h \

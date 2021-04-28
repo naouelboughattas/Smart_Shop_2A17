@@ -120,6 +120,27 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->le_id_f->setText(Ftemp.remplir());
     ui->id_ev->setText(Etemp.remplir_ev());
 
+    int ret=Atemp.connect_arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< Atemp.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<Atemp.getarduino_port_name();
+       break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+     QObject::connect(Atemp.getserial(),SIGNAL(readyRead()),this,SLOT(arduino())); // permet de lancer
+     //le slot update_label suite à la reception du signal readyRead (reception des données).
+
+}
+
+void MainWindow::arduino(){
+    /* ################################## Arduino ##################################*/
+    if(Etemp.recher_arduino(Atemp.read_from_arduino())==1){
+        Atemp.write_to_arduino("1");
+    }else{
+        Atemp.write_to_arduino("0");
+    }
+    /* #############################################################################*/
 }
 
 MainWindow::~MainWindow()
@@ -967,3 +988,4 @@ void MainWindow::on_actionAbout_us_triggered()
     about +="For more information : fb.me/waellksila\n";
     QMessageBox::about(this,"About",about);
 }
+

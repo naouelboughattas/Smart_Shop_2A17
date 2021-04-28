@@ -46,6 +46,7 @@ public:
     QString date_ff(QString);
     QString total_ttc(QString);
     QString recherche_mail();
+    int recher_arduino(QByteArray);
 
 private:
     QString id_ev;
