@@ -1,6 +1,7 @@
 #include <Keypad.h>
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
+#include <String.h>
 
 const byte ROWS = 4; 
 const byte COLS = 4; 
@@ -30,7 +31,8 @@ void setup(){
 
 void loop(){
   char key = customKeypad.getKey();
-       data=Serial.read();  
+       //char data;  
+       String msg;
 
 
 /*****************************************************************************/
@@ -61,25 +63,52 @@ do{
         lcd.setCursor(4, 1); 
         v_passcode="#EV000";
         lcd.print(v_passcode);
+        
+        
 
     }
     
-    if(key=='D')
-    {
-          lcd.clear();
-          lcd.print(v_passcode);
-          lcd.setCursor(0, 1);
-          if(Serial.available()){
-               Serial.print(v_passcode);
-                if (data='1'){
-                    lcd.clear();
-                    lcd.print("PROD Dispo");
-                }else if (data='0'){
-                    lcd.clear();
-                    lcd.print("PROD NON Dispo");
-                }      
+    if(key=='D'){
+      lcd.clear();
+      /*******************************ECRIRE UNE CHAINE******************************************/
+  for (int i = 0; i < v_passcode.length()-1; i++)
+  {
+                 Serial.write(v_passcode[i]);   // Push each char 1 by 1 on each loop pass
+              // Serial.print(v_passcode[i]); 
+  }
+      /******************************************************************************************/
+         //delay(3000);
+         //char data;
+         
+         if(Serial.available()){
+             data=Serial.read();
+
+               //Serial.print(v_passcode);
+               //Serial.print(data);        
+
+                if (data=='1'){
+                  lcd.clear();
+                   msg="DISPO";
+                   lcd.setCursor(4, 1);
+                     lcd.print(msg);
+                              Serial.flush();
+
+                }else if (data=='0'){
+                  lcd.clear();
+                    msg="NON DISPO";
+                    lcd.setCursor(4, 1);
+                     lcd.print(msg);
+                              Serial.flush();
+
+                } 
+     
           }
-    }        
+           
+                          
+          
+    }
+        
+           //Serial.print("ok");        
   }
 }
 

@@ -609,7 +609,7 @@ void MainWindow::on_ajout_ev_clicked()
                 /************************************SMTP******************************************************/
                         QString objet="NOUVELLE EVENEMENT AJOUTE !";
                                 QString message="IDEvenement:"+ui->id_ev->text()+"Nomd'evenement:"+ui->nom_ev->text() ;
-                                Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
+                                Smtp* smtp = new Smtp("wael.ksila@esprit.tn","191JMT3269", "smtp.gmail.com",465);
                                 connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
                                 QString pro=ui->produit_inclus->currentText();
