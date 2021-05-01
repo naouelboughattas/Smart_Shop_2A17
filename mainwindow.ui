@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="LOGIN">
      <widget class="QPushButton" name="bt_login">
@@ -169,7 +169,7 @@ background:#eeeeee;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../../../FOND13 - Copie.png</normaloff>../../../FOND13 - Copie.png</iconset>
+        <normaloff>FOND13 - Copie.png</normaloff>FOND13 - Copie.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -211,7 +211,7 @@ background:#eeeeee;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../../../FOND13.png</normaloff>../../../FOND13.png</iconset>
+        <normaloff>FOND13.png</normaloff>FOND13.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -839,7 +839,7 @@ border: none;
           <string/>
          </property>
          <property name="accessibleDescription">
-          <string extracomment="ok"/>
+          <string/>
          </property>
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>
@@ -2892,6 +2892,16 @@ padding:0 8;
           <width>701</width>
           <height>23</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
         </property>
         <property name="value">
          <number>24</number>
