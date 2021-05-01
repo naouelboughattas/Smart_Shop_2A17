@@ -190,8 +190,8 @@ Evenement::Evenement()
     int Evenement::recher_arduino(QByteArray produit){
         QSqlQuery query;
         int result;
-        query.prepare("SELECT ID_P FROM PRODUITS WHERE ID_P=:produit ");
-        query.bindValue(":a",produit);
+        query.prepare("SELECT ID_EV FROM EVENEMENTS, PRODUITS where EVENEMENTS.ID_P=PRODUITS.ID_P AND PRODUITS.ID_P=:produit ");
+        query.bindValue(":produit",produit);
         query.exec();
         if(query.numRowsAffected()!=0){
             result=1;

@@ -101,6 +101,10 @@ private slots:
 
     void on_actionAbout_us_triggered();
 
+    void showTime();
+
+
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
@@ -110,7 +114,6 @@ private:
     QString Rtemp;
     QString Ctemp;
     QByteArray data; // variable contenant les données reçues
-
     void keyPressEvent(QKeyEvent *event);
 };
 

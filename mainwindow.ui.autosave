@@ -839,7 +839,7 @@ border: none;
           <string/>
          </property>
          <property name="accessibleDescription">
-          <string extracomment="ok"/>
+          <string/>
          </property>
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>

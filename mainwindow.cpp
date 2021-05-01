@@ -2,20 +2,19 @@
 #include "ui_mainwindow.h"
 #include "facture.h"
 #include "evenement.h"
-//#include "smtp.h"
 #include <QMessageBox>
 #include <QPixmap>
 #include <QIntValidator>
 #include <QTableView>
 #include <QPainter>
 #include <QPdfWriter>
-#include"QTextDocumentWriter"
+#include "QTextDocumentWriter"
 #include <QTextStream>
-#include"QDesktopServices"
+#include "QDesktopServices"
 #include <QFileDialog>
 #include <QPrinter>
-#include"QFont"
-#include"QPen"
+#include "QFont"
+#include "QPen"
 #include <QPainter>
 #include <QTextDocument>
 #include <QDate>
@@ -30,6 +29,8 @@
 #include "QrCode.hpp"
 #include <QMediaPlayer>
 #include <QDebug>
+#include <QTimer>
+
 using namespace qrcodegen;
 
 void MainWindow::on_bt_login_clicked()
@@ -131,7 +132,26 @@ MainWindow::MainWindow(QWidget *parent) :
      QObject::connect(Atemp.getserial(),SIGNAL(readyRead()),this,SLOT(arduino())); // permet de lancer
      //le slot update_label suite à la reception du signal readyRead (reception des données).
 
+     //Timer
+      QTimer *timer_p=new QTimer(this);
+      connect(timer_p,SIGNAL(timeout()),this,SLOT(showTime()));
+      timer_p->start();
+      //DAate systeme
+      QDateTime Date_p=QDateTime::currentDateTime();
+      QString Date_txt=Date_p.toString("dddd dd MMMM yyyy");
+      ui->Date->setText(Date_txt);
+      ui->Date_2->setText(Date_txt);
+
 }
+void MainWindow::showTime()
+{
+    QTime time=QTime::currentTime();
+    QString time_txt=time.toString("hh:mm:ss");
+    ui->Timer->setText(time_txt);
+    ui->Timer_2->setText(time_txt);
+
+}
+
 
 void MainWindow::arduino(){
     /* ################################## Arduino ##################################*/
@@ -145,13 +165,13 @@ void MainWindow::arduino(){
 
 MainWindow::~MainWindow()
 {
-
     delete ui;
 }
 
 
 void MainWindow::on_pb_ajouter_clicked()
 {
+
     /**************************************************************************************/
     QSqlQuery query;
     QString result;
