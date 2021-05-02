@@ -1,4 +1,4 @@
-QT       += core gui sql  printsupport
+QT       += core gui sql  printsupport widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,13 +13,15 @@ SOURCES += \
     connection.cpp \
     main.cpp \
     mainwindow.cpp \
-    produit.cpp
+    produit.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
     categorie.h \
     connection.h \
     mainwindow.h \
-    produit.h
+    produit.h \
+    qcustomplot.h
 
 FORMS += \
     mainwindow.ui

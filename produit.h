@@ -4,6 +4,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QDateTime>
+#include "qcustomplot.h"
 
 class Produit
 {
@@ -25,6 +26,7 @@ public:
     QSqlQueryModel* tri();
     QSqlQueryModel* recherche(QString);
     QStringList recherche_id_produit();
+    void statistic(QCustomPlot *customPlot);
 
 
 private:

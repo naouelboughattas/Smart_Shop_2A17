@@ -45,10 +45,6 @@ private slots:
 
     void on_lineEdit_2_cat_textEdited(const QString &arg1);
 
-    void on_pushButton_5_cat_cat_clicked();
-
-    void on_tab_12_cat_currentChanged(int index);
-
     void on_pushButton_5_cat_clicked();
 
     void on_tabWidget_currentChanged(int index);
@@ -57,13 +53,13 @@ private slots:
 
     void on_pushButton_6_clicked();
 
-    void on_supr_prod_2_activated(const QString &arg1);
-
-    void on_supr_prod_activated(const QString &arg1);
-
     void on_pdff_clicked();
 
     void on_pdff_2_clicked();
+
+    void on_toolButton_clicked();
+
+    void on_toolButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;

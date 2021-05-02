@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>811</width>
-    <height>560</height>
+    <width>939</width>
+    <height>554</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>791</width>
+      <width>921</width>
       <height>541</height>
      </rect>
     </property>
@@ -30,7 +30,7 @@
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>200</x>
         <y>230</y>
         <width>191</width>
         <height>61</height>
@@ -75,7 +75,7 @@ transition: all 0.4s ease 0s;
      <widget class="QPushButton" name="pushButton_4">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>510</x>
         <y>230</y>
         <width>191</width>
         <height>61</height>
@@ -277,7 +277,7 @@ border: none;
        <rect>
         <x>190</x>
         <y>10</y>
-        <width>571</width>
+        <width>721</width>
         <height>521</height>
        </rect>
       </property>
@@ -304,8 +304,23 @@ border: none;
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Statistique</string>
+       </attribute>
+       <widget class="QCustomPlot" name="widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>711</width>
+          <height>461</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
       <widget class="QWidget" name="tab_11">
        <attribute name="title">
         <string>Afficher un produit</string>
@@ -984,7 +999,7 @@ padding:0 8;
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -1643,13 +1658,21 @@ border: none;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>811</width>
+     <width>939</width>
      <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

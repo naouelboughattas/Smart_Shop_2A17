@@ -110,12 +110,16 @@ void MainWindow::on_tab_12_currentChanged(int index)
     ui->tab_produit->setModel(P.afficher());
     ui->supr_prod->clear();
     ui->supr_prod->addItems(P.recherche_id_produit());
-
+    Produit P;
+    P.statistic(ui->widget);
 }
 
 void MainWindow::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+    Produit Pa;
+    Pa.statistic(ui->widget);
+
 
 }
 
@@ -327,4 +331,16 @@ void MainWindow::on_pdff_2_clicked()
     QTextDocument doc;
     doc.setHtml(strStream);
     doc.print(&printer);
+}
+
+void MainWindow::on_toolButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+
+}
+
+void MainWindow::on_toolButton_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+
 }
