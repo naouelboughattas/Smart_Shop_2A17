@@ -12,7 +12,7 @@
 #include "QrCode.hpp"
 #include <arduino.h>
 #include "produit.h"
-//#include "categorie.h"
+#include "categorie.h"
 
 namespace Ui {
 class MainWindow;
@@ -143,6 +143,30 @@ private slots:
 
     void on_toolButton_26_clicked();
 
+    void on_pdff_clicked();
+
+    void on_tabWidget_3_currentChanged(int index);
+
+    void on_categorie_clicked();
+
+    void on_pushButton_5_cat_clicked();
+
+    void on_lineEdit_2_cat_textEdited(const QString &arg1);
+
+    void on_pb_ajouter_cat_clicked();
+
+    void on_pb_modifier_2_cat_clicked();
+
+    void on_pb_supprimer_2_cat_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_produit_clicked();
+
+    void on_facture_clicked();
+
+    void on_categorie_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
@@ -153,7 +177,7 @@ private:
     QString Ctemp;
     QByteArray data; // variable contenant les données reçues
     Produit P;
-    //Categorie C;
+    Categorie C;
     void keyPressEvent(QKeyEvent *event);
 };
 

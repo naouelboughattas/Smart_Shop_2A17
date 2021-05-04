@@ -28,7 +28,9 @@ CONFIG += c++11
 SOURCES += \
     QrCode.cpp \
     arduino.cpp \
+    categorie.cpp \
     evenement.cpp \
+    exportexcelobjet.cpp \
     facture.cpp \
         main.cpp \
     connection.cpp \
@@ -40,7 +42,9 @@ SOURCES += \
 HEADERS += \
     QrCode.hpp \
     arduino.h \
+    categorie.h \
     evenement.h \
+    exportexcelobjet.h \
     facture.h \
     connection.h \
     mainwindow.h \
