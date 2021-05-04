@@ -14,6 +14,7 @@
 #include "produit.h"
 #include "categorie.h"
 #include "stock.h"
+#include "depot.h"
 
 
 namespace Ui {
@@ -203,6 +204,32 @@ private slots:
 
     void on_toolButton_35_clicked();
 
+    void on_categorie_5_clicked();
+
+    void on_toolButton_38_clicked();
+
+    void on_toolButton_37_clicked();
+
+    void on_pushButton_ajouterd_clicked();
+
+    void on_comboBox_currentIndexChanged(const QString &arg1);
+
+    void on_pushButton_act_clicked();
+
+    void on_pushButton_supprimerd_clicked();
+
+    void on_pushButton_recherche_4_clicked();
+
+    void on_pushButton_30_clicked();
+
+    void on_pushButton_29_clicked();
+
+    void on_pushButton_26_clicked();
+
+    void on_pushButton_27_clicked();
+
+    void on_pushButton_28_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
@@ -215,6 +242,7 @@ private:
     Produit P;
     Categorie C;
     STOCK tabs;
+    depot tabd;
     void keyPressEvent(QKeyEvent *event);
 };
 

@@ -29,6 +29,7 @@ SOURCES += \
     QrCode.cpp \
     arduino.cpp \
     categorie.cpp \
+    depot.cpp \
     evenement.cpp \
     exportexcelobjet.cpp \
     facture.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     QrCode.hpp \
     arduino.h \
     categorie.h \
+    depot.h \
     evenement.h \
     exportexcelobjet.h \
     facture.h \

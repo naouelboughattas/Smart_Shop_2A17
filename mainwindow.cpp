@@ -151,9 +151,9 @@ MainWindow::MainWindow(QWidget *parent) :
       ui->comboBox_2->setModel(STOCK::afficher1());
       ui->comboBox_3->setModel(STOCK::afficher1());
       this->setWindowTitle("Gestion Stock et Depot");
-     // ui->comboBox_4->setModel(depot::afficher1());
-      //ui->tableView_2->setModel(tabd.afficherdepot());
-      //ui->comboBox->setModel(depot::afficher1());
+      ui->comboBox_4->setModel(depot::afficher1());
+      ui->tableView_2->setModel(tabd.afficherdepot());
+      ui->comboBox->setModel(depot::afficher1());
 
 }
 void MainWindow::showTime()
@@ -1682,4 +1682,138 @@ void MainWindow::on_toolButton_35_clicked()
                                   "Cliquez oui pour confirmer."), QMessageBox::Yes);
 
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_categorie_5_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+
+}
+
+void MainWindow::on_toolButton_38_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_toolButton_37_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_pushButton_ajouterd_clicked()
+{
+    depot d(ui->lineEdit_nomd->text(),ui->lineEdit_adresse->text(),ui->lineEdit_adresse_3->text());
+    bool test=d.ajouterdepot();
+    if(test)
+    {      ui->tableView_2->setModel(tabd.afficherdepot());//actualisation
+
+        QMessageBox::information(nullptr,QObject::tr("Ajouter produit"),
+                                             QObject::tr("produit ajouté .\n"
+                                                         "Click Cancel to exit ."),QMessageBox::Cancel);
+             }
+        else
+        {
+        QMessageBox::critical(nullptr,QObject::tr("Ajouter produit"),
+                                         QObject::tr("ERooR .\n"
+                                                     "Click Cancel to exit ."),QMessageBox::Cancel);
+        }
+}
+
+void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
+{
+    ui->comboBox->currentText();
+
+}
+
+void MainWindow::on_pushButton_act_clicked()
+{
+    ui->tableView_2->setModel(tabd.afficherdepot());
+    ui->comboBox->setModel(depot::afficher1());
+
+}
+
+void MainWindow::on_pushButton_supprimerd_clicked()
+{
+    bool test =tabd.supprimerdepot(ui->comboBox->currentText());
+    if(test)
+       {  ui->tableView_2->setModel(tabd.afficherdepot());
+        QMessageBox::information(nullptr,QObject::tr("Supprimer depot"),
+                                         QObject::tr("depot supprimé .\n"
+                                                     "Click Cancel to exit ."),QMessageBox::Cancel);
+
+       }
+    else
+    {
+        QMessageBox::information(nullptr,QObject::tr("Supprimer depot"),
+                                         QObject::tr("Erreur .\n"
+                                                     "Click Cancel to exit ."),QMessageBox::Cancel);
+       }
+}
+
+void MainWindow::on_pushButton_recherche_4_clicked()
+{
+    bool q=tabd.search(ui->lineEdit_recherche_4->text());
+
+       if( q == true){
+           QMessageBox::information(nullptr,QObject::tr("OK"),
+                                QObject::tr("produit trouve"),
+                                QMessageBox::Ok);
+       }else{
+           QMessageBox::information(nullptr,QObject::tr("not OK"),
+                                QObject::tr("produit non trouve "),
+                                QMessageBox::Ok);
+       }
+}
+
+void MainWindow::on_pushButton_30_clicked()
+{
+    ui->comboBox_4->setModel(depot::afficher1());
+
+}
+
+void MainWindow::on_pushButton_29_clicked()
+{
+    bool test=tabd.modifierdepot(ui->comboBox_4->currentText(),ui->lineEdit_adresse_2->text(),ui->lineEdit_adresse_4->text());
+                 if (test)
+                         {
+                          ui->tableView_2->setModel(tabd.afficherdepot());//actualisation
+
+                     QMessageBox::information(nullptr,QObject::tr("Modifier depot"),
+                                                      QObject::tr("depot Modifié .\n"
+                                                                  "Click Cancel to exit ."),QMessageBox::Cancel);
+
+                          }
+                     else
+                     {
+                     QMessageBox::critical(nullptr,QObject::tr("Modifier depot"),
+                                                      QObject::tr("depot Modifié .\n"
+                                                                  "Click Cancel to exit ."),QMessageBox::Cancel);
+                        }
+}
+
+void MainWindow::on_pushButton_26_clicked()
+{
+    depot* d= new depot(ui->lineEdit_nomd->text(),ui->lineEdit_adresse->text(),ui->lineEdit_adresse_3->text());
+    ui->tableView_2->setModel(d->sort1());
+
+}
+
+void MainWindow::on_pushButton_27_clicked()
+{
+    tabd.pdf();
+
+}
+
+void MainWindow::on_pushButton_28_clicked()
+{
+    QPrinter  printer;
+            printer.setPrinterName("test");
+            QPrintDialog dialog(&printer,this);
+            if (dialog.exec()==QDialog::Rejected) return;
 }
