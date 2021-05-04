@@ -146,6 +146,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
       ui->le_id_5->setValidator(new QIntValidator(100,9999999,this));
 
+      ui->tableView->setModel(tabs.afficherstock());
+      this->setWindowTitle("Gestion Stock et depot");
+      ui->comboBox_2->setModel(STOCK::afficher1());
+      ui->comboBox_3->setModel(STOCK::afficher1());
+      this->setWindowTitle("Gestion Stock et Depot");
+     // ui->comboBox_4->setModel(depot::afficher1());
+      //ui->tableView_2->setModel(tabd.afficherdepot());
+      //ui->comboBox->setModel(depot::afficher1());
 
 }
 void MainWindow::showTime()
@@ -1426,4 +1434,252 @@ void MainWindow::on_categorie_2_clicked()
     ui->tab_ev->setModel(Etemp.afficher_ev());
     ui->stackedWidget->setCurrentIndex(3);
 
+}
+
+void MainWindow::on_categorie_6_clicked()
+{
+
+}
+
+void MainWindow::on_stock_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+
+}
+
+void MainWindow::on_pushButton_22_clicked()
+{
+    tabs.pdf();
+
+}
+
+void MainWindow::on_pushButton_ajouter_clicked()
+{
+    QSqlQuery qry ;
+         QString   nomp,quantite,referencep,noms,references ;
+
+            nomp=ui->lineEdit_nomp->text();
+                quantite=ui->lineEdit_quantite->text();
+                referencep=ui->lineEdit_referencep->text();
+             noms=ui->lineEdit_noms->text();
+             references=ui->lineEdit_references->text();
+             ui->tableView->setModel(tabs.afficherstock());
+
+             STOCK S(nomp,quantite,referencep,noms,references );
+             bool test=S.ajouterproduit();
+             if(test)
+             {      ui->tableView->setModel(tabs.afficherstock());//actualisation
+
+                 QMessageBox::information(nullptr,QObject::tr("Ajouter produit"),
+                                                      QObject::tr("produit ajouté .\n"
+                                                                  "Click Cancel to exit ."),QMessageBox::Cancel);
+                      }
+                 else
+                 {
+                 QMessageBox::critical(nullptr,QObject::tr("Ajouter produit"),
+                                                  QObject::tr("ERooR .\n"
+                                                              "Click Cancel to exit ."),QMessageBox::Cancel);
+                 }
+}
+
+void MainWindow::on_pushButton_modifier_clicked()
+{
+    QSqlQuery qry ;
+          QString   nomp,quantite,referencep,noms,references;
+
+             nomp=ui->lineEdit_nomp->text();
+                 quantite=ui->lineEdit_quantite->text();
+                 referencep=ui->lineEdit_referencep->text();
+              noms=ui->lineEdit_noms->text();
+              references=ui->lineEdit_references->text();
+
+              STOCK r(nomp,quantite,referencep,noms,references);
+      bool test=tabs.modifierstock(ui->comboBox_3->currentText(),ui->lineEdit_nomp_2->text(),ui->lineEdit_quantite_2->text(),ui->lineEdit_quantite_3->text(),ui->lineEdit_quantite_4->text());
+                   if (test)
+                           {
+                            ui->tableView->setModel(tabs.afficherstock());//actualisation
+
+                       QMessageBox::information(nullptr,QObject::tr("Modifier stock"),
+                                                        QObject::tr("stock Modifié .\n"
+                                                                    "Click Cancel to exit ."),QMessageBox::Cancel);
+
+                            }
+                       else
+                       {
+                       QMessageBox::critical(nullptr,QObject::tr("Modifier stock"),
+                                                        QObject::tr("stock Modifié .\n"
+                                                                    "Click Cancel to exit ."),QMessageBox::Cancel);
+                          }
+}
+
+void MainWindow::on_pushButton_16_clicked()
+{
+    bool test =tabs.supprimerstock(ui->comboBox_2->currentText());
+    if(test)
+       {
+        QMessageBox::information(nullptr,QObject::tr("Supprimer stock"),
+                                         QObject::tr("stock supprimé .\n"
+                                                     "Click Cancel to exit ."),QMessageBox::Cancel);
+
+       }
+    else
+    {
+        QMessageBox::information(nullptr,QObject::tr("Supprimer stock"),
+                                         QObject::tr("Erreur .\n"
+                                                     "Click Cancel to exit ."),QMessageBox::Cancel);
+       }
+}
+
+void MainWindow::on_pushButton_17z_clicked()
+{
+    ui->tableView->setModel(tabs.afficherstock());
+    ui->comboBox_2->setModel(STOCK::afficher1());
+
+}
+
+void MainWindow::on_comboBox_2_currentTextChanged(const QString &arg1)
+{
+    ui->comboBox_2->currentText();
+
+}
+
+void MainWindow::on_pushButton_23_clicked()
+{
+    STOCK * v = new STOCK(ui->lineEdit_nomp->text(),ui->lineEdit_quantite->text(),ui->lineEdit_referencep->text(),ui->lineEdit_noms->text(),ui->lineEdit_references->text());
+    if(ui->radioButton->isChecked()){
+       ui->tableView->setModel(v->sort1());
+    }
+    if(ui->radioButton_2->isChecked()){
+        ui->tableView->setModel(v->sort2());
+    }
+    delete v;
+}
+
+void MainWindow::on_comboBox_3_currentIndexChanged(const QString &arg1)
+{
+    ui->comboBox_3->currentText();
+
+}
+
+void MainWindow::on_pushButton_25_clicked()
+{
+    ui->comboBox_3->setModel(STOCK::afficher1());
+
+}
+
+void MainWindow::on_pushButton_recherche_clicked()
+{
+    bool q=tabs.search(ui->lineEdit_recherche->text());
+
+       if( q == true){
+           QMessageBox::information(nullptr,QObject::tr("OK"),
+                                QObject::tr("produit trouve"),
+                                QMessageBox::Ok);
+       }else{
+           QMessageBox::information(nullptr,QObject::tr("not OK"),
+                                QObject::tr("produit non trouve "),
+                                QMessageBox::Ok);
+       }
+}
+
+void MainWindow::on_qrcode_3_clicked()
+{
+    int tabev=ui->tableView->currentIndex().row();
+    QVariant idd=ui->tableView->model()->data(ui->tableView->model()->index(tabev,0));
+    QString nomp= idd.toString();
+    QSqlQuery qry;
+    qry.prepare("select * from STOCK where nomp=:nomp");
+    qry.bindValue(":nomp",nomp);
+    qry.exec();
+    QString quantite,referencep,noms,references,nomps;
+    while(qry.next()){
+        quantite=qry.value(1).toString();
+        referencep=qry.value(2).toString();
+        noms=qry.value(3).toString();
+        references=qry.value(4).toString();
+    }
+    nomps=QString(nomp);
+    nomps="Nomps: "+nomps+" Quantite: "+quantite+" Referencep: "+referencep+" Noms: "+noms+" References : "+references;
+    QrCode qr = QrCode::encodeText(nomps.toUtf8().constData(), QrCode::Ecc::HIGH);
+
+    // Read the black & white pixels
+    QImage im(qr.getSize(),qr.getSize(), QImage::Format_RGB888);
+    for (int y = 0; y < qr.getSize(); y++) {
+        for (int x = 0; x < qr.getSize(); x++) {
+            int color = qr.getModule(x, y);  // 0 for white, 1 for black
+
+            // You need to modify this part
+            if(color==0)
+                im.setPixel(x, y,qRgb(254, 254, 254));
+            else
+                im.setPixel(x, y,qRgb(0, 0, 0));
+        }
+    }
+    im=im.scaled(200,200);
+    ui->qrlabel_3->setPixmap(QPixmap::fromImage(im));
+    int i=0 ;
+    for(i=0;i<100;i=i+0.1){
+        i++;
+      //  ui->progressBar->setValue(i);
+    }
+}
+
+void MainWindow::on_pushButton_24_clicked()
+{
+    QTableView *table;
+               table = ui->tableView;
+
+               QString filters("CSV files (.csv);;All files (.*)");
+              // QString defaultFilter("CSV files (*.csv)");
+               QString defaultFilter("Classeur Excel (*.xlsx)");
+               QString fileName = QFileDialog::getSaveFileName(0, "Save file", QCoreApplication::applicationDirPath(),
+                                  filters, &defaultFilter);
+               QFile file(fileName);
+
+               QAbstractItemModel *model =  table->model();
+               if (file.open(QFile::WriteOnly | QFile::Truncate)) {
+                   QTextStream data(&file);
+                   QStringList strList;
+                   for (int i = 0; i < model->columnCount(); i++) {
+                       if (model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString().length() > 0)
+                           strList.append("\"" + model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString() + "\"");
+                       else
+                           strList.append("");
+                   }
+                   data << strList.join(";") << "\n";
+                   for (int i = 0; i < model->rowCount(); i++) {
+                       strList.clear();
+                       for (int j = 0; j < model->columnCount(); j++) {
+
+                           if (model->data(model->index(i, j)).toString().length() > 0)
+                               strList.append("\"" + model->data(model->index(i, j)).toString() + "\"");
+                           else
+                               strList.append("");
+                       }
+                       data << strList.join(";") + "\n";
+                   }
+                   file.close();
+                   QMessageBox::information(this,"Exporter To Excel","Exporte En Excel Avec Succées ");
+               }
+}
+
+void MainWindow::on_pushButton_15_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_34_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_35_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
 }

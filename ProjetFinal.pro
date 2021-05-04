@@ -37,7 +37,8 @@ SOURCES += \
     mainwindow.cpp \
     produit.cpp \
     qcustomplot.cpp \
-    smtp.cpp
+    smtp.cpp \
+    stock.cpp
 
 HEADERS += \
     QrCode.hpp \
@@ -50,7 +51,8 @@ HEADERS += \
     mainwindow.h \
     produit.h \
     qcustomplot.h \
-    smtp.h
+    smtp.h \
+    stock.h
 
 FORMS += \
     mainwindow.ui

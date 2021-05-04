@@ -13,6 +13,8 @@
 #include <arduino.h>
 #include "produit.h"
 #include "categorie.h"
+#include "stock.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -167,6 +169,40 @@ private slots:
 
     void on_categorie_2_clicked();
 
+    void on_categorie_6_clicked();
+
+    void on_stock_clicked();
+
+    void on_pushButton_22_clicked();
+
+    void on_pushButton_ajouter_clicked();
+
+    void on_pushButton_modifier_clicked();
+
+    void on_pushButton_16_clicked();
+
+    void on_pushButton_17z_clicked();
+
+    void on_comboBox_2_currentTextChanged(const QString &arg1);
+
+    void on_pushButton_23_clicked();
+
+    void on_comboBox_3_currentIndexChanged(const QString &arg1);
+
+    void on_pushButton_25_clicked();
+
+    void on_pushButton_recherche_clicked();
+
+    void on_qrcode_3_clicked();
+
+    void on_pushButton_24_clicked();
+
+    void on_pushButton_15_clicked();
+
+    void on_toolButton_34_clicked();
+
+    void on_toolButton_35_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
@@ -178,6 +214,7 @@ private:
     QByteArray data; // variable contenant les données reçues
     Produit P;
     Categorie C;
+    STOCK tabs;
     void keyPressEvent(QKeyEvent *event);
 };
 

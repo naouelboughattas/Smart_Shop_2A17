@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="LOGIN">
      <widget class="QPushButton" name="bt_login">
@@ -357,6 +357,98 @@ transition: all 0.4s ease 0s;
       </property>
       <property name="text">
        <string>Evenements</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="categorie_5">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>350</y>
+        <width>121</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #6600cc;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6600ff;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }
+</string>
+      </property>
+      <property name="text">
+       <string>Depôt</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stock">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>290</y>
+        <width>121</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #6600cc;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6600ff;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }
+</string>
+      </property>
+      <property name="text">
+       <string>Stock</string>
       </property>
      </widget>
     </widget>
@@ -4570,6 +4662,1061 @@ padding:0 8;
 }</string>
          </property>
         </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QGroupBox" name="groupBox_37">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>12</y>
+        <width>181</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Hash-tech</string>
+      </property>
+      <widget class="QToolButton" name="toolButton_34">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>240</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton {
+background: #6699ff;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: white;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QToolButton:hover {
+color:#fff;
+background:#66ccff;
+border: none;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Home</string>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="toolButton_35">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>340</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton {
+background: #6699ff;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: white;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QToolButton:hover {
+color:#fff;
+background:#66ccff;
+border: none;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Log out</string>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="toolButton_36">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>290</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton {
+background: #6699ff;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: white;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QToolButton:hover {
+color:#fff;
+background:#66ccff;
+border: none;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Settings</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_15">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>50</y>
+         <width>84</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background: #6699ff;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: white;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#66ccff;
+border: none;
+
+}</string>
+       </property>
+       <property name="text">
+        <string>Retour</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTabWidget" name="tabWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>10</y>
+        <width>791</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background-image: url(:/MyFiles/FOND13.png);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_29">
+       <attribute name="title">
+        <string>Ajouter produit</string>
+       </attribute>
+       <widget class="QLineEdit" name="lineEdit_nomp">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>120</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_quantite">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>150</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_referencep">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>180</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_noms">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>210</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_references">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>240</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ajouter">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>270</y>
+          <width>101</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_103">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>120</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nom produit</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_113">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>150</y>
+          <width>56</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Quantité</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_104">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>180</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reference produit</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_105">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>210</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nom stock</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_106">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>240</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reference stock</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_30">
+       <attribute name="title">
+        <string>Afficher stock</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_16">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>100</y>
+          <width>111</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_17z">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>130</y>
+          <width>111</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Actualiser</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>190</y>
+          <width>111</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>120</red>
+              <green>120</green>
+              <blue>120</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="text">
+         <string>Tri par nom</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_2">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>210</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>255</red>
+              <green>255</green>
+              <blue>255</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>120</red>
+              <green>120</green>
+              <blue>120</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="text">
+         <string>Tri par reference</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_recherche">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>390</y>
+          <width>121</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Rechercher</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_recherche">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>390</y>
+          <width>341</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_22">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>160</y>
+          <width>111</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>PDF</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_2">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>70</y>
+          <width>69</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="currentText">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_23">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>230</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Trier</string>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>70</y>
+          <width>501</width>
+          <height>301</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_24">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>260</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Excel</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="qrcode_3">
+        <property name="geometry">
+         <rect>
+          <x>604</x>
+          <y>400</y>
+          <width>91</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>QrCode</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="qrlabel_3">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>310</y>
+          <width>101</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 5;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_107">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>190</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Tri par nom</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_114">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>210</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Tri par reference</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_41">
+       <attribute name="title">
+        <string>Modifier Stock</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_modifier">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>320</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_3">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>80</y>
+          <width>69</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="currentText">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_nomp_2">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>150</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_quantite_2">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>180</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_25">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>80</y>
+          <width>131</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	
+padding: 1px;
+border-style: solid;
+border: 2px solid gray;
+border-radius: 8px;
+background-color: rgb(181, 216, 131);
+border:2px solid #000;
+}
+QPushButton {
+
+     color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #a1a4de;
+padding: 20px;
+border-radius: 5px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+ }
+ QPushButton:hover {
+background-image: url(:/image/Nouveau dossier/check-mark.png);
+     background: #6b6d94;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
+transition: all 0.4s ease 0s;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Actualiser</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_quantite_3">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>210</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_quantite_4">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>240</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_115">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>80</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nom produit</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_110">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>150</y>
+          <width>121</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>nouvelle quantite</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_108">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>180</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>nouvelle referencep</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_109">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>210</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>nouveau nom du stock</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_111">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>240</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>nouvelle references</string>
+        </property>
        </widget>
       </widget>
      </widget>
