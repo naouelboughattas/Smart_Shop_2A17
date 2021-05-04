@@ -1,0 +1,16 @@
+INPUT(
+./debug\QrCode.o
+./debug\arduino.o
+./debug\evenement.o
+./debug\exportexcelobjet.o
+./debug\facture.o
+./debug\main.o
+./debug\connection.o
+./debug\mainwindow.o
+./debug\qcustomplot.o
+./debug\smtp.o
+./debug\moc_exportexcelobjet.o
+./debug\moc_mainwindow.o
+./debug\moc_qcustomplot.o
+./debug\moc_smtp.o
+);

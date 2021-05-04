@@ -30,6 +30,8 @@
 #include <QMediaPlayer>
 #include <QDebug>
 #include <QTimer>
+#include "exportexcelobjet.h"
+#include <QFileDialog>
 
 using namespace qrcodegen;
 
@@ -907,7 +909,31 @@ void MainWindow::on_pushButton_4_clicked()
 
 void MainWindow::on_pushButton_5_clicked()
 {
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Exportation en fichier Excel"), qApp->applicationDirPath (),
+                                                                tr("Fichiers d'extension Excel (*.xls)"));
+                if (fileName.isEmpty())
+                    return;
 
+                ExportExcelObject obj(fileName, "mydata", ui->tab_fact);
+
+                // you can change the column order and
+                // choose which colum to export
+                obj.addField(0, "ID", "char(20)");
+                obj.addField(1, "CLIENT", "char(20)");
+                obj.addField(2, "TTC_F", "char(20)");
+                obj.addField(3, "MODE_P_F", "char(20)");
+                obj.addField(4, "ID_C", "char(20)");
+                //obj.addField(5, "servespeed3", "char(20)");
+
+
+                int retVal = obj.export2Excel();
+
+                if( retVal > 0)
+                {
+                    QMessageBox::information(this, tr("FAIS!"),
+                                             QString(tr("%1 enregistrements exportés!")).arg(retVal)
+                                             );
+                }
 }
 
 void MainWindow::on_pushButton_6_clicked()

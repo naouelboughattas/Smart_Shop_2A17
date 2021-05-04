@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="LOGIN">
      <widget class="QPushButton" name="bt_login">
@@ -620,7 +620,7 @@ padding:0 5;
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>260</y>
+           <y>230</y>
            <width>84</width>
            <height>31</height>
           </rect>
@@ -727,7 +727,7 @@ padding:0 8;
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>310</y>
+           <y>280</y>
            <width>84</width>
            <height>31</height>
           </rect>
@@ -774,7 +774,7 @@ border: none;
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>360</y>
+           <y>380</y>
            <width>84</width>
            <height>31</height>
           </rect>
@@ -818,7 +818,7 @@ border: none;
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>210</y>
+           <y>180</y>
            <width>84</width>
            <height>31</height>
           </rect>
@@ -869,6 +869,42 @@ border: none;
          </property>
          <property name="text">
           <string>Supprimer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>331</y>
+           <width>84</width>
+           <height>28</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>EXEL</string>
          </property>
         </widget>
        </widget>
