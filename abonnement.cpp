@@ -51,13 +51,13 @@ void abonnement::afficherabonnement(Ui::MainWindow *ui)
         q.prepare("select * from Abonnement");
         q.exec();
         modal->setQuery(q);
-        ui->tableView_2->setModel(modal);
+        ui->tableView_4->setModel(modal);
 
 }
 void abonnement::selectionnerabonnement(Ui::MainWindow *ui, const QModelIndex &index)
 { QSqlQuery qry;
     QString val;
-   val=ui->tableView_2->model()->data(index).toString();
+   val=ui->tableView_4->model()->data(index).toString();
 
    qry.prepare("SELECT * FROM Abonnement  where ID='"+val+"' or CINABO='"+val+"' or TYPE='"+val+"'");
        if(qry.exec())
@@ -66,9 +66,9 @@ void abonnement::selectionnerabonnement(Ui::MainWindow *ui, const QModelIndex &i
 
            {
 
-               //ui->lineEdit_idabo->setText(qry.value(0).toString());
-                //ui->lineEdit_cinabo->setText(qry.value(1).toString());
-               ui->comboBox->setCurrentText(qry.value(2).toString());
+               ui->lineEdit_idabo->setText(qry.value(0).toString());
+                ui->lineEdit_cinabo->setText(qry.value(1).toString());
+               ui->comboBox_5->setCurrentText(qry.value(2).toString());
 
            }
 

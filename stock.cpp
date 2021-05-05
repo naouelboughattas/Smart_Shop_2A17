@@ -126,7 +126,7 @@ bool  STOCK::search(QString nomp ){
 void STOCK :: pdf(){
     //QDateTime datecreation = date.currentDateTime();
                 //QString afficheDC = "Date de Creation PDF : " + datecreation.toString() ;
-                       QPdfWriter pdf("C:\\Users\\hp\\Desktop\\file(2).pdf");
+                       QPdfWriter pdf("C:\\Users\\waelk\\OneDrive\\Bureau\\C++\\PROJET\\ProjetFinal\\PDF\\pdf_stock.pdf");
                        QPainter painter(&pdf);
                       int i = 4000;
                            painter.setPen(Qt::blue);

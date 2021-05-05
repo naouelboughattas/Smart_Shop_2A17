@@ -33,6 +33,7 @@
 #include "exportexcelobjet.h"
 #include <QFileDialog>
 #include "client.h"
+#include "abonnement.h"
 #include "statistique.h"
 
 
@@ -2001,5 +2002,141 @@ void   MainWindow::mailSent(QString status)
 void MainWindow::on_sendBtn_clicked()
 {
     sendMail();
+
+}
+
+void MainWindow::on_pushButton_36_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_43_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_44_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_ajouterabo_clicked()
+{
+    QSqlQuery qry ;
+        QString  id,cinabo,type;
+
+           id=ui->lineEdit_idabo->text();
+               cinabo=ui->lineEdit_cinabo->text();
+               type=ui->comboBox_5->currentText();
+
+
+            abonnement C( id , cinabo, type);
+            bool test=C.ajouterabonnement();
+            if(test)
+            {
+                QMessageBox::information(nullptr,QObject::tr("Ajouter abonnement"),
+                                                     QObject::tr("client abonnement .\n"
+                                                                 "Click Cancel to exit ."),QMessageBox::Cancel);
+                     }
+                else
+                {
+                QMessageBox::critical(nullptr,QObject::tr("Ajouter abonnement"),
+                                                 QObject::tr("ERooR .\n"
+                                                             "Click Cancel to exit ."),QMessageBox::Cancel);
+                }
+}
+
+void MainWindow::on_pushButton_modifierabo_clicked()
+{
+    QSqlQuery qry ;
+         QString  id,cinabo,type;
+
+            id=ui->lineEdit_idabo->text();
+                cinabo=ui->lineEdit_cinabo->text();
+                type=ui->comboBox_5->currentText();
+
+
+
+             abonnement C( id , cinabo, type);
+             bool test=C.modifierabonnement();
+             if(test)
+             {
+                 QMessageBox::information(nullptr,QObject::tr("modifier abonnement"),
+                                                      QObject::tr("client abonnement .\n"
+                                                                  "Click Cancel to exit ."),QMessageBox::Cancel);
+                      }
+                 else
+                 {
+                 QMessageBox::critical(nullptr,QObject::tr("modifier abonnement"),
+                                                  QObject::tr("ERooR .\n"
+                                                              "Click Cancel to exit ."),QMessageBox::Cancel);
+                 }
+
+}
+
+void MainWindow::on_pushButton_supprimerabo_clicked()
+{
+    QSqlQuery qry;
+        abonnement r;
+
+
+         bool test =r.supprimerabonnement(ui);
+         if(test)
+            {
+             QMessageBox::information(nullptr,QObject::tr("Supprimer abonnement"),
+                                              QObject::tr("abonnement supprimé .\n"
+                                                          "Click Cancel to exit ."),QMessageBox::Cancel);
+
+            }
+         else
+         {
+             QMessageBox::information(nullptr,QObject::tr("Supprimer abonnement"),
+                                              QObject::tr("Erreur .\n"
+                                                          "Click Cancel to exit ."),QMessageBox::Cancel);
+            }
+}
+
+void MainWindow::on_pushButton_37_clicked()
+{
+    statistique s ;
+    s.exec();
+
+}
+
+void MainWindow::on_pushButton_act_2_clicked()
+{
+    abonnement r;
+    r.afficherabonnement(ui);
+
+}
+
+void MainWindow::on_tabWidget_typeabo_currentChanged(int index)
+{
+    abonnement r;
+    r.afficherabonnement(ui);
+
+
+}
+
+void MainWindow::on_client_2_clicked()
+{
+    abonnement r;
+    r.afficherabonnement(ui);
+    ui->stackedWidget->setCurrentIndex(9);
+
+
+}
+
+void MainWindow::on_abonnement_clicked()
+{
+    abonnement r;
+    r.afficherabonnement(ui);
+    ui->stackedWidget->setCurrentIndex(9);
 
 }

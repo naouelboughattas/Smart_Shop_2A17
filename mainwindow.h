@@ -268,6 +268,28 @@ private slots:
     void mailSent(QString);
 
 
+    void on_pushButton_36_clicked();
+
+    void on_toolButton_43_clicked();
+
+    void on_toolButton_44_clicked();
+
+    void on_pushButton_ajouterabo_clicked();
+
+    void on_pushButton_modifierabo_clicked();
+
+    void on_pushButton_supprimerabo_clicked();
+
+    void on_pushButton_37_clicked();
+
+    void on_pushButton_act_2_clicked();
+
+    void on_tabWidget_typeabo_currentChanged(int index);
+
+    void on_client_2_clicked();
+
+    void on_abonnement_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;

@@ -8,7 +8,7 @@
 void CLIENT :: pdf(){
     //QDateTime datecreation = date.currentDateTime();
                 //QString afficheDC = "Date de Creation PDF : " + datecreation.toString() ;
-                       QPdfWriter pdf("C:\\pdf\\file1.pdf");
+                       QPdfWriter pdf("C:\\Users\\waelk\\OneDrive\\Bureau\\C++\\PROJET\\ProjetFinal\\PDF\\pdf_client.pdf");
                        QPainter painter(&pdf);
                       int i = 4000;
                            painter.setPen(Qt::blue);
