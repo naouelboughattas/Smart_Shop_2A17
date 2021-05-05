@@ -15,6 +15,9 @@
 #include "categorie.h"
 #include "stock.h"
 #include "depot.h"
+#include "employer.h"
+#include "tache.h"
+
 
 
 namespace Ui {
@@ -27,9 +30,16 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+
     ~MainWindow();
 
+    void refresh();
+
+    void refresh2();
+
+
 private slots:
+
     void arduino();   // slot permettant la mise à jour du label état de la lampe 1,
 
     void on_pb_ajouter_clicked();
@@ -290,6 +300,92 @@ private slots:
 
     void on_abonnement_clicked();
 
+    void on_tache_clicked();
+
+    void on_Personnel_clicked();
+
+    void on_Livraison_clicked();
+
+    void on_livreur_clicked();
+
+    void on_vehicule_clicked();
+
+    void on_pushButton_42_clicked();
+
+    void on_toolButton_58_clicked();
+
+    void on_pushButton_41_clicked();
+
+    void on_toolButton_55_clicked();
+
+    void on_pushButton_40_clicked();
+
+    void on_toolButton_52_clicked();
+
+    void on_pushButton_39_clicked();
+
+    void on_toolButton_49_clicked();
+
+    void on_pushButton_38_clicked();
+
+    void on_toolButton_46_clicked();
+
+    void on_toolButton_47_clicked();
+
+    void on_toolButton_50_clicked();
+
+    void on_toolButton_53_clicked();
+
+    void on_toolButton_56_clicked();
+
+    void on_toolButton_59_clicked();
+
+    void on_pb_ajouter_3_clicked();
+
+    void on_pb_modifier_3_clicked();
+
+    void on_comboBox_9_activated(const QString &arg1);
+
+    void on_comboBox_8_activated(const QString &arg1);
+
+    void on_pb_supprimer_clicked();
+
+    void on_cin_3_textEdited(const QString &arg1);
+
+    void on_trie_2_clicked();
+
+    void on_imprimer_clicked();
+
+    void on_pdf_2_clicked();
+
+    void on_pb_tache_clicked();
+
+    void on_makeShot_clicked();
+
+    void on_modifier_currentChanged(int index);
+
+    void on_pb_ajouter_2_clicked();
+
+    void on_modifier_2_currentChanged(int index);
+
+    void on_cin_4_textEdited(const QString &arg1);
+
+    void on_trie_clicked();
+
+    void on_comboBox_6_activated(const QString &arg1);
+
+    void on_comboBox_7_activated(const QString &arg1);
+
+    void on_pb_modifier_2_clicked();
+
+    void on_checkBox_pressed();
+
+    void on_email_6_clicked();
+
+    void on_qrcode_5_clicked();
+
+    void on_pb_supprimer_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
@@ -303,6 +399,10 @@ private:
     Categorie C;
     STOCK tabs;
     depot tabd;
+    employer tmpemployer;
+    tache tmptache;
+    int etat=0;
+    QString valeur;
     void keyPressEvent(QKeyEvent *event);
 };
 

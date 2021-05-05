@@ -163,7 +163,26 @@ MainWindow::MainWindow(QWidget *parent) :
           connect(timer,SIGNAL(timeout()),this,SLOT(showTime2()));
           timer->start();
 
+          refresh();
+          ui->tabemployer->setModel(tmpemployer.afficher_employer());
+
+
+
 }
+void MainWindow::refresh()
+{
+  ui->tabemployer->setModel(tmpemployer.afficher_employer());
+  ui->comboBox_8->setModel(tmpemployer.afficher_list());
+  ui->comboBox_9->setModel(tmpemployer.afficher_list());
+}
+void MainWindow::refresh2()
+{
+  ui->tabtache->setModel(tmptache.afficher_tache());
+  ui->comboBox_7->setModel(tmptache.afficher_liste());
+  ui->comboBox_6->setModel(tmptache.afficher_liste());
+}
+
+
 void MainWindow::showTime()
 {
     QTime time=QTime::currentTime();
@@ -649,7 +668,7 @@ void MainWindow::on_ajout_ev_clicked()
                 /************************************SMTP******************************************************/
                         QString objet="NOUVELLE EVENEMENT AJOUTE !";
                                 QString message="IDEvenement:"+ui->id_ev->text()+"Nomd'evenement:"+ui->nom_ev->text() ;
-                                Smtp* smtp = new Smtp("wael.ksila@esprit.tn","191JMT3269", "smtp.gmail.com",465);
+                                Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
                                 connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
                                 QString pro=ui->produit_inclus->currentText();
@@ -2139,4 +2158,491 @@ void MainWindow::on_abonnement_clicked()
     r.afficherabonnement(ui);
     ui->stackedWidget->setCurrentIndex(9);
 
+}
+
+void MainWindow::on_tache_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+    ui->tabtache->setModel(tmptache.afficher_tache());
+
+}
+
+void MainWindow::on_Personnel_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
+    ui->tabemployer->setModel(tmpemployer.afficher_employer());
+
+
+}
+
+void MainWindow::on_Livraison_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(12);
+
+}
+
+void MainWindow::on_livreur_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(13);
+
+}
+
+void MainWindow::on_vehicule_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(14);
+
+}
+
+void MainWindow::on_pushButton_42_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_58_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_pushButton_41_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_55_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_pushButton_40_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_52_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_pushButton_39_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_49_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_pushButton_38_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_46_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_47_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_toolButton_50_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_toolButton_53_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_toolButton_56_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_toolButton_59_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pb_ajouter_3_clicked()
+{
+    QString cin=ui->cin->text();
+      QString nom=ui->nom->text();
+      QString prenom=ui->prenom->text();
+      QString adresse=ui->adresse->text();
+      QString email=ui->email->text();
+      employer e(cin,nom,prenom,adresse,email);
+      bool test=e.ajouter_employer();
+      if(test){
+          QMessageBox::information(nullptr, QObject::tr("Personnel ajouté"),
+                      QObject::tr("Personnel ajouté.\n"
+                                  "OK"), QMessageBox::Cancel);
+  }else
+          QMessageBox::information(nullptr, QObject::tr("Personnel non ajouté"),
+                      QObject::tr("Personnel non ajouté.\n"
+                                  "OK"), QMessageBox::Cancel);
+      ui->tabemployer->setModel(tmpemployer.afficher_employer());
+      refresh();
+}
+
+void MainWindow::on_pb_modifier_3_clicked()
+{
+    tmpemployer.setcin(ui->comboBox_9->currentText());
+    tmpemployer.setnom(ui->nom_2->text());
+        tmpemployer.setprenom(ui->prenom_2->text());
+        tmpemployer.setadresse(ui->adresse_2->text());
+        tmpemployer.setemail(ui->email_2->text());
+
+        bool test=tmpemployer.modifier_employer();
+        if(test){
+            QMessageBox::information(nullptr, QObject::tr("Personnel Modifié"),
+                        QObject::tr("Personnel Modifié.\n"
+                                    "OK"), QMessageBox::Cancel);
+    }else
+            QMessageBox::information(nullptr, QObject::tr("Personnel non Modifié"),
+                        QObject::tr("Personnel non Modifié.\n"
+                                    "OK"), QMessageBox::Cancel);
+        refresh();
+}
+
+void MainWindow::on_comboBox_9_activated(const QString &arg1)
+{
+    tmpemployer.setcin(arg1);
+    tmpemployer.chercher();
+    ui->nom_2->setText(tmpemployer.getnom());
+    ui->prenom_2->setText(tmpemployer.getprenom());
+    ui->adresse_2->setText(tmpemployer.getadresse());
+    ui->email_2->setText(tmpemployer.getemail());
+    refresh();
+}
+
+void MainWindow::on_comboBox_8_activated(const QString &arg1)
+{
+    ui->sup->setText(arg1);
+
+}
+
+void MainWindow::on_pb_supprimer_clicked()
+{
+    QString cin = ui->comboBox_8->currentText();
+        employer e;
+        e.setcin(cin);
+        bool test=e.supprimer_employer();
+        if(test){
+            QMessageBox::information(nullptr, QObject::tr("Personnel Supprimé"),
+                        QObject::tr("Personnel Supprimé.\n"
+                                    "OK"), QMessageBox::Cancel);
+    }else
+            QMessageBox::information(nullptr, QObject::tr("Personnel non Supprimé"),
+                        QObject::tr("Personnel non Supprimé.\n"
+                                    "OK"), QMessageBox::Cancel);
+       ui->tabemployer->setModel(tmpemployer.afficher_employer());
+       refresh();
+}
+
+void MainWindow::on_cin_3_textEdited(const QString &arg1)
+{
+    employer a ;
+    ui->tabemployer->setModel(tmpemployer.recherche(arg1));
+
+}
+
+void MainWindow::on_trie_2_clicked()
+{
+    ui->tabemployer->setModel(tmpemployer.tri_employer()) ;
+
+}
+
+void MainWindow::on_imprimer_clicked()
+{
+    QPrinter printer;
+            QPrintDialog *printDialog = new QPrintDialog(&printer, this);
+            printDialog->setWindowTitle("Imprimer Document");
+            printDialog->exec();
+
+            QPropertyAnimation *animationimprimerp;
+            animationimprimerp = new QPropertyAnimation(ui->imprimer,"geometry");
+            animationimprimerp->setDuration(1000);
+            animationimprimerp->setStartValue(QRect(690,20,141,51));
+            animationimprimerp->setEndValue(QRect(680,20,200,51));
+            animationimprimerp->setEasingCurve(QEasingCurve::InOutQuint);
+            animationimprimerp->start(QPropertyAnimation::DeleteWhenStopped);
+}
+
+void MainWindow::on_pdf_2_clicked()
+{
+    QString strStream;
+            QTextStream out(&strStream);
+
+
+    QString fileName = QFileDialog::getSaveFileName((QWidget* )0, "Export PDF", QString(), "*.pdf");
+    if (QFileInfo(fileName).suffix().isEmpty()) { fileName.append(".pdf"); }
+
+    QPrinter printer(QPrinter::PrinterResolution);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setPaperSize(QPrinter::A4);
+    printer.setOutputFileName(fileName);
+    const int rowCount = ui->tabemployer->model()->rowCount();
+    const int columnCount = ui->tabemployer->model()->columnCount();
+    QString TT = QDate::currentDate().toString("yyyy/MM/dd");
+    out <<"<html>\n"
+          "<head>\n"
+           "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+        << "<title>ERP - PERSONNELS LIST<title>\n "
+        << "</head>\n"
+        "<body bgcolor=#ffffff link=#5000A0>\n"
+        "<h1 style=\"text-align: center;\"><strong> LISTE DES PERSONNELS </strong></h1>"
+        "<h5 style=\"text-align: center;\">Le : "+TT+"</h5>"
+        "<br>\n"
+        "<table style=\"text-align: center; font-size: 12;\" border=1>\n "
+          "</br> </br>";
+    // headers
+    out << "<thead><tr bgcolor=#d6e5ff>";
+    for (int column = 0; column < columnCount; column++)
+        if (!ui->tabemployer->isColumnHidden(column))
+            out << QString("<th>%1</th>").arg(ui->tabemployer->model()->headerData(column, Qt::Horizontal).toString());
+    out << "</tr></thead>\n";
+
+    // data table
+    for (int row = 0; row < rowCount; row++) {
+        out << "<tr>";
+        for (int column = 0; column < columnCount; column++) {
+            if (!ui->tabemployer->isColumnHidden(column)) {
+                QString data =ui->tabemployer->model()->data(ui->tabemployer->model()->index(row, column)).toString().simplified();
+                out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+            }
+        }
+        out << "</tr>\n";
+    }
+    out <<  "</table>\n"
+        "</body>\n"
+        "</html>\n";
+
+    QTextDocument doc;
+    doc.setHtml(strStream);
+    doc.print(&printer);
+}
+
+void MainWindow::on_pb_tache_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+
+}
+
+void MainWindow::on_makeShot_clicked()
+{
+    this->hide();
+    qApp->processEvents();
+#ifdef _WIN32
+    //Sleep(3000);
+#else
+    Kek::wait(200);
+#endif
+
+    QPixmap okno = QPixmap::grabWindow(QApplication::desktop()->winId());
+    QDateTime t = QDateTime::currentDateTime();
+    QString saveWhere = qApp->applicationDirPath() + QString("/Scr_%1-%2-%3-%4-%5-%6.png")
+            .arg(t.date().year()).arg(t.date().month()).arg(t.date().day())
+            .arg(t.time().hour()).arg(t.time().minute()).arg(t.time().second());
+    QString saveAs = QFileDialog::getSaveFileName(NULL, "Save screenshot as...",
+                                                  saveWhere,
+                                                  "PNG Picture (*.png)",
+                                                  nullptr,
+                                                  QFileDialog::DontUseNativeDialog);
+    if(!saveAs.isEmpty())
+        okno.save(saveAs, "PNG");
+
+    this->show();
+}
+
+void MainWindow::on_modifier_currentChanged(int index)
+{
+    ui->tabemployer->setModel(tmpemployer.afficher_employer());
+    refresh();
+}
+
+void MainWindow::on_pb_ajouter_2_clicked()
+{
+    QString id=ui->id->text();
+    QString descri=ui->descri->text();
+    QDateTime duree=ui->duree->dateTime();
+    tache t (id,descri,duree);
+    bool test=t.ajouter_tache();
+    if(test){
+        QMessageBox::information(nullptr, QObject::tr("Tache ajouté"),
+                    QObject::tr("Tache ajouté.\n"
+                                "OK"), QMessageBox::Cancel);
+}else
+        QMessageBox::information(nullptr, QObject::tr("Tache non ajouté"),
+                    QObject::tr("Tache non ajouté.\n"
+                                "OK"), QMessageBox::Cancel);
+    ui->tabtache->setModel(tmptache.afficher_tache());
+    refresh2();
+
+}
+
+void MainWindow::on_modifier_2_currentChanged(int index)
+{
+    ui->tabtache->setModel(tmptache.afficher_tache());
+    ui->comboBox_7->setModel(tmptache.afficher_liste());
+    ui->comboBox_6->setModel(tmptache.afficher_liste());
+
+
+}
+
+void MainWindow::on_cin_4_textEdited(const QString &arg1)
+{
+    tache t;
+     ui->tabtache->setModel(tmptache.recherche(arg1));
+
+}
+
+void MainWindow::on_trie_clicked()
+{
+    ui->tabtache->setModel(tmptache.tri_tache()) ;
+
+}
+
+void MainWindow::on_comboBox_6_activated(const QString &arg1)
+{
+    ui->sup_2->setText(arg1);
+
+}
+
+void MainWindow::on_comboBox_7_activated(const QString &arg1)
+{
+    tmptache.setid(arg1);
+    tmptache.chercher();
+    ui->descri_2->setText(tmptache.getdescri());
+    ui->duree_2->setDateTime(tmptache.getduree());
+
+}
+
+void MainWindow::on_pb_modifier_2_clicked()
+{
+    tmptache.setid(ui->comboBox_7->currentText());
+    tmptache.setdescri(ui->descri_2->text());
+    tmptache.setduree(ui->duree_2->dateTime());
+
+    bool test=tmptache.modifier_tache();
+    if(test){
+        QMessageBox::information(nullptr, QObject::tr("tache Modifié"),
+                    QObject::tr("tache Modifié.\n"
+                                "OK"), QMessageBox::Cancel);
+}else
+        QMessageBox::information(nullptr, QObject::tr("tache non Modifié"),
+                    QObject::tr("tache non Modifié.\n"
+                                "OK"), QMessageBox::Cancel);
+}
+
+void MainWindow::on_checkBox_pressed()
+{
+
+}
+
+void MainWindow::on_email_6_clicked()
+{
+    /************************************SMTP******************************************************/
+            QString objet=ui->objet->text();
+                    QString message="IDEvenement:"+ui->id_ev->text()+"Nomd'evenement:"+ui->nom_ev->text() ;
+                    Smtp* smtp = new Smtp("donia.sarsar@esprit.tn","", "smtp.gmail.com",465);
+                    connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+                    QString pro=ui->produit_inclus->currentText();
+                    QString okk=pro+" En Solde";
+                    QString o=ui->description->text();
+                    QString email=ui->email_3->text();
+                    smtp->sendMail("donia.sarsar@esprit.tn", email , objet,o);
+    /***********************************************************************************************/
+
+}
+
+void MainWindow::on_qrcode_5_clicked()
+{
+    int tabev=ui->tabemployer->currentIndex().row();
+    QVariant idd=ui->tabemployer->model()->data(ui->tabemployer->model()->index(tabev,0));
+    QString id= idd.toString();
+    QSqlQuery qry;
+    qry.prepare("select * from PERSONNEL where CIN=:id");
+    qry.bindValue(":id",id);
+    qry.exec();
+    QString nom,debut,fin,idp,ids;
+    while(qry.next()){
+        nom=qry.value(1).toString();
+        debut=qry.value(2).toString();
+        fin=qry.value(3).toString();
+        idp=qry.value(4).toString();
+    }
+    ids=QString(id);
+    ids="CIN: "+ids+" Nom: "+nom+" Prenom: "+debut+" Adresse: "+fin+"Email : "+idp;
+    QrCode qr = QrCode::encodeText(ids.toUtf8().constData(), QrCode::Ecc::HIGH);
+
+    // Read the black & white pixels
+    QImage im(qr.getSize(),qr.getSize(), QImage::Format_RGB888);
+    for (int y = 0; y < qr.getSize(); y++) {
+        for (int x = 0; x < qr.getSize(); x++) {
+            int color = qr.getModule(x, y);  // 0 for white, 1 for black
+
+            // You need to modify this part
+            if(color==0)
+                im.setPixel(x, y,qRgb(254, 254, 254));
+            else
+                im.setPixel(x, y,qRgb(0, 0, 0));
+        }
+    }
+    im=im.scaled(200,200);
+    ui->qrlabel_4->setPixmap(QPixmap::fromImage(im));
+
+}
+
+void MainWindow::on_pb_supprimer_2_clicked()
+{
+    QString id = ui->sup_2->text();
+     tache t;
+     t.setid(id);
+     bool test=t.supprimer_tache();
+     if(test){
+         QMessageBox::information(nullptr, QObject::tr("Tache Supprimé"),
+                     QObject::tr("Tache Supprimé.\n"
+                                 "OK"), QMessageBox::Cancel);
+ }else
+         QMessageBox::information(nullptr, QObject::tr("Tache non Supprimé"),
+                     QObject::tr("Tache non Supprimé.\n"
+                                 "OK"), QMessageBox::Cancel);
+    ui->tabtache->setModel(tmptache.afficher_tache());
+    refresh2();
 }

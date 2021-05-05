@@ -32,6 +32,7 @@ SOURCES += \
     categorie.cpp \
     client.cpp \
     depot.cpp \
+    employer.cpp \
     evenement.cpp \
     exportexcelobjet.cpp \
     facture.cpp \
@@ -42,7 +43,8 @@ SOURCES += \
     qcustomplot.cpp \
     smtp.cpp \
     statistique.cpp \
-    stock.cpp
+    stock.cpp \
+    tache.cpp
 
 HEADERS += \
     QrCode.hpp \
@@ -51,6 +53,7 @@ HEADERS += \
     categorie.h \
     client.h \
     depot.h \
+    employer.h \
     evenement.h \
     exportexcelobjet.h \
     facture.h \
@@ -60,7 +63,8 @@ HEADERS += \
     qcustomplot.h \
     smtp.h \
     statistique.h \
-    stock.h
+    stock.h \
+    tache.h
 
 FORMS += \
     mainwindow.ui \
