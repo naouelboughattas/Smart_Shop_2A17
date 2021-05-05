@@ -230,6 +230,44 @@ private slots:
 
     void on_pushButton_28_clicked();
 
+    void on_client_clicked();
+
+    void on_pushButton_31_clicked();
+
+    void on_toolButton_40_clicked();
+
+    void on_toolButton_41_clicked();
+
+    void showTime2();
+
+
+    void on_pushButton_ajouter_2_clicked();
+
+    void on_pushButton_modifier_2_clicked();
+
+    void on_tabWidget_9_currentChanged(int index);
+
+    void on_tableView_3_activated(const QModelIndex &index);
+
+    void on_pushButton_32_clicked();
+
+    void on_pushButton_33_clicked();
+
+    void on_radioButton_3_clicked();
+
+    void on_radioButton_4_clicked();
+
+    void on_pushButton_recherche_2_clicked();
+
+    void on_pushButton_34_clicked();
+
+    void on_sendBtn_clicked();
+
+    void sendMail();
+
+    void mailSent(QString);
+
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;

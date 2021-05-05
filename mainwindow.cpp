@@ -32,6 +32,9 @@
 #include <QTimer>
 #include "exportexcelobjet.h"
 #include <QFileDialog>
+#include "client.h"
+#include "statistique.h"
+
 
 using namespace qrcodegen;
 
@@ -154,6 +157,10 @@ MainWindow::MainWindow(QWidget *parent) :
       ui->comboBox_4->setModel(depot::afficher1());
       ui->tableView_2->setModel(tabd.afficherdepot());
       ui->comboBox->setModel(depot::afficher1());
+
+      QTimer *timer=new QTimer(this);
+          connect(timer,SIGNAL(timeout()),this,SLOT(showTime2()));
+          timer->start();
 
 }
 void MainWindow::showTime()
@@ -1816,4 +1823,183 @@ void MainWindow::on_pushButton_28_clicked()
             printer.setPrinterName("test");
             QPrintDialog dialog(&printer,this);
             if (dialog.exec()==QDialog::Rejected) return;
+}
+
+
+void MainWindow::on_client_clicked()
+{
+    CLIENT r;
+    r.afficherclient(ui);
+    ui->stackedWidget->setCurrentIndex(8);
+
+}
+
+void MainWindow::on_pushButton_31_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_40_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+
+}
+
+void MainWindow::on_toolButton_41_clicked()
+{
+    QMessageBox::information(nullptr, QObject::tr("Log out"),
+                      QObject::tr("Etes-vous sure de vous deconnecté?.\n"
+                                  "Cliquez oui pour confirmer."), QMessageBox::Yes);
+
+    ui->stackedWidget->setCurrentIndex(0);
+}
+void MainWindow::showTime2()
+{
+    QTime time=QTime::currentTime();
+    QString time_text=time.toString("hh : mm : ss");
+    ui->DigitalClock->setText(time_text);
+}
+
+void MainWindow::on_pushButton_ajouter_2_clicked()
+{
+    QSqlQuery qry ;
+      QString   cin,nom,prenom,adresse,numero ;
+
+         cin=ui->lineEdit_cin->text();
+             nom=ui->lineEdit_nom->text();
+             prenom=ui->lineEdit_prenom->text();
+          adresse=ui->lineEdit_adresse_5->text();
+          numero=ui->lineEdit_num->text();
+
+          CLIENT C( cin , nom, prenom, adresse, numero);
+          bool test=C.ajouterclient();
+          if(test)
+          {
+              QMessageBox::information(nullptr,QObject::tr("Ajouter client"),
+                                                   QObject::tr("client ajouté .\n"
+                                                               "Click Cancel to exit ."),QMessageBox::Cancel);
+                   }
+              else
+              {
+              QMessageBox::critical(nullptr,QObject::tr("Ajouter client"),
+                                               QObject::tr("ERooR .\n"
+                                                           "Click Cancel to exit ."),QMessageBox::Cancel);
+              }
+
+}
+
+void MainWindow::on_pushButton_modifier_2_clicked()
+{
+    QSqlQuery qry ;
+      QString   cin,nom,prenom,adresse,numero ;
+
+         cin=ui->lineEdit_cin->text();
+             nom=ui->lineEdit_nom->text();
+             prenom=ui->lineEdit_prenom->text();
+          adresse=ui->lineEdit_adresse_5->text();
+          numero=ui->lineEdit_num->text();
+
+          CLIENT r( cin , nom, prenom, adresse, numero);
+          bool test=r.modifierclient();
+               if (test)
+                       {
+                   QMessageBox::information(nullptr,QObject::tr("Modifier client"),
+                                                    QObject::tr("client Modifié .\n"
+                                                                "Click Cancel to exit ."),QMessageBox::Cancel);
+
+                        }
+                   else
+                   {
+                   QMessageBox::critical(nullptr,QObject::tr("Modifier client"),
+                                                    QObject::tr("client Modifié .\n"
+                                                                "Click Cancel to exit ."),QMessageBox::Cancel);
+                      }
+}
+
+void MainWindow::on_tabWidget_9_currentChanged(int index)
+{
+    CLIENT r;
+    r.afficherclient(ui);
+
+}
+
+
+void MainWindow::on_tableView_3_activated(const QModelIndex &index)
+{
+    CLIENT r ;
+       r.selectionnerclient(ui,index);
+}
+
+void MainWindow::on_pushButton_32_clicked()
+{
+    QSqlQuery qry;
+        CLIENT r;
+
+
+         bool test =r.supprimerclient(ui);
+         if(test)
+            {
+             QMessageBox::information(nullptr,QObject::tr("Supprimer client"),
+                                              QObject::tr("client supprimé .\n"
+                                                          "Click Cancel to exit ."),QMessageBox::Cancel);
+
+            }
+         else
+         {
+             QMessageBox::information(nullptr,QObject::tr("Supprimer client"),
+                                              QObject::tr("Erreur .\n"
+                                                          "Click Cancel to exit ."),QMessageBox::Cancel);
+            }
+}
+
+void MainWindow::on_pushButton_33_clicked()
+{
+    CLIENT r;
+    r.afficherclient(ui);
+}
+
+void MainWindow::on_radioButton_3_clicked()
+{
+    CLIENT c ;
+       c.TRI1(ui);
+}
+
+void MainWindow::on_radioButton_4_clicked()
+{
+    CLIENT c ;
+       c.TRI2(ui);
+}
+
+void MainWindow::on_pushButton_recherche_2_clicked()
+{
+    CLIENT c;
+        c.recherche(ui);
+}
+
+void MainWindow::on_pushButton_34_clicked()
+{
+    CLIENT c;
+  c.pdf();
+}
+void   MainWindow::sendMail()
+{
+    Smtp* smtp = new Smtp("yasmine.gharbi@esprit.tn","191JFT3093", "smtp.gmail.com");
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+
+        smtp->sendMail("yasmine.gharbi@esprit.tn", "yasmine.gharbi@esprit.tn" ,"inscription","cher client on vous informe que vous êtes bien inscrit dans notre boutique et votre abonnement aura un an de validité dés le jour de l'inscription.");
+}
+void   MainWindow::mailSent(QString status)
+{
+
+    if(status == "Message sent")
+        QMessageBox::warning( nullptr, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
+
+}
+
+void MainWindow::on_sendBtn_clicked()
+{
+    sendMail();
+
 }

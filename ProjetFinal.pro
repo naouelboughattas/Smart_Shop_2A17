@@ -27,8 +27,10 @@ CONFIG += c++11
 
 SOURCES += \
     QrCode.cpp \
+    abonnement.cpp \
     arduino.cpp \
     categorie.cpp \
+    client.cpp \
     depot.cpp \
     evenement.cpp \
     exportexcelobjet.cpp \
@@ -39,12 +41,15 @@ SOURCES += \
     produit.cpp \
     qcustomplot.cpp \
     smtp.cpp \
+    statistique.cpp \
     stock.cpp
 
 HEADERS += \
     QrCode.hpp \
+    abonnement.h \
     arduino.h \
     categorie.h \
+    client.h \
     depot.h \
     evenement.h \
     exportexcelobjet.h \
@@ -54,10 +59,12 @@ HEADERS += \
     produit.h \
     qcustomplot.h \
     smtp.h \
+    statistique.h \
     stock.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    statistique.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
