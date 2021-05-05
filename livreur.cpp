@@ -107,3 +107,16 @@ QStringList livreur::recherche_liv(){
     return list;
 
 }
+
+bool livreur::resaisie_liv(QString cin,QString nom,QString pr)
+{
+    QSqlQuery query;
+    query.prepare("UPDATE livreur SET cin= :cin,nom = :nom,prenom = :prenom  WHERE cin= :cin ");
+    query.bindValue(":cin",cin);
+     query.bindValue(":nom",nom);
+     query.bindValue("prenom",pr);
+
+    return    query.exec();
+}
+
+

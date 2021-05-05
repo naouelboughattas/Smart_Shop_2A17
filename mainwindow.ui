@@ -6,43 +6,40 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>443</height>
+    <width>1101</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QLineEdit { background: yellow }
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>801</width>
-      <height>451</height>
+      <x>180</x>
+      <y>20</y>
+      <width>881</width>
+      <height>401</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QStackedWidget {
-background-color : rgb(229, 242, 247) ; border : none;
-}</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QTabWidget" name="tabWidget">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>0</y>
-        <width>761</width>
-        <height>411</height>
+        <width>881</width>
+        <height>481</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -99,7 +96,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
           <x>140</x>
           <y>60</y>
           <width>451</width>
-          <height>231</height>
+          <height>221</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -124,7 +121,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
          <property name="styleSheet">
           <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -145,7 +142,7 @@ padding:0 8;
          <property name="styleSheet">
           <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -166,7 +163,7 @@ padding:0 8;
          <property name="styleSheet">
           <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -187,7 +184,7 @@ padding:0 8;
          <property name="styleSheet">
           <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -207,35 +204,26 @@ padding:0 8;
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
          </property>
          <property name="text">
           <string>Ajouter</string>
@@ -314,10 +302,10 @@ transition: all 0.4s ease 0s;
        <widget class="QTableView" name="tableView_vehicule">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>50</y>
+          <x>140</x>
+          <y>80</y>
           <width>451</width>
-          <height>271</height>
+          <height>261</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -335,43 +323,34 @@ padding:0 5;
        <widget class="QPushButton" name="pushButton_S">
         <property name="geometry">
          <rect>
-          <x>540</x>
-          <y>30</y>
-          <width>181</width>
-          <height>23</height>
+          <x>30</x>
+          <y>100</y>
+          <width>101</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
         </property>
         <property name="text">
          <string>Supprimer</string>
@@ -380,43 +359,34 @@ transition: all 0.4s ease 0s;
        <widget class="QPushButton" name="pushButton_tri">
         <property name="geometry">
          <rect>
-          <x>540</x>
-          <y>80</y>
-          <width>181</width>
-          <height>23</height>
+          <x>30</x>
+          <y>160</y>
+          <width>101</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
         </property>
         <property name="text">
          <string>Tri Vehicule</string>
@@ -425,109 +395,54 @@ transition: all 0.4s ease 0s;
        <widget class="QLineEdit" name="lineEdit_R">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>20</y>
-          <width>141</width>
-          <height>20</height>
+          <x>140</x>
+          <y>40</y>
+          <width>171</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
-border-width: 1px;
+ border-width: 1px;
 border-style: solid;
-border-color:#007299;
+border-color: black;
   border-radius: 10px;
 padding:0 8;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_7">
-        <property name="geometry">
-         <rect>
-          <x>540</x>
-          <y>290</y>
-          <width>181</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
-border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
-
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
-border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
-        </property>
-        <property name="text">
-         <string>Retour</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="pushButton_VE">
         <property name="geometry">
          <rect>
-          <x>540</x>
-          <y>130</y>
-          <width>181</width>
-          <height>23</height>
+          <x>480</x>
+          <y>30</y>
+          <width>141</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
         </property>
         <property name="text">
          <string>Vehicules a Entretenir</string>
@@ -536,46 +451,157 @@ transition: all 0.4s ease 0s;
        <widget class="QPushButton" name="res">
         <property name="geometry">
          <rect>
-          <x>540</x>
-          <y>190</y>
-          <width>181</width>
-          <height>23</height>
+          <x>320</x>
+          <y>30</y>
+          <width>141</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
         </property>
         <property name="text">
          <string>Re-Saisir Une Vehicule</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pdf">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>220</y>
+          <width>101</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Imprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="qrcode">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>340</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QComboBox:hover,QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Qr-Code</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="qrlabel">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>120</y>
+          <width>211</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 5;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>80</y>
+          <width>211</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+        </property>
+        <property name="value">
+         <number>24</number>
         </property>
        </widget>
       </widget>
@@ -666,35 +692,26 @@ padding:0 8;
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #00BFFF;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
          </property>
          <property name="text">
           <string>Modifier</string>
@@ -729,7 +746,7 @@ padding:0 8;
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>50</y>
+        <y>70</y>
         <width>511</width>
         <height>231</height>
        </rect>
@@ -756,7 +773,7 @@ padding:0 8;
        <property name="styleSheet">
         <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -777,7 +794,7 @@ padding:0 8;
        <property name="styleSheet">
         <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -797,35 +814,26 @@ padding:0 8;
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
        </property>
        <property name="text">
         <string>Modifier</string>
@@ -891,7 +899,7 @@ transition: all 0.4s ease 0s;
        <property name="styleSheet">
         <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -911,35 +919,26 @@ padding:0 8;
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
        </property>
        <property name="text">
         <string>Retour</string>
@@ -951,47 +950,36 @@ transition: all 0.4s ease 0s;
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>80</y>
+        <x>110</x>
+        <y>190</y>
         <width>201</width>
         <height>81</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 color: black;
 font-size:20px;
 font-family:Arial, Helvetica, sans-serif;
-}
-QPushButton {
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
       </property>
       <property name="text">
        <string>Vehicules</string>
@@ -1000,47 +988,36 @@ transition: all 0.4s ease 0s;
      <widget class="QPushButton" name="pushButton_3">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>80</y>
+        <x>650</x>
+        <y>270</y>
         <width>201</width>
         <height>81</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 color: black;
 font-size:20px;
 font-family:Arial, Helvetica, sans-serif;
-}
-QPushButton {
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
       </property>
       <property name="text">
        <string>Livreurs</string>
@@ -1049,50 +1026,87 @@ transition: all 0.4s ease 0s;
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>220</y>
+        <x>380</x>
+        <y>230</y>
         <width>201</width>
         <height>81</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 color: black;
 font-size:20px;
 font-family:Arial, Helvetica, sans-serif;
-}
-QPushButton {
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
       </property>
       <property name="text">
        <string>Livraisons</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>50</y>
+        <width>211</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="icones.qrc">:/Downloads/vehf.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>70</y>
+        <width>211</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="icones.qrc">:/Downloads/pack.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>90</y>
+        <width>221</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="icones.qrc">:/Downloads/driver.png</pixmap>
       </property>
      </widget>
     </widget>
@@ -1100,8 +1114,8 @@ transition: all 0.4s ease 0s;
      <widget class="QTabWidget" name="tabWidget_3">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
+        <x>0</x>
+        <y>0</y>
         <width>741</width>
         <height>421</height>
        </rect>
@@ -1145,7 +1159,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="tabBarAutoHide">
        <bool>false</bool>
@@ -1157,9 +1171,9 @@ margin-top: 2px; /* make non-selected tabs look smaller */
        <widget class="QTableView" name="tableView_livraisons">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>120</x>
           <y>50</y>
-          <width>451</width>
+          <width>581</width>
           <height>271</height>
          </rect>
         </property>
@@ -1177,16 +1191,16 @@ padding:0 5;
        <widget class="QLineEdit" name="lineEdit_R_3">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>20</y>
+          <x>120</x>
+          <y>9</y>
           <width>221</width>
-          <height>20</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: #007299;
@@ -1195,49 +1209,199 @@ padding:0 8;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_9">
+       <widget class="QPushButton" name="pdf_2">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>150</y>
-          <width>161</width>
-          <height>23</height>
+          <x>10</x>
+          <y>190</y>
+          <width>101</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Imprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>330</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
         </property>
         <property name="text">
          <string>Retour</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="reload">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>10</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Actualiser</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="SL">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Marquer_livre">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>10</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Marquer Comme Livree</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Statistiques</string>
+       </attribute>
+       <widget class="QCustomPlot" name="widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>831</width>
+          <height>361</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -1247,10 +1411,10 @@ transition: all 0.4s ease 0s;
      <widget class="QTabWidget" name="tabWidget_2">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>40</x>
         <y>0</y>
-        <width>761</width>
-        <height>361</height>
+        <width>811</width>
+        <height>411</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1292,7 +1456,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -1301,8 +1465,8 @@ margin-top: 2px; /* make non-selected tabs look smaller */
        <widget class="QGroupBox" name="groupBox_3">
         <property name="geometry">
          <rect>
-          <x>140</x>
-          <y>30</y>
+          <x>70</x>
+          <y>40</y>
           <width>541</width>
           <height>261</height>
          </rect>
@@ -1329,7 +1493,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
          <property name="styleSheet">
           <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -1350,7 +1514,8 @@ padding:0 8;
          <property name="styleSheet">
           <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -1371,7 +1536,7 @@ padding:0 8;
          <property name="styleSheet">
           <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -1391,35 +1556,26 @@ padding:0 8;
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
          </property>
          <property name="text">
           <string>Ajouter</string>
@@ -1486,7 +1642,7 @@ transition: all 0.4s ease 0s;
           <string notr="true">
 QComboBox
 {
-background-color: #80ccff ;
+
  border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -1530,8 +1686,8 @@ padding:0 8;
        <widget class="QTableView" name="tableView_livreur">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>50</y>
+          <x>130</x>
+          <y>60</y>
           <width>451</width>
           <height>271</height>
          </rect>
@@ -1553,43 +1709,34 @@ padding:0 5;
        <widget class="QPushButton" name="pushButton_S1">
         <property name="geometry">
          <rect>
-          <x>570</x>
-          <y>30</y>
-          <width>171</width>
-          <height>23</height>
+          <x>10</x>
+          <y>160</y>
+          <width>111</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
         </property>
         <property name="text">
          <string>Supprimer</string>
@@ -1598,43 +1745,34 @@ transition: all 0.4s ease 0s;
        <widget class="QPushButton" name="pushButton_tri_2">
         <property name="geometry">
          <rect>
-          <x>570</x>
-          <y>80</y>
-          <width>171</width>
-          <height>23</height>
+          <x>10</x>
+          <y>200</y>
+          <width>111</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
         </property>
         <property name="text">
          <string>Tri Livreur</string>
@@ -1643,16 +1781,16 @@ transition: all 0.4s ease 0s;
        <widget class="QLineEdit" name="lineEdit_R_2">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>130</x>
           <y>20</y>
-          <width>141</width>
-          <height>20</height>
+          <width>201</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit
 {
-background-color: #80ccff ;
+
 border-width: 1px;
 border-style: solid;
 border-color: #007299;
@@ -1661,49 +1799,160 @@ padding:0 8;
 }</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="pbre">
         <property name="geometry">
          <rect>
-          <x>570</x>
-          <y>280</y>
-          <width>171</width>
-          <height>23</height>
+          <x>400</x>
+          <y>20</y>
+          <width>121</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
         </property>
         <property name="text">
-         <string>Retour</string>
+         <string>Re-Saisir Livreur</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pdfl">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>240</y>
+          <width>111</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Imprimer</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="qrlabell">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>90</y>
+          <width>211</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 5;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar_1">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>50</y>
+          <width>211</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QProgressBar
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+        </property>
+        <property name="value">
+         <number>24</number>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="qrcode_2">
+        <property name="geometry">
+         <rect>
+          <x>650</x>
+          <y>310</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+    color: #b1b1b1;
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #565656, stop: 0.1 #525252, stop: 0.5 #4e4e4e, stop: 0.9 #4a4a4a, stop: 1 #464646);
+    border-width: 1px;
+    border-color: #1e1e1e;
+    border-style: solid;
+    border-radius: 6;
+    padding: 3px;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}
+QComboBox:hover,QPushButton:hover
+{
+    border: 2px solid QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffa02f, stop: 1 #d7801a);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Qr-Code</string>
         </property>
        </widget>
       </widget>
@@ -1714,10 +1963,10 @@ transition: all 0.4s ease 0s;
        <widget class="QGroupBox" name="groupBox_4">
         <property name="geometry">
          <rect>
-          <x>130</x>
-          <y>30</y>
+          <x>70</x>
+          <y>90</y>
           <width>501</width>
-          <height>261</height>
+          <height>151</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1752,40 +2001,31 @@ transition: all 0.4s ease 0s;
            <x>320</x>
            <y>50</y>
            <width>101</width>
-           <height>23</height>
+           <height>31</height>
           </rect>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-	
-padding: 1px;
-border-style: solid;
-border: 2px solid gray;
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
 border-radius: 8px;
-background-color: rgb(181, 216, 131);
-border:2px solid #000;
-}
-QPushButton {
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
 
-     color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #0085b2;
-padding: 20px;
-border-radius: 5px;
-display: inline-block;
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
 border: none;
-transition: all 0.4s ease 0s;
- }
- QPushButton:hover {
-background-image: url(:/image/Nouveau dossier/check-mark.png);
-     background: #1E90FF;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.55);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.55);
-transition: all 0.4s ease 0s;
- }</string>
+
+}
+</string>
          </property>
          <property name="text">
           <string>Modifier</string>
@@ -1820,7 +2060,7 @@ transition: all 0.4s ease 0s;
           <string notr="true">
 QComboBox
 {
-background-color: #80ccff ;
+
  border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -1852,7 +2092,7 @@ padding:0 8;
           <string notr="true">
 QComboBox
 {
-background-color: #80ccff ;
+
  border-width: 1px;
 border-style: solid;
 border-color: black;
@@ -1897,7 +2137,7 @@ padding:0 5;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-background: #1aa3ff;
+background: #dfe3ee;
 border: 2px solid #dfe3ee;
 border-bottom-color: #aaa5a5; /* same as the pane color */
 border-top-left-radius: 7px;
@@ -1907,12 +2147,451 @@ border-radius: 8px;
 color: black;
 font-size:12px;
 font-family:Arial, Helvetica, sans-serif;
-}</string>
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
       </property>
       <property name="text">
        <string>Retour</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QWidget" name="page_7">
+     <widget class="QGroupBox" name="groupBox_6">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>50</y>
+        <width>541</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGroupBox {
+  border: 1px solid #007299;
+  border-radius: 9px;
+  margin-top: 0.5em;
+}</string>
+      </property>
+      <property name="title">
+       <string>Formulaire de Modification</string>
+      </property>
+      <widget class="QLineEdit" name="lec">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit
+{
+
+border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="len">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>80</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit
+{
+
+border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lep">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>120</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit
+{
+
+border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 8;
+}</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>80</y>
+         <width>111</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>40</y>
+         <width>47</width>
+         <height>14</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Cin</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_37">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>80</y>
+         <width>47</width>
+         <height>14</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Nom</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_38">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>120</y>
+         <width>47</width>
+         <height>14</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Prenom</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pbret">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>200</y>
+         <width>161</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Retour</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_8">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>181</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Hash-tech</string>
+    </property>
+    <widget class="QToolButton" name="toolButton_7">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>240</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QToolButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QToolButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Home</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButton_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QToolButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QToolButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Log out</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButton_9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>290</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QToolButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QToolButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Settings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Timer_2">
+     <property name="geometry">
+      <rect>
+       <x>56</x>
+       <y>120</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Time&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Date_2">
+     <property name="geometry">
+      <rect>
+       <x>36</x>
+       <y>140</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Date&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_41">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>157</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>__________________</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_42">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>107</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>__________________</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>30</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background: #dfe3ee;
+border: 2px solid #dfe3ee;
+border-bottom-color: #aaa5a5; /* same as the pane color */
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+min-width: 80px;
+border-radius: 8px;
+color: black;
+font-size:12px;
+font-family:Arial, Helvetica, sans-serif;
+
+
+}
+QPushButton:hover {
+color:#fff;
+background:#8b9dc3;
+border: none;
+
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Retour</string>
+     </property>
     </widget>
    </widget>
   </widget>
@@ -1921,13 +2600,23 @@ font-family:Arial, Helvetica, sans-serif;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1101</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="icones.qrc"/>
+ </resources>
  <connections/>
 </ui>

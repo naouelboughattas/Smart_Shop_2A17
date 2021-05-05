@@ -1,5 +1,7 @@
-QT       += core gui sql
-CONFIG += console
+QT       += core gui sql printsupport \
+    quick
+
+QT +=network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -22,14 +24,20 @@ SOURCES += \
     Vehicule.cpp \
     connection.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    qcustomplot.cpp \
+    qrcode.cpp \
+    smtp.cpp
 
 HEADERS += \
     Livraison.h \
     Livreur.h \
     Vehicule.h \
     connection.h \
-    mainwindow.h
+    mainwindow.h \
+    qcustomplot.h \
+    qrcode.h \
+    smtp.h
 
 FORMS += \
     mainwindow.ui
@@ -38,3 +46,12 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    icones.qrc
+
+DISTFILES += \
+    ../../Downloads/driver.png \
+    ../../Downloads/pack.png \
+    ../../Downloads/veh.jpg \
+    ../../Downloads/vehf.png

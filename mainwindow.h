@@ -38,6 +38,8 @@ private slots:
 
      void on_pushButton_11_clicked();
 
+     void on_pushButton_12_clicked();
+
     void on_pushButton_6_clicked();
 
     void on_pushButton_5_clicked();
@@ -47,6 +49,15 @@ private slots:
     void on_pushButton_3_clicked();
 
      void on_pushButton_10_clicked();
+
+     void on_pbre_clicked();
+
+      void on_pbret_clicked();
+
+
+      void on_pdf_clicked();
+      void on_pdfl_clicked();
+      void on_pdf_2_clicked();
 
      void on_pushButton_VE_clicked();
 
@@ -58,7 +69,16 @@ private slots:
 
     void on_pushButton_S1_clicked();
 
-    void on_pushButton_S2_clicked();
+    void on_qrcode_clicked();
+
+    void on_qrcode_2_clicked();
+
+    void on_reload_clicked();
+
+    void on_SL_clicked();
+
+    void on_Marquer_livre_clicked();
+
 
      void on_pushButton_tri_clicked();
 
@@ -68,15 +88,22 @@ private slots:
 
      void on_lineEdit_R_2_textEdited(const QString &arg1);
 
+     void on_lineEdit_R_3_textEdited(const QString &arg1);
+
      void on_tabWidget_2_currentChanged(int index);
 
+      void on_tabWidget_3_currentChanged(int index);
+
      void on_tabWidget_currentChanged(int index);
+
+     void showTime();
 
 private:
     Ui::MainWindow *ui;
     vehicule tmpveh;
     livreur tmpliv;
     livraison tmplivraison ;
+
 };
 
 #endif // MAINWINDOW_H

@@ -20,6 +20,7 @@ public:
     QSqlQueryModel * afficher_liv();
     bool supprimer_liv(QString);
     bool modifier_liv(QString,QString);
+    bool resaisie_liv(QString,QString,QString);
     QSqlQueryModel * rechercher_liv_dynamique(QString a);
     QSqlQueryModel * tri_liv();
     QSqlQueryModel * afficher_id();
