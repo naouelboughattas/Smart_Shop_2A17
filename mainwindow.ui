@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>10</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="LOGIN">
      <widget class="QPushButton" name="bt_login">
@@ -1047,7 +1047,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -2274,7 +2274,7 @@ border: none;
         <widget class="QLabel" name="label_18">
          <property name="geometry">
           <rect>
-           <x>230</x>
+           <x>270</x>
            <y>30</y>
            <width>109</width>
            <height>109</height>
@@ -2511,7 +2511,7 @@ padding:0 5;
         <widget class="QPushButton" name="qrcode">
          <property name="geometry">
           <rect>
-           <x>650</x>
+           <x>640</x>
            <y>320</y>
            <width>93</width>
            <height>28</height>
@@ -2555,7 +2555,7 @@ QComboBox:hover,QPushButton:hover
        <widget class="QGroupBox" name="groupBox_8">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>80</x>
           <y>60</y>
           <width>551</width>
           <height>351</height>
@@ -2795,22 +2795,22 @@ padding:0 8;
           <string>Informé vos clients</string>
          </property>
         </widget>
-       </widget>
-       <widget class="QLabel" name="label_25">
-        <property name="geometry">
-         <rect>
-          <x>260</x>
-          <y>80</y>
-          <width>111</width>
-          <height>111</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../ajou.png</pixmap>
-        </property>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>240</x>
+           <y>20</y>
+           <width>111</width>
+           <height>111</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../../../ajou.png</pixmap>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_9">
@@ -2820,7 +2820,7 @@ padding:0 8;
        <widget class="QGroupBox" name="groupBox_9">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>80</x>
           <y>60</y>
           <width>551</width>
           <height>351</height>
@@ -2832,7 +2832,7 @@ padding:0 8;
         <widget class="QLabel" name="label_29">
          <property name="geometry">
           <rect>
-           <x>240</x>
+           <x>250</x>
            <y>20</y>
            <width>111</width>
            <height>121</height>
@@ -3104,26 +3104,10 @@ font-family:Arial, Helvetica, sans-serif;
        <attribute name="title">
         <string>Supprimer des evenements</string>
        </attribute>
-       <widget class="QLabel" name="label_33">
-        <property name="geometry">
-         <rect>
-          <x>240</x>
-          <y>140</y>
-          <width>101</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../supprime.png</pixmap>
-        </property>
-       </widget>
        <widget class="QGroupBox" name="groupBox_10">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>130</x>
           <y>100</y>
           <width>491</width>
           <height>261</height>
@@ -3201,6 +3185,22 @@ padding:0 8;
 }</string>
          </property>
         </widget>
+        <widget class="QLabel" name="label_33">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>30</y>
+           <width>101</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../../../supprime.png</pixmap>
+         </property>
+        </widget>
        </widget>
        <widget class="QLabel" name="infos_2">
         <property name="geometry">
@@ -3220,6 +3220,51 @@ padding:0 8;
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_37">
+       <attribute name="title">
+        <string>Historique</string>
+       </attribute>
+       <widget class="QTextBrowser" name="textHisto">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>140</y>
+          <width>601</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextBrowser
+{
+ border-width: 1px;
+border-style: solid;
+border-color: black;
+  border-radius: 10px;
+padding:0 5;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_87">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>60</y>
+          <width>211</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Steelr</family>
+          <pointsize>20</pointsize>
+          <italic>false</italic>
+         </font>
+        </property>
+        <property name="text">
+         <string>Historique</string>
         </property>
        </widget>
       </widget>
@@ -7869,7 +7914,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="widget_2">
        <attribute name="title">
@@ -8468,7 +8513,7 @@ padding:0 8;
        <widget class="QLineEdit" name="email_3">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>390</x>
           <y>100</y>
           <width>171</width>
           <height>31</height>
@@ -8488,7 +8533,7 @@ padding:0 8;
        <widget class="QLineEdit" name="objet">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>390</x>
           <y>160</y>
           <width>171</width>
           <height>31</height>
@@ -8510,8 +8555,8 @@ padding:0 8;
          <rect>
           <x>360</x>
           <y>220</y>
-          <width>171</width>
-          <height>31</height>
+          <width>241</width>
+          <height>101</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -8555,7 +8600,7 @@ padding:0 8;
         <property name="geometry">
          <rect>
           <x>190</x>
-          <y>230</y>
+          <y>260</y>
           <width>141</width>
           <height>20</height>
          </rect>
@@ -8567,8 +8612,8 @@ padding:0 8;
        <widget class="QPushButton" name="email_6">
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>300</y>
+          <x>440</x>
+          <y>340</y>
           <width>101</width>
           <height>31</height>
          </rect>

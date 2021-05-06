@@ -37,6 +37,7 @@
 #include "statistique.h"
 
 
+
 using namespace qrcodegen;
 
 void MainWindow::on_bt_login_clicked()
@@ -44,7 +45,7 @@ void MainWindow::on_bt_login_clicked()
     if(ui->user->text()=="wael" && ui->pass->text()=="ksila"){
         QMediaPlayer* player;
         player = new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/MyProject/bienvenue.mp3"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/ProjetFinal/bienvenue.mp3"));
                      player->play();
                      qDebug()<<player->errorString();
 
@@ -233,10 +234,9 @@ void MainWindow::on_pb_ajouter_clicked()
 
     bool test=F.ajouter();
     if(test){
-        QMessageBox::information(nullptr, QObject::tr("OK"),
-                                 QObject::tr("Ajout effectué\n"
-                                 "Click Cancel to exit."),QMessageBox::Cancel);
         ui->tab_fact->setModel(Ftemp.afficher());
+        notif m("Facture","Facture Ajouté");
+        m.afficher();
 
 
     }else{
@@ -253,6 +253,8 @@ void MainWindow::on_pushButton_clicked()
     ui->tab_fact->resizeRowsToContents();
     ui->le_client->clear();
     ui->le_client->addItems(Ftemp.recherche_client());
+    notif m("Facture","Facture Trié");
+    m.afficher();
 
 }
 
@@ -273,8 +275,8 @@ void MainWindow::on_supp_clicked()
               ui->le_client->addItems(Ftemp.recherche_client());
 
 
-              QMessageBox::information(nullptr,"Suppression","Facture supprimé");
-
+              notif m("Facture","Facture Supprimé");
+              m.afficher();
           }
       }
 
@@ -298,9 +300,8 @@ void MainWindow::on_pb_modifier_clicked()
         ui->le_client->clear();
         ui->le_client->addItems(Ftemp.recherche_client());
         ui->tab_fact->setModel(Ftemp.afficher());
-        QMessageBox::information(nullptr, QObject::tr("Modification effectué"),
-                          QObject::tr("Facture modifie.\n"
-                                      "Click Cancel to exit."), QMessageBox::Cancel);
+        notif m("Facture","Facture Modifié");
+        m.afficher();
     }
     else
         QMessageBox::critical(nullptr, QObject::tr("Modification echoué"),
@@ -553,8 +554,8 @@ void MainWindow::on_pushButton_2_clicked()
               ui->le_client->clear();
               ui->le_client->addItems(Ftemp.recherche_client());
               ui->tab_fact->setModel(Ftemp.afficher());
-
-              QMessageBox::information(nullptr,"Suppression","Facture supprimé");
+              notif m("Facture","Facture Supprimé");
+              m.afficher();
 
           }
       }
@@ -663,12 +664,24 @@ void MainWindow::on_ajout_ev_clicked()
             i++;
             ui->progressBar->setValue(i);
         }
-            QMessageBox::information(nullptr,"Ajout effectué\n","Ajout effectué\n");
-            if(ui->checkBox->isChecked()){
+        notif m("Evenement","Evenement Ajouté");
+        m.afficher();
+        foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+                     le->clear();}
+                QFile file("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/ProjetFinal/Histo/historique.txt");
+                if(!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
+                    return;
+                QTextStream cout(&file);
+                QString d_info = QDateTime::currentDateTime().toString();
+                QString message2=d_info+" - Un événement a été ajouté avec la référence "+id_ev+"\n";
+                cout << message2;
+
+
+        if(ui->checkBox->isChecked()){
                 /************************************SMTP******************************************************/
                         QString objet="NOUVELLE EVENEMENT AJOUTE !";
                                 QString message="IDEvenement:"+ui->id_ev->text()+"Nomd'evenement:"+ui->nom_ev->text() ;
-                                Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
+                                Smtp* smtp = new Smtp("wael.ksila@esprit.tn","191JMT3269", "smtp.gmail.com",465);
                                 connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
                                 QString pro=ui->produit_inclus->currentText();
@@ -722,6 +735,27 @@ void MainWindow::on_ajout_ev_clicked()
 
 
 }
+void MainWindow::readfile(){
+    QString filename="C:/Users/waelk/OneDrive/Bureau/C++/PROJET/ProjetFinal/Histo/historique.txt";
+    QFile file(filename);
+    if(!file.exists()){
+        qDebug() << "NO existe el archivo "<<filename;
+    }else{
+        qDebug() << filename<<" encontrado...";
+    }
+    QString line;
+    ui->textHisto->clear();
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream stream(&file);
+        while (!stream.atEnd()){
+            line = stream.readLine();
+            ui->textHisto->setText(ui->textHisto->toPlainText()+line+"\n");
+            qDebug() << "linea: "<<line;
+        }
+    }
+    file.close();
+}
+
 
 void MainWindow::on_tabWidget_2_currentChanged(int index)
 {
@@ -736,7 +770,7 @@ void MainWindow::on_tabWidget_2_currentChanged(int index)
     ui->modif_produit_inclus->clear();
     ui->modif_produit_inclus->addItems(Etemp.recherche_produit());
     ui->id_ev->setText(Etemp.remplir_ev());
-
+    readfile();
 
 
 }
@@ -760,7 +794,18 @@ void MainWindow::on_supp_ev_clicked()
               ui->supr_ev->clear();
               ui->supr_ev->addItems(Etemp.recherche_id_ev());
               ui->tab_ev->setModel(Etemp.afficher_ev());
-              QMessageBox::information(nullptr,"Suppression","Evenement supprimé");
+              notif m("Evenement","Evenement Supprimé");
+              m.afficher();
+              foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+                           le->clear();}
+                      QFile file("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/ProjetFinal/Histo/historique.txt");
+                      if(!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
+                          return;
+                      QTextStream cout(&file);
+                      QString d_info = QDateTime::currentDateTime().toString();
+                      QString message2=d_info+" - Un événement a été supprimé avec la référence "+id_ev+"\n";
+                      cout << message2;
+
 
           }
       }else{
@@ -789,8 +834,17 @@ void MainWindow::on_supp_ev_2_clicked()
               ui->supr_ev->clear();
               ui->supr_ev->addItems(Etemp.recherche_id_ev());
               ui->tab_ev->setModel(Etemp.afficher_ev());
-              QMessageBox::information(nullptr,"Suppression","Evenement supprimé");
-
+              notif m("Evenement","Evenement Supprimé");
+              m.afficher();
+              foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+                           le->clear();}
+                      QFile file("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/ProjetFinal/Histo/historique.txt");
+                      if(!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
+                          return;
+                      QTextStream cout(&file);
+                      QString d_info = QDateTime::currentDateTime().toString();
+                      QString message2=d_info+" - Un événement a été supprimé avec la référence "+id_ev+"\n";
+                      cout << message2;
           }
       }else{
           QMessageBox::information(nullptr,"Suppression","Evenement non supprimé !");
@@ -884,6 +938,8 @@ void MainWindow::on_tri_ev_clicked()
     }
     ui->tab_ev->setModel(Etemp.tri_ev());
     ui->tab_ev->resizeRowsToContents();
+    notif m("Evenement","Evenement Trié");
+    m.afficher();
 
 }
 
@@ -927,9 +983,19 @@ void MainWindow::on_modif_ev_clicked()
         ui->produit_inclus->clear();
         ui->produit_inclus->addItems(Etemp.recherche_id_ev());
         ui->tab_ev->setModel(Etemp.afficher_ev());
-        QMessageBox::information(nullptr, QObject::tr("Modification effectué"),
-                          QObject::tr("Facture modifie.\n"
-                                      "Click Cancel to exit."), QMessageBox::Cancel);
+        notif m("Evenement","Evenement Modifié");
+        m.afficher();
+        foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+                     le->clear();}
+                QFile file("C:/Users/waelk/OneDrive/Bureau/C++/PROJET/ProjetFinal/Histo/historique.txt");
+                if(!file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
+                    return;
+                QTextStream cout(&file);
+                QString d_info = QDateTime::currentDateTime().toString();
+                QString message2=d_info+" - Un événement a été modifié avec la référence "+id_ev+"\n";
+                cout << message2;
+
+
     }
     else
         QMessageBox::critical(nullptr, QObject::tr("Modification echoué"),
@@ -2503,13 +2569,13 @@ void MainWindow::on_pb_ajouter_2_clicked()
     tache t (id,descri,duree);
     bool test=t.ajouter_tache();
     if(test){
-        QMessageBox::information(nullptr, QObject::tr("Tache ajouté"),
-                    QObject::tr("Tache ajouté.\n"
-                                "OK"), QMessageBox::Cancel);
-}else
+        notif m("Tache","Tache ajouté avec succès");
+        m.afficher();
+    }else{
         QMessageBox::information(nullptr, QObject::tr("Tache non ajouté"),
                     QObject::tr("Tache non ajouté.\n"
                                 "OK"), QMessageBox::Cancel);
+}
     ui->tabtache->setModel(tmptache.afficher_tache());
     refresh2();
 
@@ -2534,6 +2600,9 @@ void MainWindow::on_cin_4_textEdited(const QString &arg1)
 void MainWindow::on_trie_clicked()
 {
     ui->tabtache->setModel(tmptache.tri_tache()) ;
+    notif m("Tache","Tache Trié");
+    m.afficher();
+
 
 }
 
@@ -2559,10 +2628,14 @@ void MainWindow::on_pb_modifier_2_clicked()
     tmptache.setduree(ui->duree_2->dateTime());
 
     bool test=tmptache.modifier_tache();
-    if(test){
+    if(test){/*
         QMessageBox::information(nullptr, QObject::tr("tache Modifié"),
                     QObject::tr("tache Modifié.\n"
-                                "OK"), QMessageBox::Cancel);
+                                "OK"), QMessageBox::Cancel);*/
+        notif m("Tache","Tache Modifié");
+        m.afficher();
+
+
 }else
         QMessageBox::information(nullptr, QObject::tr("tache non Modifié"),
                     QObject::tr("tache non Modifié.\n"
@@ -2577,13 +2650,10 @@ void MainWindow::on_checkBox_pressed()
 void MainWindow::on_email_6_clicked()
 {
     /************************************SMTP******************************************************/
-            QString objet=ui->objet->text();
-                    QString message="IDEvenement:"+ui->id_ev->text()+"Nomd'evenement:"+ui->nom_ev->text() ;
-                    Smtp* smtp = new Smtp("donia.sarsar@esprit.tn","", "smtp.gmail.com",465);
+                    Smtp* smtp = new Smtp("donia.sarsar@esprit.tn","Dadou1234", "smtp.gmail.com",465);
                     connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
-                    QString pro=ui->produit_inclus->currentText();
-                    QString okk=pro+" En Solde";
+                    QString objet=ui->objet->text();
                     QString o=ui->description->text();
                     QString email=ui->email_3->text();
                     smtp->sendMail("donia.sarsar@esprit.tn", email , objet,o);
@@ -2636,9 +2706,12 @@ void MainWindow::on_pb_supprimer_2_clicked()
      t.setid(id);
      bool test=t.supprimer_tache();
      if(test){
-         QMessageBox::information(nullptr, QObject::tr("Tache Supprimé"),
+         /*QMessageBox::information(nullptr, QObject::tr("Tache Supprimé"),
                      QObject::tr("Tache Supprimé.\n"
-                                 "OK"), QMessageBox::Cancel);
+                                 "OK"), QMessageBox::Cancel);*/
+         notif m("Tache","Tache Supprimé");
+         m.afficher();
+
  }else
          QMessageBox::information(nullptr, QObject::tr("Tache non Supprimé"),
                      QObject::tr("Tache non Supprimé.\n"

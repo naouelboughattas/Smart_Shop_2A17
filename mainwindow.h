@@ -17,6 +17,9 @@
 #include "depot.h"
 #include "employer.h"
 #include "tache.h"
+#include "notif.h"
+#include <QSystemTrayIcon>
+
 
 
 
@@ -385,6 +388,8 @@ private slots:
     void on_qrcode_5_clicked();
 
     void on_pb_supprimer_2_clicked();
+
+    void readfile();
 
 private:
     Ui::MainWindow *ui;
