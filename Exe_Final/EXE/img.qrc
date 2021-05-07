@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>login.png</file>
+        <file>logoo.png</file>
+        <file>log2.png</file>
+        <file>log3.png</file>
+        <file>log_final.png</file>
+        <file>driver.png</file>
+        <file>pack.png</file>
+        <file>vehf.png</file>
+        <file>d.png</file>
+        <file>p.png</file>
+        <file>v.png</file>
+    </qresource>
+</RCC>

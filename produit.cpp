@@ -150,14 +150,14 @@ void Produit::statistic(QCustomPlot *customPlot)
     // prepare x axis with country labels:
     QVector<double> ticks;
     QVector<QString> labels;
-    query.prepare("SELECT COUNT(DISTINCT id_p) FROM produits where prix between 0 and 50");
+    query.prepare("SELECT COUNT(DISTINCT id_p) FROM produits where prix between 0 and 100");
     query.exec();
     int i;
     while(query.next())
     {
         i=query.value(0).toInt();
     }
-    query.prepare("SELECT COUNT(DISTINCT id_p) FROM produits where prix between 50 and 100");
+    query.prepare("SELECT COUNT(DISTINCT id_p) FROM produits where prix between 100 and 1000");
     query.exec();
     int ii;
     while(query.next())
@@ -165,27 +165,21 @@ void Produit::statistic(QCustomPlot *customPlot)
         ii=query.value(0).toInt();
     }
 
-    query.prepare("SELECT COUNT(DISTINCT id_p) FROM produits where prix between 100 and 1000");
+    query.prepare("SELECT COUNT(DISTINCT id_p) FROM produits where prix > 1000");
     query.exec();
     int j;
     while(query.next())
     {
         j=query.value(0).toInt();
     }
-    query.prepare("SELECT COUNT(DISTINCT id_p) FROM produits where prix > 1000");
-    query.exec();
-    int k;
-    while(query.next())
-    {
-        k=query.value(0).toInt();
-    }
 
 
 
 
 
-    ticks << 1 << 2 << 3 << 4 ;
-    labels << "[ 0 DT,50 DT ]"<< "[ 50 DT,100 DT ]" << "[ 100 DT,1000 DT ]"<<"Plus que 1000 DT" ;
+
+    ticks << 1 << 2 << 3  ;
+    labels << "[ 0 DT,100 DT ]"<< "[ 100 DT,100 DT ]" << "Plus que 1000 DT" ;
     QSharedPointer<QCPAxisTickerText> textTicker(new QCPAxisTickerText);
     textTicker->addTicks(ticks, labels);
     customPlot->xAxis->setTicker(textTicker);
@@ -215,7 +209,7 @@ void Produit::statistic(QCustomPlot *customPlot)
 
     // Add data:
     QVector<double> fossilData, nuclearData, regenData;
-    fossilData  << i << j << k;
+    fossilData  << i << ii << j;
    // nuclearData << 0.08*10.5 << 0.12*5.5 << 0.12*5.5 << 0.40*5.8 << 0.09*5.2 << 0.00*4.2 << 0.07*11.2;
     regenData   << 0.06*10.5 << 0.05*5.5 << 0.04*5.5 << 0.06*5.8 << 0.02*5.2 << 0.07*4.2 << 0.25*11.2;
     fossil->setData(ticks, fossilData);

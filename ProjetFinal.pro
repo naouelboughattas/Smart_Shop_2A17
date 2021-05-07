@@ -26,7 +26,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    Livraison.cpp \
     QrCode.cpp \
+    Vehicule.cpp \
     abonnement.cpp \
     arduino.cpp \
     categorie.cpp \
@@ -36,6 +38,7 @@ SOURCES += \
     evenement.cpp \
     exportexcelobjet.cpp \
     facture.cpp \
+    livreur.cpp \
         main.cpp \
     connection.cpp \
     mainwindow.cpp \
@@ -48,7 +51,9 @@ SOURCES += \
     tache.cpp
 
 HEADERS += \
+    Livraison.h \
     QrCode.hpp \
+    Vehicule.h \
     abonnement.h \
     arduino.h \
     categorie.h \
@@ -59,6 +64,7 @@ HEADERS += \
     exportexcelobjet.h \
     facture.h \
     connection.h \
+    livreur.h \
     mainwindow.h \
     notif.h \
     produit.h \
@@ -77,6 +83,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    img.qrc
 
 DISTFILES +=

@@ -19,6 +19,9 @@
 #include "tache.h"
 #include "notif.h"
 #include <QSystemTrayIcon>
+#include "Livraison.h"
+#include "livreur.h"
+#include "Vehicule.h"
 
 
 
@@ -391,6 +394,78 @@ private slots:
 
     void readfile();
 
+    void on_lineEdit_R_3_textEdited(const QString &arg1);
+
+    void on_SL_clicked();
+
+    void on_pdf_3_clicked();
+
+    void on_reload_clicked();
+
+    void on_Marquer_livre_clicked();
+
+    void on_tabWidget_4_currentChanged(int index);
+
+    void on_lineEdit_R_2_textEdited(const QString &arg1);
+
+    void on_pushButton_S1_clicked();
+
+    void on_pushButton_tri_2_clicked();
+
+    void on_pdfl_clicked();
+
+    void on_qrcode_2_clicked();
+
+    void on_pushButton_43_clicked();
+
+    void on_toolButton_61_clicked();
+
+    void on_toolButton_62_clicked();
+
+    void on_pbre_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_pushmod_2_clicked();
+
+    void on_tabWidget_5_currentChanged(int index);
+
+    void on_tabWidget_6_currentChanged(int index);
+
+    void on_lineEdit_R_textEdited(const QString &arg1);
+
+    void on_pushButton_S_clicked();
+
+    void on_pushButton_tri_clicked();
+
+    void on_pdf_4_clicked();
+
+    void on_res_clicked();
+
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_44_clicked();
+
+    void on_toolButton_64_clicked();
+
+    void on_toolButton_65_clicked();
+
+    void on_pushButton_45_clicked();
+
+    void on_toolButton_67_clicked();
+
+    void on_toolButton_68_clicked();
+
+    void on_pushButton_VE_clicked();
+
+    void on_qrcode_4_clicked();
+
+    void on_pushmod_clicked();
+
+    void on_pushButton_13_clicked();
+
+    void on_email_7_clicked();
+
 private:
     Ui::MainWindow *ui;
     Facture Ftemp;
@@ -408,6 +483,9 @@ private:
     tache tmptache;
     int etat=0;
     QString valeur;
+    livraison tmplivraison ;
+    livreur tmpliv;
+    vehicule tmpveh;
     void keyPressEvent(QKeyEvent *event);
 };
 

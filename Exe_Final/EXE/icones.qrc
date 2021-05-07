@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../../Downloads/vehf.png</file>
+        <file>../../Downloads/pack.png</file>
+        <file>../../Downloads/driver.png</file>
+    </qresource>
+</RCC>
