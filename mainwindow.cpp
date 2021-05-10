@@ -1117,7 +1117,7 @@ void MainWindow::on_ajout_ev_2_clicked()
 {
     QString objet="AJOUT DU COURRIER";
             QString message=" Votre courrier a été ajouté avec succés" ;
-            Smtp* smtp = new Smtp("wael.ksila@esprit.tn","191JMT3269", "smtp.gmail.com",465);
+            Smtp* smtp = new Smtp("wael.ksila@esprit.tn","", "smtp.gmail.com",465);
             connect (smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
             smtp->sendMail("wael.ksila@esprit.tn", "waelksila97@gmail.com" , objet, message);
 }
@@ -2145,7 +2145,7 @@ void MainWindow::on_pushButton_34_clicked()
 }
 void   MainWindow::sendMail()
 {
-    Smtp* smtp = new Smtp("yasmine.gharbi@esprit.tn","191JFT3093", "smtp.gmail.com");
+    Smtp* smtp = new Smtp("yasmine.gharbi@esprit.tn","", "smtp.gmail.com");
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
 
